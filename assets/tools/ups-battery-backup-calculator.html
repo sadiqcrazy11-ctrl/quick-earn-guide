@@ -1,0 +1,738 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Free UPS battery backup calculator: battery size, tubular or lithium, your fans, lights, TV and fridge → real backup hours, recharge units (kWh) and recharge cost in Rs. Built for Pakistan loadshedding.">
+<title>Free UPS Battery Backup Calculator — How Long Will a 200Ah Battery Run 3 Fans? | Quick Earn Guide</title>
+<link rel="icon" href="data:,">
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f7f8f7; --card:#ffffff; --text:#1a1d1a; --muted:#5a625c;
+  --line:#e3e7e3; --accent:#177245; --accent-dark:#0f5a35; --accent-soft:#eef6f1;
+  --warn-bg:#fdf6e3; --warn-line:#e5d48a; --warn-text:#5c4a08;
+  --max:880px;
+}
+html.dark{
+  --bg:#141714; --bg-soft:#1b1e1b; --card:#1b1e1b; --text:#e8eae8; --muted:#a7aea8;
+  --line:#2e332e; --accent:#4cc084; --accent-dark:#4cc084; --accent-soft:#1d2b22;
+  --warn-bg:#2b2716; --warn-line:#6b5d24; --warn-text:#e8d48a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-weight:700;font-size:19px;color:var(--text);letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14.5px}
+nav.main a{color:var(--muted);font-weight:500}
+nav.main a:hover{color:var(--accent);text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.theme-btn:hover{border-color:var(--accent)}
+
+/* Hero */
+.hero{padding:52px 0 8px}
+.hero h1{font-size:clamp(30px,5.5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px;font-weight:800}
+.hero p.lead{font-size:19px;color:var(--muted);margin:0 0 20px;max-width:640px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:7px;font-weight:600;font-size:15.5px}
+.btn:hover{background:var(--accent-dark);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+
+.notice{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:13px 16px;font-size:14.5px;margin:22px 0}
+.notice strong{font-weight:700}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 4px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--card)}
+.stat b{display:block;font-size:20px;letter-spacing:-.01em}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* Sections */
+section.block{padding:44px 0 6px;border-top:1px solid var(--line);margin-top:38px}
+section.block:first-of-type{border-top:none}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+h2{font-size:clamp(24px,4vw,31px);letter-spacing:-.015em;line-height:1.25;margin:0 0 12px}
+h3{font-size:19px;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+ol.steps,ul.plain{margin:6px 0 16px;padding-left:22px}
+ol.steps li,ul.plain li{margin-bottom:9px}
+.callout{background:var(--accent-soft);border-radius:8px;padding:15px 17px;margin:18px 0;font-size:15.5px}
+.callout p:last-child{margin-bottom:0}
+
+/* Tables */
+.table-scroll{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg-soft);font-weight:600;font-size:13.5px}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+
+/* Hustle list */
+.hustles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.hustle{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.hustle h4{margin:0 0 5px;font-size:16.5px}
+.hustle p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.hustle .meta{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--text)}
+.tag.earn{border-color:var(--accent);color:var(--accent)}
+
+/* Compare strip */
+.compare{border:1px solid var(--line);border-radius:8px;padding:18px;margin:20px 0;background:var(--bg-soft)}
+.compare h3{margin-top:0}
+
+/* Hero live preview */
+.preview{border:1px solid var(--accent);border-radius:8px;background:var(--accent-soft);padding:20px;margin:24px 0 6px}
+.preview h3{margin:0 0 14px;font-size:19px}
+.preview-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preview-field label{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;font-weight:600;margin-bottom:6px}
+.preview-field label b{color:var(--accent);white-space:nowrap}
+.preview input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;margin:0}
+.preview-out{font-size:18px;margin:16px 0 8px}
+.preview-out b{font-size:clamp(32px,6vw,42px);color:var(--accent);letter-spacing:-.02em;vertical-align:-6px;margin:0 2px}
+.preview-note{font-size:15px;margin:0}
+.preview .calc-disclaimer{margin-top:12px}
+
+/* Goal picker + tools directory */
+.goal-list{list-style:none;margin:14px 0 6px;padding:0}
+.goal-list li{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--line)}
+.goal-list li:first-child{border-top:1px solid var(--line)}
+.goal-list span{font-weight:600}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.tool-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--card)}
+.tool-card svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool-card h4{margin:8px 0 4px;font-size:16.5px}
+.tool-card p{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+.deeper{font-size:15.5px;margin:16px 0 0}
+
+/* Calculators */
+.calc{border:1px solid var(--line);border-radius:8px;padding:18px;margin:18px 0;background:var(--card)}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.calc-field input{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.calc-field input[type=range]{width:100%;margin:9px 0 0;padding:0;border:none;background:none;accent-color:var(--accent);cursor:pointer}
+.calc-error{display:none;color:#b3261e;font-size:14.5px;margin:12px 0 0}
+html.dark .calc-error{color:#f28b82}
+.calc-results{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.calc-results .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.calc-results .row:last-of-type{border-bottom:none}
+.calc-results .row span{color:var(--muted)}
+.calc-results .row b{white-space:nowrap}
+.calc-results .row.headline b{color:var(--accent);font-size:19px}
+.calc-disclaimer{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+/* Micro-action steps box */
+.next-steps{background:var(--accent-soft);border-radius:8px;padding:12px 16px;margin-top:16px}
+.next-steps h4{margin:0 0 4px;font-size:15.5px;color:var(--accent-dark)}
+.next-steps p{font-size:14.5px;margin:0 0 6px}
+.next-steps ol{margin:0;padding-left:20px;font-size:14.5px}
+.next-steps li{margin-bottom:3px}
+.next-steps li:last-child{margin-bottom:0}
+
+/* Legal */
+.legal h2{font-size:24px}
+.legal p,.legal li{font-size:15.5px}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 44px;background:var(--bg-soft)}
+footer.site .cols{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+footer.site h5{margin:0 0 10px;font-size:14px}
+footer.site ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+footer.site li{margin-bottom:7px}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--accent)}
+.foot-note{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  table{min-width:0;font-size:14.5px}
+  table,thead,tbody,tr{display:block;width:100%}
+  thead{display:none}
+  tr{border-bottom:1px solid var(--line);padding:8px 0}
+  tr:last-child{border-bottom:none}
+  td{display:block;border-bottom:none;padding:5px 14px}
+  td.num,th.num{text-align:left}
+  td:first-child{font-weight:600}
+  .stats{grid-template-columns:1fr}
+  .hustles{grid-template-columns:1fr}
+  .calc-fields{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .preview-fields{grid-template-columns:1fr}
+  nav.main{display:none}
+  nav.main.open{display:flex;width:100%;padding:6px 0 4px;flex-direction:column;gap:10px}
+  .header-in{flex-wrap:wrap}
+  .menu-btn{display:inline-block!important}
+  .hero{padding-top:36px}
+  body{font-size:16.5px}
+}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+
+/* Viral script — compact collapsible card */
+.script-card{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:22px 0 6px;overflow:hidden}
+.script-card summary{padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.script-card summary::-webkit-details-marker{display:none}
+.script-card summary:hover{background:var(--bg-soft)}
+.script-card summary h2{font-size:20px;margin:0}
+.script-card summary .chev{color:var(--accent);font-weight:700;flex:none}
+.script-card[open ] summary{border-bottom:1px solid var(--line)}
+.script-body{padding:14px 18px 16px;font-size:15px}
+.script-body h3{font-size:15.5px;margin:14px 0 4px}
+.script-body h3:first-child{margin-top:0}
+.script-body p{margin:0 0 8px}
+.script-body ul{margin:0 0 8px;padding-left:20px}
+.script-body li{margin-bottom:4px}
+
+/* Guide cards — compact Finovly-style cards; full text lives in the collapsible body */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+section.block.gcard{padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.guide-grid section.block.gcard{margin-top:0}
+.gcard.open{grid-column:1/-1}
+.gcard-head{padding:18px 20px 16px;cursor:pointer}
+.gcard-head:hover{background:var(--bg-soft)}
+.gcard-head .kicker{margin:0 0 5px}
+.gcard-head h2{font-size:21px;line-height:1.3;margin:0 0 8px}
+.gcard-excerpt{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-btn{background:none;border:none;padding:0;font:inherit;font-size:15.5px;font-weight:700;color:var(--accent);cursor:pointer}
+.read-btn:hover{text-decoration:underline}
+.gcard-body{border-top:1px solid var(--line);padding:18px 20px 14px}
+.gcard-body[hidden]{display:none}
+@media (max-width:700px){.guide-grid{grid-template-columns:1fr}}
+
+/* Expansion pack: language toggle, share, cases, checklist */
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap;font-weight:700}
+.lang-btn:hover{border-color:var(--accent)}
+.head-btns{display:flex;gap:8px;align-items:center}
+.es-only{display:none}
+html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:14.5px;margin:0 0 14px}
+.share-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.share-row .share-label{font-size:13.5px;font-weight:700;color:var(--muted)}
+.share-row a,.share-row button{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--text);background:none;cursor:pointer;font-family:inherit}
+.share-row a:hover,.share-row button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.calc-field select{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:130px;padding:10px 12px;font-size:15px;font-weight:600;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;cursor:pointer;font-family:inherit}
+.seg button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.big-warn{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:12px 15px;font-size:14.5px;margin-top:14px}
+.prompt{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14.5px;margin:0 0 10px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.case{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.case h4{margin:0 0 5px;font-size:16.5px}
+.case p{font-size:14.5px;margin:0 0 8px}
+.case .lesson{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.case .src{font-size:13.5px;margin:0}
+.check-list{list-style:none;margin:14px 0;padding:0}
+.check-list li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.check-list li:last-child{border-bottom:none}
+.check-list input{width:19px;height:19px;margin-top:3px;accent-color:var(--accent);flex:none;cursor:pointer}
+.email-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.email-row input{flex:1;min-width:220px;padding:11px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.email-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+#print-area{display:none}
+@media (max-width:640px){.case-grid{grid-template-columns:1fr}}
+@media print{
+  body *{visibility:hidden}
+  #print-area,#print-area *{visibility:visible}
+  #print-area{display:block!important;position:absolute;top:0;left:0;right:0;padding:10px;color:#000}
+}
+
+/* Tool pages */
+.crumbs{font-size:14px;color:var(--muted);padding:20px 0 0;margin:0}
+.crumbs a{color:var(--muted);font-weight:500}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .sep{margin:0 7px}
+.tool-hero{padding:22px 0 2px}
+.tool-hero h1{font-size:clamp(29px,5.2vw,42px);line-height:1.16;letter-spacing:-.02em;margin:0 0 12px;font-weight:800}
+.tool-hero p.lead{font-size:18.5px;color:var(--muted);margin:0;max-width:660px}
+.faq-item{border-top:1px solid var(--line);padding:15px 0 3px}
+.faq-item h3{margin:0 0 6px;font-size:17.5px}
+.faq-item p{margin:0 0 12px}
+.current-tag{font-size:12.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+
+/* UPS calculator extras */
+.preset-row{display:flex;gap:8px;flex-wrap:wrap}
+.preset-row button{padding:9px 14px;font-size:14.5px;font-weight:600;color:var(--text);background:var(--bg-soft);border:1px solid var(--line);border-radius:20px;cursor:pointer;font-family:inherit}
+.preset-row button:hover{border-color:var(--accent);color:var(--accent)}
+.app-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.app-row:last-child{border-bottom:none}
+.app-name{flex:1;min-width:140px;font-weight:600;font-size:15.5px}
+.app-name small{display:block;font-weight:400;color:var(--muted);font-size:13px}
+.stepper{display:flex;align-items:center;gap:7px}
+.stepper button{width:34px;height:34px;border:1px solid var(--line);background:var(--bg);color:var(--text);border-radius:6px;font-size:18px;line-height:1;cursor:pointer;font-family:inherit}
+.stepper button:hover{border-color:var(--accent);color:var(--accent)}
+.stepper b{min-width:22px;text-align:center;font-size:16px}
+.app-watt{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--muted)}
+.app-watt input{width:74px;padding:8px 9px;font-size:15px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.app-watt input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.ups-line{font-size:17px;font-weight:600;margin:16px 0 0;color:var(--accent-dark)}
+</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "How long will a 200Ah battery run 3 fans?", "acceptedAnswer": {"@type": "Answer", "text": "About 4.5 hours on a tubular (lead-acid) battery, and about 8.2 hours on lithium. Three ceiling fans draw roughly 225W. A 200Ah tubular battery only gives you half its charge safely — 12V × 200Ah × 50% × 0.85 inverter efficiency = 1,020 usable watt-hours, and 1,020 ÷ 225W ≈ 4.5 hours. Lithium lets you use 90% of the charge, which is why it lasts close to twice as long on the same Ah rating."}}, {"@type": "Question", "name": "Why is my real backup time shorter than the estimate?", "acceptedAnswer": {"@type": "Answer", "text": "Usually the battery, not the maths. Batteries lose capacity as they age, and tubular batteries that have been drained too deep, too often, lose it faster. Inverter quality matters too, and small things add up: fans on full speed draw more than fans on medium, and an old fridge can pull well above its label when its compressor starts. Treat the calculator's number as a healthy-battery estimate — if yours is years old, expect less."}}, {"@type": "Question", "name": "How much does it cost to recharge the battery after a power cut?", "acceptedAnswer": {"@type": "Answer", "text": "Refilling a fully drained 200Ah battery takes about 3 units (kWh) from the grid once charging losses are counted — roughly Rs 150 at Rs 50 per unit. Smaller cuts cost proportionally less, because you only repay the energy you used. The price per unit is editable in the calculator: type the rate from your own electricity bill for a closer figure. It is an estimate for planning, not an official tariff."}}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "../../index.html"}, {"@type": "ListItem", "position": 2, "name": "Free Tools", "item": "index.html"}, {"@type": "ListItem", "position": 3, "name": "UPS Battery Backup Calculator"}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="header-in">
+    <a class="logo" href="../../index.html">Quick Earn <span>Guide</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html" data-en="Free Tools" data-es="Herramientas Gratis">Free Tools</a>
+      <a href="../../index.html#all-calculators" data-en="Calculators" data-es="Calculadoras">Calculators</a>
+      <a href="../guides/ai-hustles.html" data-en="AI Hustles" data-es="Negocios con IA">AI Hustles</a>
+      <a href="../../index.html#case-studies" data-en="Case Studies" data-es="Casos Reales">Case Studies</a>
+      <a href="../../index.html#about" data-en="About" data-es="Acerca de">About</a>
+    </nav>
+    <div class="head-btns">
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar a español">ES</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <p class="crumbs"><a href="../../index.html" data-en="Home" data-es="Inicio">Home</a><span class="sep">›</span><a href="index.html" data-en="Free Tools" data-es="Herramientas Gratis">Free Tools</a><span class="sep">›</span><span>UPS Battery Backup Calculator</span></p>
+
+  <div class="tool-hero">
+    <h1 data-en="UPS Battery Backup Calculator" data-es="Calculadora de Respaldo de Batería UPS">UPS Battery Backup Calculator</h1>
+    <p class="lead" data-en="How long will a 200Ah battery really run 3 fans? Pick your battery, tick what you actually run during loadshedding, and get an honest answer in hours — plus what recharging will cost you." data-es="¿Cuánto tiempo alimentará de verdad una batería de 200Ah a 3 ventiladores? Elige tu batería, marca lo que usas durante los cortes y obtén una respuesta honesta en horas — además de lo que costará recargarla.">How long will a 200Ah battery really run 3 fans? Pick your battery, tick what you actually run during loadshedding, and get an honest answer in hours — plus what recharging will cost you.</p>
+  </div>
+
+  <section class="block" id="ups-battery-backup-calculator" style="border-top:none;margin-top:10px;padding-top:6px">
+    <div class="calc">
+      <div class="calc-field" style="margin-bottom:14px">
+        <label>🔋 Battery size (Ah)</label>
+        <div class="seg" id="ups-size-seg">
+          <button type="button" data-ah="50">50 Ah</button>
+          <button type="button" data-ah="100">100 Ah</button>
+          <button type="button" data-ah="150">150 Ah</button>
+          <button type="button" data-ah="200" class="active">200 Ah</button>
+          <button type="button" data-ah="custom">Custom</button>
+        </div>
+      </div>
+      <div class="calc-field" id="ups-custom-wrap" style="display:none;margin-bottom:14px">
+        <label for="ups-custom-ah">Custom battery size (Ah)</label>
+        <input type="number" id="ups-custom-ah" min="10" max="1000" step="1" inputmode="numeric" value="200">
+      </div>
+      <div class="calc-field" style="margin-bottom:16px">
+        <label>🔌 Battery type</label>
+        <div class="seg" id="ups-type-seg">
+          <button type="button" data-usable="0.5" data-tname="tubular" class="active">Tubular lead-acid (50% usable)</button>
+          <button type="button" data-usable="0.9" data-tname="lithium">Lithium (90% usable)</button>
+        </div>
+      </div>
+      <div class="calc-field" style="margin-bottom:4px">
+        <label>🏠 Quick presets</label>
+        <div class="preset-row">
+          <button type="button" data-preset="p1">1 fan + 2 lights</button>
+          <button type="button" data-preset="p2">3 fans + TV + router</button>
+          <button type="button" data-preset="p3">Full room</button>
+        </div>
+      </div>
+      <div id="ups-apps"></div>
+      <div class="calc-fields" style="margin-top:16px">
+        <div class="calc-field">
+          <label for="ups-price">⚡ Electricity price per unit in Rs (editable estimate)</label>
+          <input type="number" id="ups-price" min="0" max="500" step="1" inputmode="decimal" value="50">
+        </div>
+      </div>
+      <p class="calc-error" id="ups-error">Add at least one appliance above — and make sure the battery size is a number above 0.</p>
+      <div class="calc-results" id="ups-results" aria-live="polite">
+        <div class="row headline"><span>Estimated backup time</span><b id="ups-out-hours">—</b></div>
+        <div class="row"><span>Total load</span><b id="ups-out-load">—</b></div>
+        <div class="row"><span>Usable battery energy</span><b id="ups-out-usable">—</b></div>
+        <div class="row"><span>Units (kWh) to recharge fully</span><b id="ups-out-units">—</b></div>
+        <div class="row"><span>Est. recharge cost</span><b id="ups-out-cost">—</b></div>
+      </div>
+      <p class="ups-line" id="ups-line"></p>
+      <p class="calc-disclaimer" data-en="&lt;strong&gt;Estimates only.&lt;/strong&gt; Real backup time varies with battery age, how deeply the battery has been drained in the past, inverter quality and your actual load. The recharge cost uses the per-unit price you enter above — an editable estimate, not an official electricity tariff." data-es="&lt;strong&gt;Solo estimaciones.&lt;/strong&gt; El tiempo real de respaldo varía según la edad de la batería, cuánto se ha descargado en el pasado, la calidad del inversor y tu carga real. El costo de recarga usa el precio por unidad que ingreses arriba — una estimación editable, no una tarifa oficial de electricidad."><strong>Estimates only.</strong> Real backup time varies with battery age, how deeply the battery has been drained in the past, inverter quality and your actual load. The recharge cost uses the per-unit price you enter above — an editable estimate, not an official electricity tariff.</p>
+      <div class="next-steps">
+        <h4>Your 3-step start →</h4>
+        <p>Worked out your backup time?</p>
+        <ol>
+          <li>If the number is too low, drop the fridge first — it is usually the biggest load on the list.</li>
+          <li>Never drain a tubular battery below half. That is exactly why only 50% counts as usable here — going deeper kills its life.</li>
+          <li>Recharge fully after every cut. A battery left half-charged fades fast.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="kicker">Tool 12 — About this tool</p>
+    <h2>What this UPS battery backup calculator does</h2>
+    <p>When the power goes in Pakistan, one question decides your evening: how long will the battery last? Most answers online quietly assume you can use 100% of the battery — you cannot, not without destroying it. This calculator does the maths the honest way. Pick your battery size, choose tubular or lithium, tick the fans, lights and screens you actually run, and it shows your real backup time, your total load, and what it costs in electricity units to recharge the battery afterwards.</p>
+    <h3>The formula, in plain words</h3>
+    <div class="callout">
+      <p><strong>Usable energy (Wh) = 12V × battery size (Ah) × usable % × 0.85 inverter efficiency</strong></p>
+      <p><strong>Backup hours = usable Wh ÷ total load (W)</strong></p>
+      <p>The usable % is the part nobody tells you: a tubular lead-acid battery should only be drained to about half (50% usable) or it dies young, while a lithium battery gives you about 90%. The 0.85 covers what the inverter itself wastes turning battery power into the power your fans use.</p>
+    </div>
+    <h3>The question everyone asks: 200Ah, 3 fans</h3>
+    <p>Three ceiling fans draw about 225W together. A 200Ah tubular battery holds 12 × 200 × 50% × 0.85 = 1,020 usable watt-hours, so 1,020 ÷ 225 = <strong>about 4.5 hours</strong>. The same battery in lithium gives 1,836 usable watt-hours — <strong>about 8.2 hours</strong>. Try it above: the calculator opens with exactly this setup.</p>
+    <h3>How to use it — 3 steps</h3>
+    <ol class="steps">
+      <li>Pick your battery size and type. If your size is not listed, tap Custom and type it in — the number is printed on the battery itself.</li>
+      <li>Use the + and − steppers for everything you run during a cut. Wattages are pre-filled with typical Pakistani home values, but every wattage is editable if your appliance label says different.</li>
+      <li>Read your backup time, then check the recharge rows: how many units (kWh) refilling the battery takes, and what that costs at your own per-unit price.</li>
+    </ol>
+    <h3>Who it is for</h3>
+    <p>Anyone in a loadshedding area deciding whether their current UPS setup is enough, anyone shopping for a battery who wants to size it before spending, and anyone whose electricity bill jumped and wants to know what each power cut is quietly costing them in recharge units.</p>
+    <h3>Honest limitations</h3>
+    <p>This is an estimate, not a promise. Real backup varies with battery age — a three-year-old tubular battery holds noticeably less than a new one — with how deeply it has been drained in the past, with inverter quality, and with your true load. Fridges cycle on and off rather than drawing full power constantly, so a fridge on the list makes the estimate cautious, not exact. The recharge cost is only as good as the per-unit price you type in; it is an editable estimate, not an official tariff.</p>
+  </section>
+
+  <section class="block">
+    <p class="kicker">FAQ</p>
+    <h2>UPS Battery Backup Calculator — common questions</h2>
+    <div class="faq-item">
+      <h3>How long will a 200Ah battery run 3 fans?</h3>
+      <p>About 4.5 hours on a tubular (lead-acid) battery, and about 8.2 hours on lithium. Three ceiling fans draw roughly 225W. A 200Ah tubular battery only gives you half its charge safely — 12V × 200Ah × 50% × 0.85 inverter efficiency = 1,020 usable watt-hours, and 1,020 ÷ 225W ≈ 4.5 hours. Lithium lets you use 90% of the charge, which is why it lasts close to twice as long on the same Ah rating.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is my real backup time shorter than the estimate?</h3>
+      <p>Usually the battery, not the maths. Batteries lose capacity as they age, and tubular batteries that have been drained too deep, too often, lose it faster. Inverter quality matters too, and small things add up: fans on full speed draw more than fans on medium, and an old fridge can pull well above its label when its compressor starts. Treat the calculator's number as a healthy-battery estimate — if yours is years old, expect less.</p>
+    </div>
+    <div class="faq-item">
+      <h3>How much does it cost to recharge the battery after a power cut?</h3>
+      <p>Refilling a fully drained 200Ah battery takes about 3 units (kWh) from the grid once charging losses are counted — roughly Rs 150 at Rs 50 per unit. Smaller cuts cost proportionally less, because you only repay the energy you used. The price per unit is editable in the calculator: type the rate from your own electricity bill for a closer figure. It is an estimate for planning, not an official tariff.</p>
+    </div>
+  </section>
+
+<section class="block" id="free-tools">
+    <p class="kicker">Free Tools</p>
+    <h2>All 13 free tools</h2>
+    <p>Every tool is free, works instantly, and needs no signup. Each one also lives on the <a href="../../index.html#all-calculators">homepage</a> if you prefer everything on one page.</p>
+    <div class="tools">
+      <div class="tool-card">
+        <h4><a href="investment-calculator.html">Investment Calculator</a></h4>
+        <p>See what a starting amount plus steady monthly contributions could grow into with compound returns — before you invest a single dollar.</p>
+        <a href="investment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-rate-calculator.html">Freelance Rate Calculator</a></h4>
+        <p>Work backwards from the salary you actually want to the hourly rate clients need to pay — taxes, expenses and time off included.</p>
+        <a href="freelance-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="savings-goal-calculator.html">Savings Goal Calculator</a></h4>
+        <p>Turn any goal — an emergency fund, a car, a deposit — into one monthly number you can actually plan around.</p>
+        <a href="savings-goal-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-income-calculator.html">Side Hustle Income Calculator</a></h4>
+        <p>What are a few hours of side work each week actually worth per month — and per year? Run your own numbers.</p>
+        <a href="side-hustle-income-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ai-tool-roi-calculator.html">AI Tool ROI Calculator</a></h4>
+        <p>Turn a $20 subscription into monthly income — or find out honestly whether it is just an expense.</p>
+        <a href="ai-tool-roi-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-time-calculator.html">Side Hustle Time Calculator</a></h4>
+        <p>Only have a few free hours a week around school or work? See what they are honestly worth.</p>
+        <a href="side-hustle-time-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="currency-converter.html">USD to PKR Converter</a></h4>
+        <p>What are your US dollars worth back home? Convert USD to PKR — or nine other currencies — in seconds.</p>
+        <a href="currency-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="faceless-channel-revenue-calculator.html">YouTube Revenue Calculator</a></h4>
+        <p>Views are not dollars. Estimate what a faceless channel's views might actually pay — with the honest warnings attached.</p>
+        <a href="faceless-channel-revenue-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tiktok-earnings-calculator.html">TikTok Earnings Calculator</a></h4>
+        <p>How much are your TikTok views really worth? Turn monthly views and an honest RPM into monthly, yearly and per-video Creator Rewards estimates.</p>
+        <a href="tiktok-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="etsy-profit-calculator.html">Etsy Profit Calculator</a></h4>
+        <p>What do you really keep after Etsy fees? Enter price, costs and shipping to see profit per sale, total fees and your true margin.</p>
+        <a href="etsy-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="delivery-driver-earnings-calculator.html">Delivery Driver Earnings Calculator</a></h4>
+        <p>$18 an hour — before gas. Enter your hours, average rate and weekly gas to see your real weekly and monthly net pay.</p>
+        <a href="delivery-driver-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ups-battery-backup-calculator.html">UPS Battery Backup Calculator</a> <span class="current-tag">You are here</span></h4>
+        <p>How long will a 200Ah battery run 3 fans? Pick your battery, tick your appliances, and get an honest backup time in hours — plus what recharging costs.</p>
+        <a href="ups-battery-backup-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-finder-quiz.html">Side Hustle Finder Quiz</a></h4>
+        <p>Not sure where to start? Five quick questions match you with one best-fit side hustle for your time, budget and style — plus two runner-ups.</p>
+        <a href="side-hustle-finder-quiz.html">Open full tool →</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>Quick Earn Guide</h5>
+        <ul>
+          <li><a href="../../index.html#about">About</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+          <li><a href="index.html">Free Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Guides" data-es="Guías">Guides</h5>
+        <ul>
+          <li><a href="../../index.html#all-calculators">Money Calculators</a></li>
+          <li><a href="../guides/chatgpt.html">Make Money With ChatGPT</a></li>
+          <li><a href="../guides/freelancing.html">Freelancing Quick-Start</a></li>
+          <li><a href="../guides/faceless-blueprint.html">Faceless Social Media Blueprint</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../index.html#privacy">Privacy Policy</a></li>
+          <li><a href="../../index.html#terms">Terms of Use</a></li>
+          <li><a href="../../index.html#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>© 2026 Quick Earn Guide · Written by Sadiq Khan · Not financial advice — content is for educational purposes only. Do your own research. Earnings figures are estimates, not guarantees.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){ try{ if(v===null){ localStorage.removeItem(k); } else { localStorage.setItem(k,v); } }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+var TITLES={"en": "Free UPS Battery Backup Calculator — How Long Will a 200Ah Battery Run 3 Fans?", "es": "Calculadora de Respaldo de Batería UPS Gratis — ¿Cuánto Dura una Batería de 200Ah?"}, DESCS={"en": "Free UPS battery backup calculator: battery size, tubular or lithium, your fans, lights, TV and fridge → real backup hours, recharge units (kWh) and recharge cost in Rs. Built for Pakistan loadshedding.", "es": "Calculadora de respaldo de batería UPS gratis: tamaño de batería, tubular o litio, tus ventiladores, luces, TV y refrigerador → horas reales de respaldo, unidades de recarga (kWh) y costo de recarga. Pensada para los cortes de luz."}, ES_DICT={"🔋 Battery size (Ah)": "🔋 Tamaño de batería (Ah)", "Custom": "Personalizado", "Custom battery size (Ah)": "Tamaño personalizado de batería (Ah)", "🔌 Battery type": "🔌 Tipo de batería", "Tubular lead-acid (50% usable)": "Plomo-ácido tubular (50% utilizable)", "Lithium (90% usable)": "Litio (90% utilizable)", "🏠 Quick presets": "🏠 Ajustes rápidos", "1 fan + 2 lights": "1 ventilador + 2 luces", "3 fans + TV + router": "3 ventiladores + TV + router", "Full room": "Cuarto completo", "⚡ Electricity price per unit in Rs (editable estimate)": "⚡ Precio de la electricidad por unidad en Rs (estimación editable)", "Add at least one appliance above — and make sure the battery size is a number above 0.": "Agrega al menos un aparato arriba — y asegúrate de que el tamaño de la batería sea un número mayor que 0.", "Estimated backup time": "Tiempo de respaldo estimado", "Total load": "Carga total", "Usable battery energy": "Energía utilizable de la batería", "Units (kWh) to recharge fully": "Unidades (kWh) para recargar por completo", "Est. recharge cost": "Costo est. de recarga", "Your 3-step start →": "Tu inicio en 3 pasos →", "Worked out your backup time?": "¿Ya calculaste tu tiempo de respaldo?", "If the number is too low, drop the fridge first — it is usually the biggest load on the list.": "Si el número es muy bajo, quita primero el refrigerador — suele ser la carga más grande de la lista.", "Never drain a tubular battery below half. That is exactly why only 50% counts as usable here — going deeper kills its life.": "Nunca descargues una batería tubular por debajo de la mitad. Por eso aquí solo el 50% cuenta como utilizable — bajar más acorta su vida.", "Recharge fully after every cut. A battery left half-charged fades fast.": "Recarga por completo después de cada corte. Una batería que queda a media carga se degrada rápido."};
+  var btn=document.getElementById('themeBtn');
+  function syncTheme(){ btn.textContent = root.classList.contains('dark') ? '\u2600\ufe0f Light' : '\uD83C\uDF19 Dark'; }
+  var savedTheme=read('qeg-theme');
+  if(savedTheme==='dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){ root.classList.add('dark'); }
+  syncTheme();
+  btn.addEventListener('click',function(){
+    var dark=root.classList.toggle('dark');
+    store('qeg-theme',dark?'dark':'light');
+    syncTheme();
+  });
+  var menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',function(){ nav.classList.toggle('open'); });
+  nav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ nav.classList.remove('open'); } });
+  function dictSwap(lang){
+    var scopes=document.querySelectorAll('.calc');
+    for(var s=0;s<scopes.length;s++){
+      var els=scopes[s].querySelectorAll('*');
+      for(var i=0;i<els.length;i++){
+        var e=els[i];
+        if(e.children.length || e.hasAttribute('data-en')) continue;
+        if(lang==='es'){
+          var tx=e.textContent.replace(/\s+/g,' ').trim();
+          if(ES_DICT[tx]){ if(!e.hasAttribute('data-orig')) e.setAttribute('data-orig',e.textContent); e.textContent=ES_DICT[tx]; }
+        }else{
+          var o=e.getAttribute('data-orig');
+          if(o!==null){ e.textContent=o; }
+        }
+      }
+    }
+  }
+  var langBtn=document.getElementById('langBtn');
+  function applyLang(lang){
+    root.lang=(lang==='es')?'es':'en';
+    var els=document.querySelectorAll('[data-en]');
+    for(var i=0;i<els.length;i++){
+      var v=els[i].getAttribute('data-'+root.lang);
+      if(v!==null) els[i].innerHTML=v;
+    }
+    dictSwap(root.lang);
+    document.title=TITLES[root.lang];
+    var md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content',DESCS[root.lang]);
+    langBtn.textContent=(root.lang==='es')?'EN':'ES';
+    langBtn.setAttribute('aria-label',(root.lang==='es')?'Switch to English':'Cambiar a espa\u00f1ol');
+    var ids=['ai-hours','tp-hours','fc-views'];
+    for(var j=0;j<ids.length;j++){ var inp=document.getElementById(ids[j]); if(inp) inp.dispatchEvent(new Event('input',{bubbles:true})); }
+    store('qeg-lang',root.lang);
+  }
+  langBtn.addEventListener('click',function(){ applyLang(root.lang==='es'?'en':'es'); });
+  var savedLang=read('qeg-lang');
+  if(savedLang==='es'){ applyLang('es'); }
+})();
+
+</script>
+<script>
+(function(){
+  var APPS=[
+    {id:'ceiling', en:'Ceiling fan', es:'Ventilador de techo', w:75, qty:0},
+    {id:'pedestal', en:'Pedestal fan', es:'Ventilador de pedestal', w:55, qty:0},
+    {id:'bulb', en:'LED bulb', es:'Bombilla LED', w:12, qty:0},
+    {id:'tv', en:'LED TV', es:'TV LED', w:100, qty:0},
+    {id:'router', en:'Wi-Fi router', es:'Router Wi-Fi', w:10, qty:0},
+    {id:'laptop', en:'Laptop', es:'Laptop', w:65, qty:0},
+    {id:'fridge', en:'Fridge', es:'Refrigerador', w:150, qty:0, noteEn:'Runs in cycles — not at full power the whole time', noteEs:'Funciona en ciclos — no a plena potencia todo el tiempo'},
+    {id:'saver', en:'Energy saver (CFL)', es:'Foco ahorrador (CFL)', w:25, qty:0}
+  ];
+  var PRESETS={
+    p1:{ceiling:1, bulb:2},
+    p2:{ceiling:3, tv:1, router:1},
+    p3:{ceiling:2, bulb:4, tv:1, router:1, laptop:1}
+  };
+  var state={ah:200, usable:0.5, chargeEff:0.8, typeKey:'tubular'};
+  var TYPE_NAMES={
+    tubular:{en:'tubular', es:'tubular de plomo-ácido'},
+    lithium:{en:'lithium', es:'de litio'}
+  };
+  function el(id){ return document.getElementById(id); }
+  function lang(){ return document.documentElement.lang==='es' ? 'es' : 'en'; }
+  function fmtNum(n, dec){
+    return n.toLocaleString('en-US',{minimumFractionDigits:dec, maximumFractionDigits:dec});
+  }
+  function appById(id){ for(var i=0;i<APPS.length;i++){ if(APPS[i].id===id) return APPS[i]; } return null; }
+
+  function renderApps(){
+    var L=lang(), wrap=el('ups-apps'), html='';
+    for(var i=0;i<APPS.length;i++){
+      var a=APPS[i];
+      html+='<div class="app-row" data-app="'+a.id+'">'
+        +'<div class="app-name">'+(L==='es'?a.es:a.en)+(a.noteEn?'<small>'+(L==='es'?a.noteEs:a.noteEn)+'</small>':'')+'</div>'
+        +'<div class="stepper"><button type="button" data-act="dec" aria-label="Remove one">−</button><b>'+a.qty+'</b><button type="button" data-act="inc" aria-label="Add one">+</button></div>'
+        +'<div class="app-watt"><input type="number" min="0" max="2000" step="1" inputmode="numeric" value="'+a.w+'" aria-label="Watts"> W</div>'
+        +'</div>';
+    }
+    wrap.innerHTML=html;
+  }
+
+  function syncQtyDisplay(){
+    var rows=el('ups-apps').children;
+    for(var i=0;i<rows.length;i++){
+      var a=appById(rows[i].getAttribute('data-app'));
+      rows[i].querySelector('.stepper b').textContent=a.qty;
+    }
+  }
+
+  function compute(){
+    var L=lang(), err=el('ups-error');
+    var totalLoad=0;
+    for(var i=0;i<APPS.length;i++){ totalLoad += APPS[i].qty * APPS[i].w; }
+    var price=parseFloat(el('ups-price').value);
+    var ah=state.ah;
+    if(isNaN(ah) || ah<=0 || totalLoad<=0){
+      err.style.display='block';
+      el('ups-out-hours').textContent='—';
+      el('ups-out-load').textContent = totalLoad>0 ? fmtNum(totalLoad,0)+' W' : '—';
+      el('ups-out-usable').textContent='—';
+      el('ups-out-units').textContent='—';
+      el('ups-out-cost').textContent='—';
+      el('ups-line').textContent='';
+      return;
+    }
+    err.style.display='none';
+    var usableWh = 12 * ah * state.usable * 0.85;
+    var hours = usableWh / totalLoad;
+    var units = (12 * ah / 1000) / state.chargeEff;
+    var hoursTxt;
+    if(hours < 1){
+      var mins=Math.round(hours*60);
+      hoursTxt = (L==='es' ? 'unos ' : 'about ') + mins + (L==='es' ? ' minutos' : ' minutes');
+    } else {
+      hoursTxt = (L==='es' ? 'unas ' : 'about ') + fmtNum(Math.round(hours*10)/10, 1) + (L==='es' ? ' horas' : ' hours');
+    }
+    el('ups-out-hours').textContent = '≈ ' + fmtNum(Math.round(hours*10)/10, 1) + ' ' + (L==='es' ? 'horas' : 'hours');
+    el('ups-out-load').textContent = fmtNum(totalLoad,0) + ' W';
+    el('ups-out-usable').textContent = fmtNum(Math.round(usableWh),0) + ' Wh';
+    el('ups-out-units').textContent = fmtNum(units,2) + ' ' + (L==='es' ? 'unidades' : 'units');
+    el('ups-out-cost').textContent = (isNaN(price) || price<0) ? '—' : 'Rs ' + fmtNum(Math.round(units*price),0);
+    var tname=TYPE_NAMES[state.typeKey][L];
+    el('ups-line').textContent = L==='es'
+      ? 'Tu batería '+tname+' de '+fmtNum(ah,0)+'Ah alimentará esta carga por '+hoursTxt+'.'
+      : 'Your '+fmtNum(ah,0)+'Ah '+tname+' battery will run this load for '+hoursTxt+'.';
+  }
+
+  // Battery size segmented control
+  var sizeSeg=el('ups-size-seg');
+  sizeSeg.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var btns=sizeSeg.querySelectorAll('button');
+    for(var i=0;i<btns.length;i++) btns[i].classList.remove('active');
+    b.classList.add('active');
+    var v=b.getAttribute('data-ah');
+    if(v==='custom'){
+      el('ups-custom-wrap').style.display='block';
+      state.ah=parseFloat(el('ups-custom-ah').value);
+    } else {
+      el('ups-custom-wrap').style.display='none';
+      state.ah=parseFloat(v);
+    }
+    compute();
+  });
+  el('ups-custom-ah').addEventListener('input',function(){ state.ah=parseFloat(this.value); compute(); });
+
+  // Battery type segmented control
+  var typeSeg=el('ups-type-seg');
+  typeSeg.addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var btns=typeSeg.querySelectorAll('button');
+    for(var i=0;i<btns.length;i++) btns[i].classList.remove('active');
+    b.classList.add('active');
+    state.usable=parseFloat(b.getAttribute('data-usable'));
+    state.typeKey=b.getAttribute('data-tname');
+    state.chargeEff = state.typeKey==='lithium' ? 0.9 : 0.8;
+    compute();
+  });
+
+  // Presets
+  var presetBtns=document.querySelectorAll('.preset-row button');
+  for(var p=0;p<presetBtns.length;p++){
+    presetBtns[p].addEventListener('click',function(){
+      var preset=PRESETS[this.getAttribute('data-preset')];
+      for(var i=0;i<APPS.length;i++){ APPS[i].qty = preset[APPS[i].id] || 0; }
+      syncQtyDisplay();
+      compute();
+    });
+  }
+
+  // Appliance steppers + watt inputs (delegated)
+  el('ups-apps').addEventListener('click',function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var row=b.closest('.app-row'); if(!row) return;
+    var a=appById(row.getAttribute('data-app')); if(!a) return;
+    if(b.getAttribute('data-act')==='inc'){ a.qty=Math.min(a.qty+1, 30); }
+    if(b.getAttribute('data-act')==='dec'){ a.qty=Math.max(a.qty-1, 0); }
+    row.querySelector('.stepper b').textContent=a.qty;
+    compute();
+  });
+  el('ups-apps').addEventListener('input',function(e){
+    if(e.target.tagName!=='INPUT') return;
+    var row=e.target.closest('.app-row'); if(!row) return;
+    var a=appById(row.getAttribute('data-app')); if(!a) return;
+    var v=parseFloat(e.target.value);
+    a.w = isNaN(v) || v<0 ? 0 : v;
+    compute();
+  });
+  el('ups-price').addEventListener('input',compute);
+
+  // Re-render in the right language when the ES|EN toggle is used
+  el('langBtn').addEventListener('click',function(){ renderApps(); compute(); });
+
+  // Default view: the classic question — 200Ah tubular, 3 fans + TV + router
+  var d=PRESETS.p2;
+  for(var j=0;j<APPS.length;j++){ APPS[j].qty = d[APPS[j].id] || 0; }
+  renderApps();
+  compute();
+})();
+</script>
+</body>
+</html>
