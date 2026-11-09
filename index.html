@@ -272,6 +272,25 @@ a.read-btn{display:inline-block}
 .dir-links a{white-space:nowrap}
 .dir-sep{color:var(--muted)}
 .hero{padding-bottom:0}
+
+/* In-page reader (Muse artifact viewer ONLY — never on github.io):
+   guide and tool pages open inside this document. The artifact viewer
+   serves a single page, so a normal link away to a sub-page
+   (assets/guides/…, assets/tools/…) fails with "Couldn't load this artifact".
+   The reader below loads the same files and shows them here instead.
+   On the live GitHub Pages site this stays hidden and unused: every link
+   navigates normally to its own separate page and URL. */
+#reader[hidden]{display:none}
+body.reading>header.site,body.reading>main,body.reading>footer.site{display:none}
+.reader-bar{position:sticky;top:0;z-index:30;background:var(--bg);border-bottom:1px solid var(--line)}
+.reader-bar-in{display:flex;align-items:center;gap:14px;padding:10px 20px}
+.reader-back{background:var(--accent);color:#fff;border:none;border-radius:7px;padding:9px 16px;font:inherit;font-size:15px;font-weight:600;cursor:pointer;white-space:nowrap}
+.reader-back:hover{background:var(--accent-dark)}
+.reader-bar-title{font-weight:600;font-size:15px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.reader-status{max-width:var(--max);margin:22px auto;padding:14px 18px;border:1px solid var(--line);background:var(--bg-soft);border-radius:8px;font-size:15.5px;width:calc(100% - 40px)}
+.reader-status[hidden]{display:none}
+#readerContent{padding-bottom:12px}
+@media print{.reader-bar{display:none}}
 </style>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -412,7 +431,49 @@ a.read-btn{display:inline-block}
 {"@type":"Question","name":"Which store starts Black Friday 2026 sales first?","acceptedAnswer":{"@type":"Answer","text":"Lowe's, from October 29, followed by Best Buy's DoorBOOsters on October 30 and Target's Deal of the Day from November 1. Walmart's first big event is November 12–15, and Best Buy's main Black Friday event starts November 19."}},
 {"@type":"Question","name":"Do I need followers to become a UGC creator?","acceptedAnswer":{"@type":"Answer","text":"No. Brands buy the finished video, not your audience. Three good practice videos matter more than a follower count."}},
 {"@type":"Question","name":"How much should a beginner UGC creator charge?","acceptedAnswer":{"@type":"Answer","text":"$50–$150 per short video in most 2026 guides, usage rights separate (about 30–50% extra for 30–90 days of paid-ad use). Start low, raise your rate as your portfolio grows."}},
-{"@type":"Question","name":"How fast is the first dollar as a UGC creator?","acceptedAnswer":{"@type":"Answer","text":"Realistically 2–4 weeks from first pitches to first paid video. Filming and pitching this weekend is the part you control."}}
+{"@type":"Question","name":"How fast is the first dollar as a UGC creator?","acceptedAnswer":{"@type":"Answer","text":"Realistically 2–4 weeks from first pitches to first paid video. Filming and pitching this weekend is the part you control."}},
+{"@type":"Question","name":"What is the best side hustle in November 2026 for a beginner?","acceptedAnswer":{"@type":"Answer","text":"A service that pays in weeks beats a channel that pays in months. AI automation for one local business type, or UGC videos for small brands, brings a first client faster than faceless YouTube or a course."}},
+{"@type":"Question","name":"How much does the average side hustler actually make?","acceptedAnswer":{"@type":"Answer","text":"Bankrate puts the median at about $200 a month and the average at about $885 a month. Most earn a modest supplement at first, not a second salary."}},
+{"@type":"Question","name":"How fast will I earn my first dollar?","acceptedAnswer":{"@type":"Answer","text":"Services usually pay in 2-6 weeks with steady pitching. UGC takes 2-4 weeks from first pitch to first paid video. Faceless YouTube and courses usually take months, and many never earn much."}},
+{"@type":"Question","name":"What are the best early Black Friday deals in November 2026?","acceptedAnswer":{"@type":"Answer","text":"The Fire TV Stick 4K at $25, Pixel Watch 5 $100 off, Pixel 11 up to $350 off, and Apple Watch Ultra 4 nearly $100 off, per 9to5Toys' live roundup."}},
+{"@type":"Question","name":"Should I buy now or wait until November 27?","acceptedAnswer":{"@type":"Answer","text":"Buy now only at your target price, especially all-time lows and gifts that sell out; otherwise wait until November 23-30."}},
+{"@type":"Question","name":"How does Target's Deal of the Day work in 2026?","acceptedAnswer":{"@type":"Answer","text":"A new one-day deal runs daily November 1 through December 24 with a one-day preview; Early Black Friday runs November 5-7; free Target Circle unlocks many sale prices."}},
+{"@type":"Question","name":"Can a complete beginner really make $100 with AI in 30 days?","acceptedAnswer":{"@type":"Answer","text":"It is possible, not promised. Beginners who pick one service, make samples, and pitch daily sometimes land a first sale within 30 days. Results depend on skill, pricing, and how many buyers you reach."}},
+{"@type":"Question","name":"Which AI hustle is easiest for a beginner?","acceptedAnswer":{"@type":"Answer","text":"AI-assisted writing and resume makeovers, because buyers already understand them and the work is easy to sample. Faceless video and digital products take longer, because they need an audience first."}},
+{"@type":"Question","name":"Do I need paid AI tools to start?","acceptedAnswer":{"@type":"Answer","text":"No. Free plans are enough to test an idea and land a first client. Upgrade only when a free limit blocks paying work, and check the commercial terms of any free tier before selling work made with it."}},
+{"@type":"Question","name":"How much does a faceless Shorts side hustle cost to start?","acceptedAnswer":{"@type":"Answer","text":"You can start for $0 with free tool tiers. The automated version costs money: Revid runs $39 a month on its Growth plan, and a full stack of chatbot, voice, image, editing, and scheduling tools runs roughly $110 a month."}},
+{"@type":"Question","name":"How many views do I need to earn $100 a month on TikTok?","acceptedAnswer":{"@type":"Answer","text":"At creator-reported rates of $0.40 to $1.00 per 1,000 qualified views, $100 needs roughly 100,000 to 250,000 qualified views a month, after you qualify with 10,000 followers and 100,000 views in 30 days."}},
+{"@type":"Question","name":"Is faceless short-form video a scam?","acceptedAnswer":{"@type":"Answer","text":"No, but the marketing is often misleading. The tools are real and creators do earn from short-form video. What is not real is the \"fully automated income\" pitch: no tool picks your niche, builds your audience, or guarantees pay."}},
+{"@type":"Question","name":"How much does holiday light installation pay per foot?","acceptedAnswer":{"@type":"Answer","text":"About $5 to $12 per foot installed in 2026, with $7 to $9 common for standard work and $8 to $12 for full-service packages."}},
+{"@type":"Question","name":"Is it too late to start a holiday light installation side hustle in November?","acceptedAnswer":{"@type":"Answer","text":"No. About 90% of new clients book in November, and guides report beginners starting in early November still finishing a first season. But installs end by mid-December, so the window is short."}},
+{"@type":"Question","name":"Do I need insurance to install Christmas lights?","acceptedAnswer":{"@type":"Answer","text":"Yes, treat it as essential. One fall or damage claim can wipe out a season's profit, so get a quote before your first paid job."}},
+{"@type":"Question","name":"What is the most mentioned side hustle of 2026?","acceptedAnswer":{"@type":"Answer","text":"Food delivery (DoorDash, Uber Eats, Grubhub) appears on nearly every YouTube and blog list, followed by Rover pet care, TaskRabbit, vending machines, and faceless YouTube."}},
+{"@type":"Question","name":"How much does Rover take from sitters?","acceptedAnswer":{"@type":"Answer","text":"Rover takes a 20% service fee from US sitters, so a $40 booking pays $32 before taxes. Most sitters earn $100 to $200 a month."}},
+{"@type":"Question","name":"Why do popular side hustles pay less than videos claim?","acceptedAnswer":{"@type":"Answer","text":"Videos quote gross rates and skip platform fees, vehicle costs, licensing rules, and competition. After those, delivery drivers often land at $8 to $22 an hour, and most side hustlers overall earn under $500 a month."}},
+{"@type":"Question","name":"How long does it take for a side hustle to replace a full-time income?","acceptedAnswer":{"@type":"Answer","text":"Freelance services are fastest, at roughly 6 to 12 months of steady client work. Most people who successfully replace a job income take 9 to 18 months, and product or creator hustles usually need 12 to 24 months. Many side hustles never reach replacement level at all."}},
+{"@type":"Question","name":"How much does a side hustle need to earn to replace a full-time job?","acceptedAnswer":{"@type":"Answer","text":"Plan on $4,000 to $8,000 a month in profit — after expenses, not gross sales. US median full-time earnings were $1,143 a week in late 2024, about $4,950 a month before tax, so a hustle has to clear that kind of money consistently before quitting is sensible."}},
+{"@type":"Question","name":"What is the average side hustle income?","acceptedAnswer":{"@type":"Answer","text":"Bankrate's 2024 survey put the average at $891 a month, but the median was just $200 a month. The average is pulled up by a minority of high earners; the typical side hustler earns far less than a full-time wage."}},
+{"@type":"Question","name":"When does Target's Early Black Friday sale run?","acceptedAnswer":{"@type":"Answer","text":"November 5 to 7, 2026. The main Black Friday sale lands the week of November 27."}},
+{"@type":"Question","name":"What is the best Target Early Black Friday deal?","acceptedAnswer":{"@type":"Answer","text":"The 40% off select toys and holiday lights, especially with the Target Circle extra 25% off one toy or kids' book through November 14."}},
+{"@type":"Question","name":"Should I buy now or wait for Black Friday?","acceptedAnswer":{"@type":"Answer","text":"Buy now only if the price is a confirmed all-time low on something you already planned to buy. For electronics and appliances, wait — the deepest cuts usually arrive November 23 to 30."}},
+{"@type":"Question","name":"When do Best Buy's Early Black Friday deals start?","acceptedAnswer":{"@type":"Answer","text":"November 6, 2026, refreshing every Friday. Main event: November 19 to 28; Cyber Week: December 1 to 6."}},
+{"@type":"Question","name":"What is the best Best Buy deal today?","acceptedAnswer":{"@type":"Answer","text":"The Lenovo IdeaPad Slim 3i at $629.99 (down from $1,299.99) and the unlocked Google Pixel 11 Pro at $799 (down from $1,099) — both verified live prices."}},
+{"@type":"Question","name":"When is Kohl's Early Access, and what is the best day to shop?","acceptedAnswer":{"@type":"Answer","text":"November 6 to 8, 2026. Friday is best: $15 Kohl's Cash per $50 (vs. $10 on Nov 7-8), plus the sharpest Daily Deals."}},
+{"@type":"Question","name":"When does Walmart's Early Black Friday sale start?","acceptedAnswer":{"@type":"Answer","text":"November 12, 2026, at 12:01 a.m. ET online and 6 a.m. local time in stores, running through November 15."}},
+{"@type":"Question","name":"Do I need Walmart+ to shop the deals?","acceptedAnswer":{"@type":"Answer","text":"No. Members get a one-day head start on limited hot Deal drops, but most deals are open to all shoppers from the start."}},
+{"@type":"Question","name":"Does Walmart match prices if a deal drops later?","acceptedAnswer":{"@type":"Answer","text":"No. Walmart.com offers no price adjustments — a buy-now price that drops later stays dropped."}},{"@type":"Question","name":"Does TikTok pay for AI-generated videos?","acceptedAnswer":{"@type":"Answer","text":"Yes — if it is over one minute, original, not a slideshow, Duet, or Stitch, and not sponsored. The AI label does not disqualify it."}},{"@type":"Question","name":"Do I need to label AI videos on TikTok?","acceptedAnswer":{"@type":"Answer","text":"Yes, for realistic AI content a viewer could mistake for real. TikTok says labeling does not reduce distribution."}},{"@type":"Question","name":"What are the Creator Rewards requirements in 2026?","acceptedAnswer":{"@type":"Answer","text":"An 18+ personal account, at least 10,000 followers, at least 100,000 video views in the last 30 days, US residence, and original videos over one minute long."}},
+{"@type":"Question","name":"Do you need a degree to do AI training jobs on Mercor?","acceptedAnswer":{"@type":"Answer","text":"For the high-paying rates, yes — a professional credential, license, or advanced degree. General labeling work without credentials pays roughly $12 to $25 an hour."}},
+{"@type":"Question","name":"How fast does Mercor pay?","acceptedAnswer":{"@type":"Answer","text":"Weekly, in US dollars, through Stripe or Wise. The first payout is held about a week; after that, pay is weekly. Hours vary week to week."}},
+{"@type":"Question","name":"Are expert network calls like GLG a real way to make money?","acceptedAnswer":{"@type":"Answer","text":"Yes, for people with genuine industry experience: typical calls pay $300 to $500 an hour, billed by the minute, and networks pay reliably. But calls are irregular — bonus income on top of a career, not a replacement for one."}},
+{"@type":"Question","name":"What is the fastest holiday side hustle that pays before Christmas?","acceptedAnswer":{"@type":"Answer","text":"Selling things you already own — list on Facebook Marketplace and Mercari today and you can have cash within days. Seasonal retail and delivery shifts are next fastest, usually paying weekly."}},
+{"@type":"Question","name":"How much can I realistically make before Christmas 2026?","acceptedAnswer":{"@type":"Answer","text":"About $20 an hour × 20 hours a week × 5 weeks is roughly $2,000 before taxes. Selling unused items typically brings $100 to $300 in a weekend."}},
+{"@type":"Question","name":"Do I need to pay anything to start a holiday side hustle?","acceptedAnswer":{"@type":"Answer","text":"No. A real seasonal job never charges you to start, and selling your own things costs nothing but listing time. Any program asking you to pay for training, a starter kit, or \"access\" first should be treated as a scam."}},
+{"@type":"Question","name":"Which AI side hustle makes the most money?","acceptedAnswer":{"@type":"Answer","text":"By verified revenue, AI services and agencies lead with a median of $40,900 a month and $780 per client, ahead of AI SaaS ($21,000) and mobile apps ($23,900). Services also need the least upfront building."}},
+{"@type":"Question","name":"Can a beginner copy these AI businesses?","acceptedAnswer":{"@type":"Answer","text":"The AI Receipts rates 30 of the 65 as replicable, but that is an editorial judgment, not a promise. Eight were started by one person, and all of them took months of real work before the revenue arrived."}},
+{"@type":"Question","name":"How much do most AI side hustlers actually make?","acceptedAnswer":{"@type":"Answer","text":"We do not know the true average — the verified lists only study businesses that already earn. The wider TrustMRR dataset of 5,079 indie projects puts the median at $169 a month, which is the honest baseline to plan around."}},
+{"@type":"Question","name":"What is the fastest way to make $1,000 before Christmas?","acceptedAnswer":{"@type":"Answer","text":"Sell a holiday service people already need — gift wrapping, baking, decorating, party help, babysitting, or gift shopping — at $25 to $50 a job. That is 20 to 40 jobs, or about three to five a week until Christmas. Local services pay the day the job is done, faster than waiting on a retail callback."}},
+{"@type":"Question","name":"How much does holiday light installation pay?","acceptedAnswer":{"@type":"Answer","text":"A typical residential installation pays $300 to $600 for a few hours of work, with one expert-cited range of $500 to $1,500 per job depending on house size and roof complexity. Seasonal crew jobs pay $1,000 to $1,600 a week or $25 to $35 an hour. It needs a ladder, insurance, and real safety care — it is not a no-skill starter."}},
+{"@type":"Question","name":"Are seasonal retail jobs still hiring for Christmas 2026?","acceptedAnswer":{"@type":"Answer","text":"Yes, but fewer than last year: Challenger, Gray & Christmas projects about 450,000 seasonal retail hires for Q4 2026, down from 461,500 in 2025 and the lowest since 2008. Apply now through each employer's official careers page, and run a local service in parallel so you are not waiting on one callback."}}
 ]}
 </script>
 <script type="application/ld+json">
@@ -421,9 +482,9 @@ a.read-btn{display:inline-block}
 <script>
 // Legacy links: guides used to live at /#guide-id on this single page.
 // They now have their own pages — send old hash and query links there.
-(function(){var G={"youtube":1,"trading":1,"freelancing":1,"social":1,"hustles":1,"budgeting":1,"chatgpt":1,"claude":1,"ai-video":1,"ai-tools":1,"niches":1,"teen-money":1,"save-money":1,"ai-hustles":1,"faceless-blueprint":1,"zero-capital":1,"no-ssn":1,"client-finder":1,"ai-music":1,"sellable-products":1,"trending-products":1,"ai-monetization":1,"tiktok-shop":1,"substitute-pay-texas":1,"jury-duty-texas":1,"substitute-pay-california":1,"substitute-pay-new-york":1,"jury-duty-ca-ny-fl":1,"ai-tiktok-shop-affiliate":1,"freelance-ai-services":1,"ai-auto-apply-jobs":1,"side-hustle-burnout":1,"monetize-ai-videos":1,"online-surveys-pay":1,"ai-influencer":1,"etsy-ai-rules":1,"ai-side-hustles-this-week":1,"halloween-side-hustles":1,"ai-side-hustles-30-days":1,"vibe-coding-side-hustle":1,"halloween-digital-products":1,"ai-tools-phone":1,"most-common-side-hustle-2026":1,"highest-roi-side-hustles-2026-hourly-rate":1,"ai-tools-worth-paying-for-2026":1,"no-code-chatbot-service":1,"build-micro-saas-weekend-no-coding":1,"black-friday-2026-seller-prep":1,"side-gigs-start-now-2027":1,"black-friday-2026-sale-dates-calendar":1};var h=(location.hash||'').slice(1);var t=G[h]?h:null;
+(function(){var G={"youtube":1,"trading":1,"freelancing":1,"social":1,"hustles":1,"budgeting":1,"chatgpt":1,"claude":1,"ai-video":1,"ai-tools":1,"niches":1,"teen-money":1,"save-money":1,"ai-hustles":1,"faceless-blueprint":1,"zero-capital":1,"no-ssn":1,"client-finder":1,"ai-music":1,"sellable-products":1,"trending-products":1,"ai-monetization":1,"tiktok-shop":1,"substitute-pay-texas":1,"jury-duty-texas":1,"substitute-pay-california":1,"substitute-pay-new-york":1,"jury-duty-ca-ny-fl":1,"ai-tiktok-shop-affiliate":1,"freelance-ai-services":1,"ai-auto-apply-jobs":1,"side-hustle-burnout":1,"monetize-ai-videos":1,"online-surveys-pay":1,"ai-influencer":1,"etsy-ai-rules":1,"ai-side-hustles-this-week":1,"halloween-side-hustles":1,"ai-side-hustles-30-days":1,"vibe-coding-side-hustle":1,"halloween-digital-products":1,"ai-tools-phone":1,"most-common-side-hustle-2026":1,"highest-roi-side-hustles-2026-hourly-rate":1,"ai-tools-worth-paying-for-2026":1,"no-code-chatbot-service":1,"build-micro-saas-weekend-no-coding":1,"black-friday-2026-seller-prep":1,"side-gigs-start-now-2027":1,"black-friday-2026-sale-dates-calendar":1,"best-side-hustles-november-2026":1,"make-money-with-ai-first-100-30-days-2026":1,"faceless-shorts-side-hustle-reality-2026":1,"holiday-light-installation-side-hustle-november-2026":1,"target-early-black-friday-deals-november-5-2026":1,"best-buy-early-black-friday-deals-november-6-2026":1,"walmart-early-black-friday-deals-november-12-2026":1,"ai-training-jobs-credentialed-experts-mercor-pay-2026":1,"ai-videos-monetized-tiktok-creator-rewards-rules-2026":1,"holiday-side-hustles-paid-before-christmas-2026":1,"ai-side-hustles-verified-revenue-2026":1,"make-1000-before-christmas-2026":1};var h=(location.hash||'').slice(1);var t=G[h]?h:null;
 if(!t){try{var q=new URLSearchParams(location.search);var v=q.get('guide')||q.get('article');if(v&&G[v])t=v;}catch(e){}}
-if(t){location.replace('assets/guides/'+t+'.html');}})();
+if(t){window.__qegBootGuide=t;}})();
 </script>
 </head>
 <body>
@@ -468,7 +529,7 @@ if(t){location.replace('assets/guides/'+t+'.html');}})();
   <section class="block" id="guides" style="margin-top:10px">
     <p class="kicker">Guides</p>
     <h2 data-en="Start with a guide" data-es="Empieza con una guía">Start with a guide</h2>
-    <p class="muted">51 honest guides, each on its own page. These six are the best places to begin:</p>
+    <p class="muted">66 honest guides, each on its own page. These six are the best places to begin:</p>
   </section>
   <div class="guide-grid" style="margin-top:16px">
   <section class="block gcard">
@@ -526,15 +587,15 @@ if(t){location.replace('assets/guides/'+t+'.html');}})();
     <h2 class="dir-title">All guides</h2>
     <div class="dir-group">
       <h3>Start earning</h3>
-      <p class="dir-links"><a href="assets/guides/trading.html">Trading Basics</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/social.html">Earning on Social Media</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/niches.html">Niche Breakdown: 10 Ways Rated</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/teen-money.html">Make Money as a Teenager</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/zero-capital.html">$0 Capital Emergency Cash</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/no-ssn.html">No-SSN Ways to Earn</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/client-finder.html">Find Clients: The LinkedIn Formula</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/budgeting.html">Budgeting Basics</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/save-money.html">Save Money Fast</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/side-hustle-burnout.html">Side Hustle Burnout: The 2026 Numbers</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/most-common-side-hustle-2026.html">Most Common Side Hustle in 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/highest-roi-side-hustles-2026-hourly-rate.html">Highest ROI Side Hustles 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/side-gigs-start-now-2027.html">Side Gigs to Start Now for 2027</a></p>
+      <p class="dir-links"><a href="assets/guides/trading.html">Trading Basics</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/social.html">Earning on Social Media</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/niches.html">Niche Breakdown: 10 Ways Rated</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/teen-money.html">Make Money as a Teenager</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/zero-capital.html">$0 Capital Emergency Cash</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/no-ssn.html">No-SSN Ways to Earn</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/client-finder.html">Find Clients: The LinkedIn Formula</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/budgeting.html">Budgeting Basics</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/save-money.html">Save Money Fast</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/side-hustle-burnout.html">Side Hustle Burnout: The 2026 Numbers</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/most-common-side-hustle-2026.html">Most Common Side Hustle in 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/highest-roi-side-hustles-2026-hourly-rate.html">Highest ROI Side Hustles 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/side-gigs-start-now-2027.html">Side Gigs to Start Now for 2027</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/best-side-hustles-november-2026.html">Best Side Hustles in November 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/most-popular-side-hustles-2026.html">Most Popular Side Hustles 2026: Hype vs. Reality</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/side-hustles-replace-full-time-income-2026.html">Can a Side Hustle Replace Your Full-Time Income?</a></p>
     </div>
     <div class="dir-group">
       <h3>AI guides</h3>
-      <p class="dir-links"><a href="assets/guides/claude.html">Make Money With Claude</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-video.html">Make Money With AI Video</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools.html">Other AI Tools That Pay</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-hustles.html">AI Hustles &amp; ChatGPT Prompts</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/faceless-blueprint.html">Faceless Social Media Blueprint</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-music.html">Make Money With AI Music</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-monetization.html">Can AI Videos Be Monetized?</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/monetize-ai-videos.html">Monetize AI Videos Without Demonetization</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-influencer.html">Create an AI Influencer</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/freelance-ai-services.html">Freelance AI Services on Fiverr</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-auto-apply-jobs.html">AI Auto-Apply Job Tools</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-side-hustles-30-days.html">5 AI Side Hustles Tested for 30 Days</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/vibe-coding-side-hustle.html">Vibe Coding Side Hustle</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools-phone.html">AI Tools on Your Phone</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools-worth-paying-for-2026.html">AI Tools Worth Paying For</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/no-code-chatbot-service.html">No-Code Chatbot Service</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/build-micro-saas-weekend-no-coding.html">Build a Micro-SaaS in a Weekend</a></p>
+      <p class="dir-links"><a href="assets/guides/claude.html">Make Money With Claude</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-video.html">Make Money With AI Video</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools.html">Other AI Tools That Pay</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-hustles.html">AI Hustles &amp; ChatGPT Prompts</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/faceless-blueprint.html">Faceless Social Media Blueprint</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-music.html">Make Money With AI Music</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-monetization.html">Can AI Videos Be Monetized?</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/monetize-ai-videos.html">Monetize AI Videos Without Demonetization</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-influencer.html">Create an AI Influencer</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/freelance-ai-services.html">Freelance AI Services on Fiverr</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-auto-apply-jobs.html">AI Auto-Apply Job Tools</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-side-hustles-30-days.html">5 AI Side Hustles Tested for 30 Days</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/vibe-coding-side-hustle.html">Vibe Coding Side Hustle</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools-phone.html">AI Tools on Your Phone</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tools-worth-paying-for-2026.html">AI Tools Worth Paying For</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/no-code-chatbot-service.html">No-Code Chatbot Service</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/build-micro-saas-weekend-no-coding.html">Build a Micro-SaaS in a Weekend</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/make-money-with-ai-first-100-30-days-2026.html">Make Money With AI: First $100 in 30 Days</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/faceless-shorts-side-hustle-reality-2026.html">Faceless Shorts Side Hustle Reality 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-training-jobs-credentialed-experts-mercor-pay-2026.html">AI Training Jobs for Credentialed Experts</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-videos-monetized-tiktok-creator-rewards-rules-2026.html">Can AI Videos Be Monetized on TikTok in 2026?</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/make-money-with-claude-ai-2026.html">Make Money With Claude AI in 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-side-hustles-verified-revenue-2026.html">AI Side Hustles With Verified Revenue 2026</a></p>
     </div>
     <div class="dir-group">
       <h3>Selling, pay &amp; work guides</h3>
-      <p class="dir-links"><a href="assets/guides/sellable-products.html">Sellable Products &amp; Prices</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/trending-products.html">Trending Products to Sell in 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tiktok-shop-affiliate.html">AI TikTok Shop Affiliate Videos</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/etsy-ai-rules.html">Etsy AI Rules (Oct 2026)</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/find-trending-etsy-products.html">Find Trending Etsy Products</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/online-surveys-pay.html">How Much Online Surveys Pay</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/halloween-side-hustles.html">Halloween Side Hustles</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/halloween-digital-products.html">Halloween Digital Products</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/black-friday-2026-seller-prep.html">Black Friday 2026 Seller Prep</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/black-friday-2026-sale-dates-calendar.html">Black Friday 2026 Sale Dates Calendar</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-texas.html">Substitute Pay — Texas</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-california.html">Substitute Pay — California</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-new-york.html">Substitute Pay — New York</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/jury-duty-texas.html">Jury Duty Pay — Texas</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/jury-duty-ca-ny-fl.html">Jury Duty Pay — CA · NY · FL</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ugc-creator-side-hustle.html">Become a UGC Creator</a></p>
+      <p class="dir-links"><a href="assets/guides/sellable-products.html">Sellable Products &amp; Prices</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/trending-products.html">Trending Products to Sell in 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ai-tiktok-shop-affiliate.html">AI TikTok Shop Affiliate Videos</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/etsy-ai-rules.html">Etsy AI Rules (Oct 2026)</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/find-trending-etsy-products.html">Find Trending Etsy Products</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/online-surveys-pay.html">How Much Online Surveys Pay</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/halloween-side-hustles.html">Halloween Side Hustles</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/halloween-digital-products.html">Halloween Digital Products</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/black-friday-2026-seller-prep.html">Black Friday 2026 Seller Prep</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/black-friday-2026-sale-dates-calendar.html">Black Friday 2026 Sale Dates Calendar</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/early-black-friday-deals-november-2026.html">Early Black Friday Deals November 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/target-early-black-friday-deals-november-5-2026.html">Target Early Black Friday Deals Nov 5, 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/best-buy-early-black-friday-deals-november-6-2026.html">Best Buy Early Black Friday Deals Nov 6, 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/walmart-early-black-friday-deals-november-12-2026.html">Walmart Early Black Friday Deals Nov 12, 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-texas.html">Substitute Pay — Texas</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-california.html">Substitute Pay — California</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/substitute-pay-new-york.html">Substitute Pay — New York</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/jury-duty-texas.html">Jury Duty Pay — Texas</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/jury-duty-ca-ny-fl.html">Jury Duty Pay — CA · NY · FL</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/ugc-creator-side-hustle.html">Become a UGC Creator</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/holiday-light-installation-side-hustle-november-2026.html">Holiday Light Installation Side Hustle</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/holiday-side-hustles-paid-before-christmas-2026.html">Holiday Side Hustles That Pay Before Christmas 2026</a> <span class="dir-sep" aria-hidden="true">·</span> <a href="assets/guides/make-1000-before-christmas-2026.html">Make $1,000 Before Christmas 2026</a></p>
     </div>
   </section>
 
@@ -648,7 +709,7 @@ if(t){location.replace('assets/guides/'+t+'.html');}})();
           <li><a href="assets/guides/hustles.html">Side Hustles</a></li>
           <li><a href="assets/guides/chatgpt.html">Make Money With ChatGPT</a></li>
           <li><a href="assets/guides/tiktok-shop.html">TikTok Shop Affiliate</a></li>
-          <li><a href="#guides">All 51 Guides</a></li>
+          <li><a href="#guides">All 66 Guides</a></li>
           <li><a href="assets/tools/index.html">Free Tools</a></li>
           <li><a href="#all-calculators">Money Calculators</a></li>
         </ul>
@@ -692,7 +753,164 @@ if(t){location.replace('assets/guides/'+t+'.html');}})();
 })();
 </script>
 
+<style id="readerPageCss"></style>
+<div id="reader" hidden>
+  <div class="reader-bar">
+    <div class="wrap reader-bar-in">
+      <button type="button" class="reader-back" id="readerBack">← Back to Quick Earn Guide</button>
+      <span class="reader-bar-title" id="readerBarTitle"></span>
+    </div>
+  </div>
+  <p class="reader-status" id="readerStatus" hidden></p>
+  <div id="readerContent"></div>
+</div>
+<div id="readerScripts" hidden></div>
 
+<script>
+// In-page reader for the guide and tool pages — ARTIFACT VIEWER ONLY.
+//
+// Why: this site is a set of pages (this homepage plus assets/guides/*.html
+// and assets/tools/*.html). On the live GitHub Pages site (github.io) those
+// links work as normal page loads, and they must keep doing so: separate
+// page URLs, working browser back/forward, and shareable article links.
+// Inside the Muse artifact viewer, though, only this one document is
+// served — navigating away to a sub-page fails with "Couldn't load this
+// artifact". So ONLY in the viewer (hostname is NOT github.io) are clicks
+// on internal page links intercepted here: the target page is fetched, its
+// own styles and <main> content are shown in the reader above, and its
+// functional scripts (the calculators) are run — all without leaving this
+// document. On github.io this script returns before registering any click
+// handler, so there is no preventDefault interception and no reader there.
+(function(){
+  var host=(location.hostname||'').toLowerCase();
+  var onGithubPages=(host==='github.io'||host.slice(-10)==='.github.io');
+  if(onGithubPages){
+    // Live site: never intercept, never open the reader. A legacy
+    // homepage#guide-id / ?guide=id link still lands on that guide's own
+    // page, as a normal navigation to its separate URL.
+    if(window.__qegBootGuide){
+      window.location.replace(new URL('assets/guides/'+window.__qegBootGuide+'.html',location.href).href);
+    }
+    return;
+  }
+  var reader=document.getElementById('reader');
+  var content=document.getElementById('readerContent');
+  var statusEl=document.getElementById('readerStatus');
+  var barTitle=document.getElementById('readerBarTitle');
+  var pageCss=document.getElementById('readerPageCss');
+  var scriptHolder=document.getElementById('readerScripts');
+  var homeTitle=document.title;
+  var homeUrl=new URL('index.html', location.href);
+  var currentUrl=homeUrl; // URL of the page whose content is on screen
+  var homeScrollY=0;
+  var loadToken=0;
+
+  function isPagePath(path){
+    return /(^|\/)assets\/(guides|tools)\/[^\/]+\.html$/.test(path);
+  }
+  function clearPageScripts(){ scriptHolder.innerHTML=''; }
+
+  function runPageScripts(doc){
+    clearPageScripts();
+    var scripts=doc.querySelectorAll('script');
+    for(var i=0;i<scripts.length;i++){
+      var s=scripts[i];
+      if(s.src){ continue; } // external scripts (ads) are not re-run
+      var type=(s.getAttribute('type')||'').toLowerCase();
+      if(type && type!=='text/javascript'){ continue; } // skips JSON-LD blocks
+      var code=s.textContent||'';
+      if(!code.replace(/\s/g,'')){ continue; }
+      // The sub-pages' header script (theme / language / menu buttons) is
+      // skipped: this page keeps its own header, and that script would only
+      // double-bind the homepage's buttons. Calculator scripts are
+      // self-contained and run normally.
+      if(code.indexOf('themeBtn')!==-1 || code.indexOf('langBtn')!==-1){ continue; }
+      var el=document.createElement('script');
+      el.textContent=code;
+      scriptHolder.appendChild(el);
+    }
+  }
+
+  function openPage(url){
+    var token=++loadToken;
+    if(reader.hidden){ homeScrollY=window.scrollY||0; }
+    reader.hidden=false;
+    document.body.classList.add('reading');
+    content.innerHTML='';
+    clearPageScripts();
+    statusEl.hidden=false;
+    statusEl.textContent='Loading…';
+    window.scrollTo(0,0);
+    fetch(url.href).then(function(r){
+      if(!r.ok){ throw new Error('HTTP '+r.status); }
+      return r.text();
+    }).then(function(html){
+      if(token!==loadToken){ return; }
+      var doc=new DOMParser().parseFromString(html,'text/html');
+      var main=doc.querySelector('main');
+      if(!main){ throw new Error('No article content found'); }
+      var css='';
+      var styles=doc.querySelectorAll('style');
+      for(var i=0;i<styles.length;i++){ css+=styles[i].textContent+'\n'; }
+      pageCss.textContent=css;
+      content.appendChild(document.importNode(main,true));
+      currentUrl=url;
+      document.title=doc.title||homeTitle;
+      barTitle.textContent=(doc.title||'').replace(/\s*\|\s*Quick Earn Guide\s*$/,'');
+      statusEl.hidden=true;
+      runPageScripts(doc);
+      if(url.hash){
+        var t=document.getElementById(url.hash.slice(1));
+        if(t){ t.scrollIntoView(); return; }
+      }
+      window.scrollTo(0,0);
+    }).catch(function(){
+      if(token!==loadToken){ return; }
+      statusEl.innerHTML='This page could not be loaded here. <a href="'+url.href+'" target="_blank" rel="noopener">Open the full page in a new tab →</a>';
+    });
+  }
+
+  function closeReader(anchorId,restoreScroll){
+    loadToken++;
+    reader.hidden=true;
+    document.body.classList.remove('reading');
+    content.innerHTML='';
+    pageCss.textContent='';
+    clearPageScripts();
+    document.title=homeTitle;
+    currentUrl=homeUrl;
+    if(anchorId){
+      var t=document.getElementById(anchorId);
+      if(t){ t.scrollIntoView(); return; }
+    }
+    window.scrollTo(0,restoreScroll?homeScrollY:0);
+  }
+
+  document.addEventListener('click',function(e){
+    var a=(e.target&&e.target.closest)?e.target.closest('a[href]'):null;
+    if(!a){ return; }
+    var raw=a.getAttribute('href');
+    if(!raw || /^(mailto:|tel:|javascript:|data:)/i.test(raw)){ return; }
+    var url;
+    try{ url=new URL(raw,currentUrl); }catch(err){ return; }
+    if(url.origin!==location.origin){ return; } // external links open as authored
+    if(url.pathname===currentUrl.pathname){ return; } // same-page hash links
+    e.preventDefault();
+    if(isPagePath(url.pathname)){ openPage(url); }
+    else{ closeReader(url.hash?url.hash.slice(1):null,false); } // link back to the homepage
+  });
+
+  document.getElementById('readerBack').addEventListener('click',function(){ closeReader(null,true); });
+  document.addEventListener('keydown',function(e){
+    if((e.key==='Escape'||e.key==='Esc') && !reader.hidden){ closeReader(null,true); }
+  });
+
+  // Old-style links (homepage#guide-id or ?guide=id) open that guide here too.
+  if(window.__qegBootGuide){
+    openPage(new URL('assets/guides/'+window.__qegBootGuide+'.html',location.href));
+  }
+})();
+</script>
 
 </body>
 </html>
