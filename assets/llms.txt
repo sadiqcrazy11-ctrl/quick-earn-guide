@@ -86,6 +86,9 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Make Money With Claude AI in 2026: Honest Ways (and What They Really Pay): assets/guides/make-money-with-claude-ai-2026.html
 - AI Side Hustles With Verified Revenue in 2026: What Real Businesses Actually Make: assets/guides/ai-side-hustles-verified-revenue-2026.html
 - Make $1,000 Before Christmas 2026: Holiday Service Math That Adds Up: assets/guides/make-1000-before-christmas-2026.html
+- Best Side Hustles November 2026: Real Income Ranges and Honest Timelines: assets/guides/best-side-hustles-november-2026.html
+- How to Find Trending Products on Etsy (Before You List Anything): assets/guides/find-trending-etsy-products.html
+- Most Popular Side Hustles 2026: What YouTube Videos Don't Tell You: assets/guides/most-popular-side-hustles-2026.html
 
 ## Free tools (separate pages under assets/tools/)
 
