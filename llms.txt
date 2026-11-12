@@ -21,29 +21,29 @@ Status: private build — not publicly launched, so paths below are relative to 
 
 ## Guides (each guide has its own page under assets/guides/)
 
-- How to Start Earning on YouTube: assets/guides/youtube.html
-- Trading Basics for Beginners: assets/guides/trading.html
-- Freelancing Quick-Start (Fiverr & Upwork): assets/guides/freelancing.html
-- Earning on Social Media: assets/guides/social.html
-- Side Hustles Worth Your Time: assets/guides/hustles.html
-- Budgeting Basics: Make the Monthly Number Happen: assets/guides/budgeting.html
+- How to Make Money on YouTube (Honest Starter Guide): assets/guides/youtube.html
+- Trading for Beginners: The Basics, Honestly: assets/guides/trading.html
+- How to Start Freelancing: Quick-Start on Fiverr & Upwork: assets/guides/freelancing.html
+- How to Make Money on Social Media (Honest Ranges): assets/guides/social.html
+- Best Side Hustles Worth Your Time (Honest Pay): assets/guides/hustles.html
+- 50/30/20 Budget Rule: Budgeting Basics That Stick: assets/guides/budgeting.html
 - 7 Real Ways to Make Money With ChatGPT (No Hype): assets/guides/chatgpt.html
 - How to Earn Money With Claude (the AI Assistant): assets/guides/claude.html
-- How to Earn Money With AI Video Generation: assets/guides/ai-video.html
-- Other AI Tools That Can Make You Money (Honest Guide): assets/guides/ai-tools.html
-- Niche Breakdown: 10 Ways to Earn, Rated Honestly: assets/guides/niches.html
+- How to Make Money With AI Video Generation: assets/guides/ai-video.html
+- How to Make Money With AI Tools (Beyond Chatbots): assets/guides/ai-tools.html
+- 10 Profitable Niches Rated Honestly: Difficulty & Pay: assets/guides/niches.html
 - How to Make Money as a Teenager: 7 Real Ways That Work: assets/guides/teen-money.html
 - How to Save Money Fast: 7 Real Strategies That Work on Any Income: assets/guides/save-money.html
-- AI Hustles & ChatGPT Prompts for Cash: assets/guides/ai-hustles.html
-- Faceless Social Media Blueprint (TikTok & Reels): assets/guides/faceless-blueprint.html
-- $0 Capital Emergency Cash Guide: assets/guides/zero-capital.html
-- No-SSN / No-Paperwork Ways to Earn: assets/guides/no-ssn.html
-- Find Clients With One Google Search (The LinkedIn Formula): assets/guides/client-finder.html
+- AI Hustles & ChatGPT Prompts to Make Money: assets/guides/ai-hustles.html
+- Faceless TikTok & Reels Blueprint: Post Daily, Earn Slow: assets/guides/faceless-blueprint.html
+- Make Money With No Money: $0 Capital Emergency Cash Guide: assets/guides/zero-capital.html
+- Earn Money Without SSN: No-Paperwork Ways to Earn: assets/guides/no-ssn.html
+- How to Find Freelance Clients With One Google Search (The LinkedIn Formula): assets/guides/client-finder.html
 - How to Make Money With AI Music in 2026 (Honest Guide): assets/guides/ai-music.html
-- Sellable Products: What Actually Sells Online (Prices, Costs & Free Tools): assets/guides/sellable-products.html
+- Best Products to Sell Online: What Actually Sells (Prices, Costs & Free Tools): assets/guides/sellable-products.html
 - Trending Products to Sell in 2026 (What's Actually Rising): assets/guides/trending-products.html
 - Can AI Videos Be Monetized on YouTube in 2026? (Real Rules): assets/guides/ai-monetization.html
-- TikTok Shop Affiliate: How Much You Can Really Earn in 2026: assets/guides/tiktok-shop.html
+- TikTok Shop Affiliate Products: How Much You Can Really Earn in 2026: assets/guides/tiktok-shop.html
 - Substitute Teacher Pay in Texas (2026): Daily Rates by District: assets/guides/substitute-pay-texas.html
 - Jury Duty Pay in Texas (2026): $20 First Day, $58 After — Not $6: assets/guides/jury-duty-texas.html
 - Substitute Teacher Pay in California (2026): Daily Rates by District: assets/guides/substitute-pay-california.html
@@ -63,9 +63,9 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Vibe Coding Side Hustle With No Coding Experience: What Actually Pays in 2026: assets/guides/vibe-coding-side-hustle.html
 - Sell Halloween Digital Products Last Minute: What Still Works 5 Days Before October 31: assets/guides/halloween-digital-products.html
 - Make Money With AI Tools on Your Phone (No Coding): The Honest Version: assets/guides/ai-tools-phone.html
-- The Most Common Side Hustle in 2026 Is Not What You Think: assets/guides/most-common-side-hustle-2026.html
+- The Most Common Side Hustle in 2026: Selling Online (Survey Data): assets/guides/most-common-side-hustle-2026.html
 - Highest ROI Side Hustles 2026: Ranked by Hourly Rate (Honest Numbers): assets/guides/highest-roi-side-hustles-2026-hourly-rate.html
-- Only AI Tools Worth Paying For in 2026: Cut the Stack, Keep the Money: assets/guides/ai-tools-worth-paying-for-2026.html
+- Only AI Tools Worth Paying For: A Freelancer's 2026 Stack: assets/guides/ai-tools-worth-paying-for-2026.html
 - No-Code Chatbot Service for Small Businesses: Real Rates, Real First Clients in 2026: assets/guides/no-code-chatbot-service.html
 - Build a Micro-SaaS in a Weekend With No Coding: The Honest 2026 Guide: assets/guides/build-micro-saas-weekend-no-coding.html
 - Black Friday 2026 Seller Prep: Early Access, Real Dates, and Deals That Still Make Money: assets/guides/black-friday-2026-seller-prep.html
@@ -75,7 +75,7 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Make Money With AI: Your First $100 in 30 Days (Honest Beginner Plan): assets/guides/make-money-with-ai-first-100-30-days-2026.html
 - Faceless Shorts Side Hustle: The Real Cost and the Real Pay in 2026: assets/guides/faceless-shorts-side-hustle-reality-2026.html
 - Holiday Light Installation Side Hustle: Real Pay, Real Costs, November 2026: assets/guides/holiday-light-installation-side-hustle-november-2026.html
-- Become a UGC Creator This Weekend: Make Brand Videos With No Followers Needed: assets/guides/ugc-creator-side-hustle.html
+- Become a UGC Creator: A Side Hustle With No Followers Needed (2026): assets/guides/ugc-creator-side-hustle.html
 - Can a Side Hustle Really Replace Your Full-Time Income in 2026?: assets/guides/side-hustles-replace-full-time-income-2026.html
 - Target Early Black Friday Deals November 5, 2026: What's Actually Worth Buying Today: assets/guides/target-early-black-friday-deals-november-5-2026.html
 - Best Buy Early Black Friday Deals November 6, 2026: What Starts Today (Plus Kohl's Early Access): assets/guides/best-buy-early-black-friday-deals-november-6-2026.html
@@ -88,21 +88,51 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Make $1,000 Before Christmas 2026: Holiday Service Math That Adds Up: assets/guides/make-1000-before-christmas-2026.html
 - Best Side Hustles November 2026: Real Income Ranges and Honest Timelines: assets/guides/best-side-hustles-november-2026.html
 - How to Find Trending Products on Etsy (Before You List Anything): assets/guides/find-trending-etsy-products.html
-- Most Popular Side Hustles 2026: What YouTube Videos Don't Tell You: assets/guides/most-popular-side-hustles-2026.html
+- Most Popular Side Hustles 2026: Hype vs. Reality: assets/guides/most-popular-side-hustles-2026.html
+
+- Resale Concierge Side Hustle: Sell Other People's Stuff for a Commission (2026): assets/guides/resale-concierge-side-hustle.html
+- AI Automation Agency Income: How Much Can You Really Make in 2026?: assets/guides/ai-automation-agency-income-2026.html
+- Side Hustle Average Income: $810 a Month in 2026 (Real Data): assets/guides/side-hustle-average-income-810-month-2026.html
+- Side Hustles That Actually Pay in 2026: What to Expect in Your First 30 Days: assets/guides/side-hustles-that-actually-pay-30-days-2026.html
+- Amazon Black Friday Week 2026: November 19-30 Dates, Double Drops and What to Buy: assets/guides/amazon-black-friday-week-2026-dates-deals-november-19-30.html
+- Side Hustles With the Fastest First Payment in 2026: Same-Day Cash to First Paycheck: assets/guides/side-hustles-fastest-first-payment-2026.html
+- Black Friday Reselling in 2026: How to Flip Deals for Profit (Honest Guide): assets/guides/black-friday-reselling-flip-deals-profit-2026.html
+- Christmas Seasonal Jobs 2026: Who Is Hiring, Real Pay Rates, and How to Apply: assets/guides/christmas-seasonal-jobs-hiring-2026.html
 
 ## Free tools (separate pages under assets/tools/)
 
+- Affiliate Commission Calculator: assets/tools/affiliate-commission-calculator.html
 - AI Tool ROI Calculator: assets/tools/ai-tool-roi-calculator.html
+- Amazon Seller Profit Calculator: assets/tools/amazon-seller-profit-calculator.html
+- Course Pricing Calculator: assets/tools/course-pricing-calculator.html
 - Currency Converter: assets/tools/currency-converter.html
+- Debt Payoff Calculator: assets/tools/debt-payoff-calculator.html
 - Delivery Driver Earnings Calculator: assets/tools/delivery-driver-earnings-calculator.html
+- Dropshipping Profit Calculator: assets/tools/dropshipping-profit-calculator.html
+- eBay Fee Calculator: assets/tools/ebay-fee-calculator.html
+- Emergency Fund Calculator: assets/tools/emergency-fund-calculator.html
 - Etsy Profit Calculator: assets/tools/etsy-profit-calculator.html
 - Faceless Channel Revenue Calculator: assets/tools/faceless-channel-revenue-calculator.html
+- Fastest First Payment Calculator: assets/tools/fastest-first-payment-calculator.html
+- Freelance Project Quote Estimator: assets/tools/freelance-project-quote-estimator.html
 - Freelance Rate Calculator: assets/tools/freelance-rate-calculator.html
 - Tools index: assets/tools/index.html
 - Investment Calculator: assets/tools/investment-calculator.html
+- Invoice Generator: assets/tools/invoice-generator.html
+- Mileage Deduction Calculator: assets/tools/mileage-deduction-calculator.html
+- PayPal Fee Calculator: assets/tools/paypal-fee-calculator.html
+- Print-on-Demand Profit Calculator: assets/tools/print-on-demand-profit-calculator.html
+- Raise Calculator: assets/tools/raise-calculator.html
+- Salary to Hourly Converter: assets/tools/salary-hourly-converter.html
 - Savings Goal Calculator: assets/tools/savings-goal-calculator.html
 - Side Hustle Finder Quiz: assets/tools/side-hustle-finder-quiz.html
 - Side Hustle Income Calculator: assets/tools/side-hustle-income-calculator.html
+- Side Hustle Tax Calculator: assets/tools/side-hustle-tax-calculator.html
 - Side Hustle Time Calculator: assets/tools/side-hustle-time-calculator.html
+- Survey Earnings Estimator: assets/tools/survey-earnings-estimator.html
 - TikTok Earnings Calculator: assets/tools/tiktok-earnings-calculator.html
+- Tradesperson Rate Calculator: assets/tools/tradesperson-rate-calculator.html
+- UGC Rate Calculator: assets/tools/ugc-rate-calculator.html
 - UPS Battery Backup Calculator: assets/tools/ups-battery-backup-calculator.html
+- Upwork Fee Calculator: assets/tools/upwork-fee-calculator.html
+- W-2 vs 1099 Calculator: assets/tools/w2-vs-1099-calculator.html

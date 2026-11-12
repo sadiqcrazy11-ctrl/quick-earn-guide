@@ -1,0 +1,725 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9026411505774637" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Free print-on-demand profit calculator: tee, hoodie and mug margins after base cost, shipping and platform fees — plus sales needed for your goal.">
+<title>Print-on-Demand Profit Calculator | Quick Earn Guide</title>
+<link rel="canonical" href="https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/assets/tools/print-on-demand-profit-calculator.html">
+<link rel="icon" href="data:,">
+
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f7f8f7; --card:#ffffff; --text:#1a1d1a; --muted:#5a625c;
+  --line:#e3e7e3; --accent:#177245; --accent-dark:#0f5a35; --accent-soft:#eef6f1;
+  --warn-bg:#fdf6e3; --warn-line:#e5d48a; --warn-text:#5c4a08;
+  --max:880px;
+}
+html.dark{
+  --bg:#141714; --bg-soft:#1b1e1b; --card:#1b1e1b; --text:#e8eae8; --muted:#a7aea8;
+  --line:#2e332e; --accent:#4cc084; --accent-dark:#4cc084; --accent-soft:#1d2b22;
+  --warn-bg:#2b2716; --warn-line:#6b5d24; --warn-text:#e8d48a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-weight:700;font-size:19px;color:var(--text);letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14.5px}
+nav.main a{color:var(--muted);font-weight:500}
+nav.main a:hover{color:var(--accent);text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.theme-btn:hover{border-color:var(--accent)}
+
+/* Hero */
+.hero{padding:52px 0 8px}
+.hero h1{font-size:clamp(30px,5.5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px;font-weight:800}
+.hero p.lead{font-size:19px;color:var(--muted);margin:0 0 20px;max-width:640px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:7px;font-weight:600;font-size:15.5px}
+.btn:hover{background:var(--accent-dark);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+
+.notice{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:13px 16px;font-size:14.5px;margin:22px 0}
+.notice strong{font-weight:700}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 4px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--card)}
+.stat b{display:block;font-size:20px;letter-spacing:-.01em}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* Sections */
+section.block{padding:44px 0 6px;border-top:1px solid var(--line);margin-top:38px}
+section.block:first-of-type{border-top:none}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+h2{font-size:clamp(24px,4vw,31px);letter-spacing:-.015em;line-height:1.25;margin:0 0 12px}
+h3{font-size:19px;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+ol.steps,ul.plain{margin:6px 0 16px;padding-left:22px}
+ol.steps li,ul.plain li{margin-bottom:9px}
+.callout{background:var(--accent-soft);border-radius:8px;padding:15px 17px;margin:18px 0;font-size:15.5px}
+.callout p:last-child{margin-bottom:0}
+
+/* Tables */
+.table-scroll{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg-soft);font-weight:600;font-size:13.5px}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+
+/* Hustle list */
+.hustles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.hustle{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.hustle h4{margin:0 0 5px;font-size:16.5px}
+.hustle p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.hustle .meta{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--text)}
+.tag.earn{border-color:var(--accent);color:var(--accent)}
+
+/* Compare strip */
+.compare{border:1px solid var(--line);border-radius:8px;padding:18px;margin:20px 0;background:var(--bg-soft)}
+.compare h3{margin-top:0}
+
+/* Hero live preview */
+.preview{border:1px solid var(--accent);border-radius:8px;background:var(--accent-soft);padding:20px;margin:24px 0 6px}
+.preview h3{margin:0 0 14px;font-size:19px}
+.preview-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preview-field label{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;font-weight:600;margin-bottom:6px}
+.preview-field label b{color:var(--accent);white-space:nowrap}
+.preview input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;margin:0}
+.preview-out{font-size:18px;margin:16px 0 8px}
+.preview-out b{font-size:clamp(32px,6vw,42px);color:var(--accent);letter-spacing:-.02em;vertical-align:-6px;margin:0 2px}
+.preview-note{font-size:15px;margin:0}
+.preview .calc-disclaimer{margin-top:12px}
+
+/* Goal picker + tools directory */
+.goal-list{list-style:none;margin:14px 0 6px;padding:0}
+.goal-list li{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--line)}
+.goal-list li:first-child{border-top:1px solid var(--line)}
+.goal-list span{font-weight:600}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.tool-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--card)}
+.tool-card svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool-card h4{margin:8px 0 4px;font-size:16.5px}
+.tool-card p{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+.deeper{font-size:15.5px;margin:16px 0 0}
+
+/* Calculators */
+.calc{border:1px solid var(--line);border-radius:8px;padding:18px;margin:18px 0;background:var(--card)}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.calc-field input{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.calc-field input[type=range]{width:100%;margin:9px 0 0;padding:0;border:none;background:none;accent-color:var(--accent);cursor:pointer}
+.calc-error{display:none;color:#b3261e;font-size:14.5px;margin:12px 0 0}
+html.dark .calc-error{color:#f28b82}
+.calc-results{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.calc-results .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.calc-results .row:last-of-type{border-bottom:none}
+.calc-results .row span{color:var(--muted)}
+.calc-results .row b{white-space:nowrap}
+.calc-results .row.headline b{color:var(--accent);font-size:19px}
+.calc-disclaimer{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+/* Micro-action steps box */
+.next-steps{background:var(--accent-soft);border-radius:8px;padding:12px 16px;margin-top:16px}
+.next-steps h4{margin:0 0 4px;font-size:15.5px;color:var(--accent-dark)}
+.next-steps p{font-size:14.5px;margin:0 0 6px}
+.next-steps ol{margin:0;padding-left:20px;font-size:14.5px}
+.next-steps li{margin-bottom:3px}
+.next-steps li:last-child{margin-bottom:0}
+
+/* Legal */
+.legal h2{font-size:24px}
+.legal p,.legal li{font-size:15.5px}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 44px;background:var(--bg-soft)}
+footer.site .cols{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+footer.site h5{margin:0 0 10px;font-size:14px}
+footer.site ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+footer.site li{margin-bottom:7px}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--accent)}
+.foot-note{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  table{min-width:0;font-size:14.5px}
+  table,thead,tbody,tr{display:block;width:100%}
+  thead{display:none}
+  tr{border-bottom:1px solid var(--line);padding:8px 0}
+  tr:last-child{border-bottom:none}
+  td{display:block;border-bottom:none;padding:5px 14px}
+  td.num,th.num{text-align:left}
+  td:first-child{font-weight:600}
+  .stats{grid-template-columns:1fr}
+  .hustles{grid-template-columns:1fr}
+  .calc-fields{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .preview-fields{grid-template-columns:1fr}
+  nav.main{display:none}
+  nav.main.open{display:flex;width:100%;padding:6px 0 4px;flex-direction:column;gap:10px}
+  .header-in{flex-wrap:wrap}
+  .menu-btn{display:inline-block!important}
+  .hero{padding-top:36px}
+  body{font-size:16.5px}
+}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+
+/* Viral script — compact collapsible card */
+.script-card{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:22px 0 6px;overflow:hidden}
+.script-card summary{padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.script-card summary::-webkit-details-marker{display:none}
+.script-card summary:hover{background:var(--bg-soft)}
+.script-card summary h2{font-size:20px;margin:0}
+.script-card summary .chev{color:var(--accent);font-weight:700;flex:none}
+.script-card[open ] summary{border-bottom:1px solid var(--line)}
+.script-body{padding:14px 18px 16px;font-size:15px}
+.script-body h3{font-size:15.5px;margin:14px 0 4px}
+.script-body h3:first-child{margin-top:0}
+.script-body p{margin:0 0 8px}
+.script-body ul{margin:0 0 8px;padding-left:20px}
+.script-body li{margin-bottom:4px}
+
+/* Guide cards — compact Finovly-style cards; full text lives in the collapsible body */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+section.block.gcard{padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.guide-grid section.block.gcard{margin-top:0}
+.gcard.open{grid-column:1/-1}
+.gcard-head{padding:18px 20px 16px;cursor:pointer}
+.gcard-head:hover{background:var(--bg-soft)}
+.gcard-head .kicker{margin:0 0 5px}
+.gcard-head h2{font-size:21px;line-height:1.3;margin:0 0 8px}
+.gcard-excerpt{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-btn{background:none;border:none;padding:0;font:inherit;font-size:15.5px;font-weight:700;color:var(--accent);cursor:pointer}
+.read-btn:hover{text-decoration:underline}
+.gcard-body{border-top:1px solid var(--line);padding:18px 20px 14px}
+.gcard-body[hidden]{display:none}
+@media (max-width:700px){.guide-grid{grid-template-columns:1fr}}
+
+/* Expansion pack: language toggle, share, cases, checklist */
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap;font-weight:700}
+.lang-btn:hover{border-color:var(--accent)}
+.head-btns{display:flex;gap:8px;align-items:center}
+.es-only{display:none}
+html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:14.5px;margin:0 0 14px}
+.share-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.share-row .share-label{font-size:13.5px;font-weight:700;color:var(--muted)}
+.share-row a,.share-row button{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--text);background:none;cursor:pointer;font-family:inherit}
+.share-row a:hover,.share-row button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.calc-field select{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:130px;padding:10px 12px;font-size:15px;font-weight:600;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;cursor:pointer;font-family:inherit}
+.seg button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.big-warn{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:12px 15px;font-size:14.5px;margin-top:14px}
+.prompt{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14.5px;margin:0 0 10px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.case{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.case h4{margin:0 0 5px;font-size:16.5px}
+.case p{font-size:14.5px;margin:0 0 8px}
+.case .lesson{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.case .src{font-size:13.5px;margin:0}
+.check-list{list-style:none;margin:14px 0;padding:0}
+.check-list li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.check-list li:last-child{border-bottom:none}
+.check-list input{width:19px;height:19px;margin-top:3px;accent-color:var(--accent);flex:none;cursor:pointer}
+.email-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.email-row input{flex:1;min-width:220px;padding:11px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.email-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+#print-area{display:none}
+@media (max-width:640px){.case-grid{grid-template-columns:1fr}}
+@media print{
+  body *{visibility:hidden}
+  #print-area,#print-area *{visibility:visible}
+  #print-area{display:block!important;position:absolute;top:0;left:0;right:0;padding:10px;color:#000}
+}
+
+/* Tool pages */
+.crumbs{font-size:14px;color:var(--muted);padding:20px 0 0;margin:0}
+.crumbs a{color:var(--muted);font-weight:500}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .sep{margin:0 7px}
+.tool-hero{padding:22px 0 2px}
+.tool-hero h1{font-size:clamp(29px,5.2vw,42px);line-height:1.16;letter-spacing:-.02em;margin:0 0 12px;font-weight:800}
+.tool-hero p.lead{font-size:18.5px;color:var(--muted);margin:0;max-width:660px}
+.faq-item{border-top:1px solid var(--line);padding:15px 0 3px}
+.faq-item h3{margin:0 0 6px;font-size:17.5px}
+.faq-item p{margin:0 0 12px}
+.current-tag{font-size:12.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","datePublished":"2026-11-12","dateModified":"2026-11-12","mainEntity":[{"@type":"Question","name":"How much profit is there in a print-on-demand t-shirt?","acceptedAnswer":{"@type":"Answer","text":"At typical 2026 costs \u2014 $8\u2013$13 base, $4\u2013$7 shipping, ~10% in platform and payment fees \u2014 a $24.99 tee leaves roughly $5\u2013$9 profit. Hoodies and higher-priced items leave more per sale because the fixed costs do not grow with the price."}},{"@type":"Question","name":"Is Printful or Printify cheaper?","acceptedAnswer":{"@type":"Answer","text":"Printify is usually cheaper per unit because it routes orders through many independent providers (tees from about $8.11, hoodies from $19.86, mugs from $5.02 in 2026 catalog checks), while Printful prints in-house with more consistent quality at slightly higher base prices. Both change prices often \u2014 check your exact product before pricing."}},{"@type":"Question","name":"Should I offer free shipping on POD products?","acceptedAnswer":{"@type":"Answer","text":"Only if the price absorbs it. Shipping costs $4\u2013$7 per order either way; 'free shipping' just moves that cost into your margin. This calculator counts the shipping cost whether or not you charge the buyer for it."}},{"@type":"Question","name":"What margin should I target on print-on-demand?","acceptedAnswer":{"@type":"Answer","text":"Aim for at least 30% after all costs if you plan to run ads, since ad spend comes out of the same margin. Under 20% leaves no room for a discount sale, a return, or a slow month."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"../../index.html"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"index.html"},{"@type":"ListItem","position":3,"name":"Print-on-Demand Profit Calculator"}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="header-in">
+    <a class="logo" href="../../index.html">Quick Earn <span>Guide</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html" data-en="Free Tools" data-es="Herramientas Gratis">Free Tools</a>
+      <a href="../../index.html#all-calculators" data-en="Calculators" data-es="Calculadoras">Calculators</a>
+      <a href="../guides/ai-hustles.html" data-en="AI Hustles" data-es="Negocios con IA">AI Hustles</a>
+      <a href="../../index.html#case-studies" data-en="Case Studies" data-es="Casos Reales">Case Studies</a>
+      <a href="../../index.html#about" data-en="About" data-es="Acerca de">About</a>
+    </nav>
+    <div class="head-btns">
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar a español">ES</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <p class="crumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="index.html">Free Tools</a><span class="sep">›</span><span>Print-on-Demand Profit Calculator</span></p>
+
+  <div class="tool-hero">
+    <h1>Print-on-Demand Profit Calculator</h1>
+    <p class="lead">A $25 t-shirt is not $25 of profit. Pick a product, enter your price, and see what is left after the base cost, shipping, and platform fees — and how many sales your monthly goal actually needs.</p>
+  </div>
+
+  <section class="block" style="border-top:none;margin-top:10px;padding-top:6px">
+<div class="calc">
+      <div class="calc-fields">
+        <div class="calc-field">
+          <label for="pod-product">👕 Product</label>
+          <select id="pod-product">
+            <option value="tee">T-shirt (Bella+Canvas style)</option>
+            <option value="hoodie">Hoodie (Gildan 18500 style)</option>
+            <option value="mug">Mug (11 oz ceramic)</option>
+            <option value="custom">Custom product — enter costs below</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="pod-price">💵 Selling price ($)</label>
+          <input type="number" id="pod-price" min="0" step="any" inputmode="decimal" value="24.99">
+        </div>
+        <div class="calc-field">
+          <label for="pod-base">🏭 Base product cost ($) — editable</label>
+          <input type="number" id="pod-base" min="0" step="any" inputmode="decimal" value="11">
+        </div>
+        <div class="calc-field">
+          <label for="pod-shipcost">🚚 Shipping cost per order ($) — editable</label>
+          <input type="number" id="pod-shipcost" min="0" step="any" inputmode="decimal" value="4.75">
+        </div>
+        <div class="calc-field">
+          <label for="pod-shipcharge">📦 Shipping charged to buyer ($)</label>
+          <input type="number" id="pod-shipcharge" min="0" step="any" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="pod-fee">✂️ Platform + payment fee (%) — editable</label>
+          <input type="number" id="pod-fee" min="0" max="30" step="any" inputmode="decimal" value="9.5">
+        </div>
+        <div class="calc-field">
+          <label for="pod-fixed">🧾 Fixed fee per sale ($) — editable</label>
+          <input type="number" id="pod-fixed" min="0" step="any" inputmode="decimal" value="0.45">
+        </div>
+        <div class="calc-field">
+          <label for="pod-goal">🎯 Monthly profit goal ($)</label>
+          <input type="number" id="pod-goal" min="0" step="any" inputmode="decimal" value="500">
+        </div>
+      </div>
+      <p class="calc-error" id="pod-error">Please enter valid numbers: all amounts $0 or more, fee between 0% and 30%.</p>
+      <div class="calc-results" id="pod-results" aria-live="polite">
+        <div class="row headline"><span>Profit per sale</span><b id="pod-out-profit">—</b></div>
+        <div class="row"><span>Margin</span><b id="pod-out-margin">—</b></div>
+        <div class="row"><span>Total revenue per sale</span><b id="pod-out-rev">—</b></div>
+        <div class="row"><span>Fees per sale</span><b id="pod-out-fees">—</b></div>
+        <div class="row"><span>Total cost per sale</span><b id="pod-out-cost">—</b></div>
+        <div class="row"><span>Sales needed for your goal</span><b id="pod-out-sales">—</b></div>
+      </div>
+      <p class="calc-disclaimer"><strong>Costs checked Nov 12, 2026.</strong> Typical 2026 base-cost ranges from October 2026 catalog checks: tees $8–$13, hoodies $19–$25, mugs $5–$8, plus $4–$7 US shipping (Printful/Printify-style providers; costs vary by blank, provider, and discount plan). Fee default 9.5% + $0.45 mirrors Etsy-style costs (6.5% transaction + ~3% processing + $0.20 listing + $0.25) — edit every field to match your provider and platform. Ad spend and design time are not included. Estimates only — educational, not financial advice.</p>
+      <div class="next-steps">
+        <h4>Your 3-step start →</h4>
+        <p>Margin under 30%?</p>
+        <ol>
+          <li>Raise the price $3–$5 — POD buyers compare designs, not pennies.</li>
+          <li>Order a sample: the cheapest provider is not always the one you would re-order from.</li>
+          <li>Charge shipping or build it into the price — "free shipping" still costs you $4–$7.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="kicker">About this tool</p>
+<h2>What this print-on-demand profit calculator does</h2>
+    <p>Print-on-demand looks like free money until the cost stack lands: the base product, shipping to the customer, the platform's cut, and payment processing — all before a dollar of profit. A $24.99 t-shirt with an $11 base cost and $4.75 shipping has already spent $15.75 before fees. This calculator runs the full stack per sale, shows your real margin, and converts a monthly goal into the sales count it demands, so "I need 500 sales a month" stops being a surprise.</p>
+    <h3>A quick example</h3>
+    <p>Run the defaults: a $24.99 tee, $11 base, $4.75 shipping, no shipping charged, 9.5% + $0.45 in fees ($2.82). Profit per sale is $6.42 — a 25.7% margin. A $500 monthly goal needs 78 sales. Switch to a hoodie at $49.99 with a $21 base and $6 shipping and the same fee structure leaves $17.79 per sale — the product choice matters more than the design.</p>
+    <h3>How to use it — 3 steps</h3>
+    <ol class="steps">
+      <li>Pick a product — base cost and shipping fill in with typical 2026 ranges. Replace them with your provider's exact quote for your blank and print areas.</li>
+      <li>Enter your selling price and what you charge for shipping (0 if shipping is "free" — the cost still counts).</li>
+      <li>Set the fee fields to your platform: the default mirrors Etsy-style costs; a Shopify store with card processing is closer to 2.9% + $0.30.</li>
+    </ol>
+    <h3>Who it is for</h3>
+    <p>Etsy and Shopify POD sellers pricing their first products, designers checking whether a niche can pay, and anyone whose POD payout was thinner than expected.</p>
+    <h3>Honest limitations</h3>
+    <p>Base costs vary by blank brand, print provider, size, print areas, and discount plans — the defaults are mid-range starting points, not quotes. Ad spend, design time, returns, and platform subscriptions are excluded. Estimates only — not financial advice.</p>
+    <p class="deeper">Deeper: <a href="etsy-profit-calculator.html">Etsy Profit Calculator</a> · <a href="../guides/etsy-ai-rules.html">Etsy AI Rules (Oct 2026)</a> · <a href="../guides/find-trending-etsy-products.html">Find Trending Etsy Products</a></p>
+  </section>
+
+  <section class="block">
+    <p class="kicker">FAQ</p>
+    <h2>Print-on-Demand Profit Calculator — common questions</h2>
+    <div class="faq-item">
+      <h3>How much profit is there in a print-on-demand t-shirt?</h3>
+      <p>At typical 2026 costs — $8–$13 base, $4–$7 shipping, ~10% in platform and payment fees — a $24.99 tee leaves roughly $5–$9 profit. Hoodies and higher-priced items leave more per sale because the fixed costs do not grow with the price.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is Printful or Printify cheaper?</h3>
+      <p>Printify is usually cheaper per unit because it routes orders through many independent providers (tees from about $8.11, hoodies from $19.86, mugs from $5.02 in 2026 catalog checks), while Printful prints in-house with more consistent quality at slightly higher base prices. Both change prices often — check your exact product before pricing.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Should I offer free shipping on POD products?</h3>
+      <p>Only if the price absorbs it. Shipping costs $4–$7 per order either way; 'free shipping' just moves that cost into your margin. This calculator counts the shipping cost whether or not you charge the buyer for it.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What margin should I target on print-on-demand?</h3>
+      <p>Aim for at least 30% after all costs if you plan to run ads, since ad spend comes out of the same margin. Under 20% leaves no room for a discount sale, a return, or a slow month.</p>
+    </div>
+  </section>
+
+  <section class="block" id="free-tools">
+    <p class="kicker">Free Tools</p>
+    <h2>All 34 free tools</h2>
+    <p>Every tool is free, works instantly, and needs no signup. Each one also lives on the <a href="../../index.html#all-calculators">homepage</a> if you prefer everything on one page.</p>
+    <div class="tools">
+      <div class="tool-card">
+        <h4><a href="investment-calculator.html">Investment Calculator</a></h4>
+        <p>See what a starting amount plus steady monthly contributions could grow into with compound returns — before you invest a single dollar.</p>
+        <a href="investment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-rate-calculator.html">Freelance Rate Calculator</a></h4>
+        <p>Work backwards from the salary you actually want to the hourly rate clients need to pay — taxes, expenses and time off included.</p>
+        <a href="freelance-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="savings-goal-calculator.html">Savings Goal Calculator</a></h4>
+        <p>Turn any goal — an emergency fund, a car, a deposit — into one monthly number you can actually plan around.</p>
+        <a href="savings-goal-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-income-calculator.html">Side Hustle Income Calculator</a></h4>
+        <p>What are a few hours of side work each week actually worth per month — and per year? Run your own numbers.</p>
+        <a href="side-hustle-income-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ai-tool-roi-calculator.html">AI Tool ROI Calculator</a></h4>
+        <p>Turn a $20 subscription into monthly income — or find out honestly whether it is just an expense.</p>
+        <a href="ai-tool-roi-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-time-calculator.html">Side Hustle Time Calculator</a></h4>
+        <p>Only have a few free hours a week around school or work? See what they are honestly worth.</p>
+        <a href="side-hustle-time-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="currency-converter.html">USD to PKR Converter</a></h4>
+        <p>What are your US dollars worth back home? Convert USD to PKR — or nine other currencies — in seconds.</p>
+        <a href="currency-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="faceless-channel-revenue-calculator.html">YouTube Revenue Calculator</a></h4>
+        <p>Views are not dollars. Estimate what a faceless channel's views might actually pay — with the honest warnings attached.</p>
+        <a href="faceless-channel-revenue-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tiktok-earnings-calculator.html">TikTok Earnings Calculator</a></h4>
+        <p>How much are your TikTok views really worth? Turn monthly views and an honest RPM into monthly, yearly and per-video Creator Rewards estimates.</p>
+        <a href="tiktok-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="etsy-profit-calculator.html">Etsy Profit Calculator</a></h4>
+        <p>What do you really keep after Etsy fees? Enter price, costs and shipping to see profit per sale, total fees and your true margin.</p>
+        <a href="etsy-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="delivery-driver-earnings-calculator.html">Delivery Driver Earnings Calculator</a></h4>
+        <p>$18 an hour — before gas. Enter your hours, average rate and weekly gas to see your real weekly and monthly net pay.</p>
+        <a href="delivery-driver-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ups-battery-backup-calculator.html">UPS Battery Backup Calculator</a></h4>
+        <p>How long will a 200Ah battery run 3 fans? Pick your battery, tick your appliances, and get an honest backup time in hours — plus what recharging costs.</p>
+        <a href="ups-battery-backup-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-finder-quiz.html">Side Hustle Finder Quiz</a></h4>
+        <p>Not sure where to start? Five quick questions match you with one best-fit side hustle for your time, budget and style — plus two runner-ups.</p>
+        <a href="side-hustle-finder-quiz.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tradesperson-rate-calculator.html">Tradesperson Rate Calculator</a></h4>
+        <p>Your true hourly rate as an electrician, plumber, or HVAC tech — with a price book and a below-floor warning.</p>
+        <a href="tradesperson-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-tax-calculator.html">Side Hustle Tax Calculator</a></h4>
+        <p>Estimate SE tax and quarterly payments on 1099 income with verified 2026 federal figures.</p>
+        <a href="side-hustle-tax-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="salary-hourly-converter.html">Salary to Hourly Converter</a></h4>
+        <p>Convert salary to hourly, daily, weekly, and monthly pay — with overtime at time-and-a-half.</p>
+        <a href="salary-hourly-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="survey-earnings-estimator.html">Survey Earnings Estimator</a></h4>
+        <p>What surveys really pay per hour after screen-outs, by platform.</p>
+        <a href="survey-earnings-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="w2-vs-1099-calculator.html">W-2 vs 1099 Calculator</a></h4>
+        <p>Compare a salary offer against contract work after SE tax — and find the breakeven 1099 rate.</p>
+        <a href="w2-vs-1099-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="fastest-first-payment-calculator.html">Fastest First Payment Calculator</a></h4>
+        <p>Which side hustle pays you first? Ranked by typical days to first payout.</p>
+        <a href="fastest-first-payment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="upwork-fee-calculator.html">Upwork Fee Calculator</a></h4>
+        <p>Your real Upwork take-home after the service fee, withdrawal costs and Connects — plus the direct-client comparison.</p>
+        <a href="upwork-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="paypal-fee-calculator.html">PayPal Fee Calculator</a></h4>
+        <p>What PayPal keeps on every payment type, and the gross-up price that nets you exactly what you quoted.</p>
+        <a href="paypal-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ebay-fee-calculator.html">eBay Fee Calculator</a></h4>
+        <p>Your true eBay profit per sale after the final value fee, per-order fee and promoted listing ads.</p>
+        <a href="ebay-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="amazon-seller-profit-calculator.html">Amazon Seller Profit Calculator</a></h4>
+        <p>Per-unit Amazon profit after referral fees, FBA/FBM costs and your plan — plus breakeven units.</p>
+        <a href="amazon-seller-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="dropshipping-profit-calculator.html">Dropshipping Profit Calculator</a></h4>
+        <p>True dropshipping profit per order, breakeven ROAS, and the order volume your goal actually needs.</p>
+        <a href="dropshipping-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="affiliate-commission-calculator.html">Affiliate Commission Calculator</a></h4>
+        <p>Honest affiliate math: clicks × conversion × commission, with the clicks your goal really needs.</p>
+        <a href="affiliate-commission-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="print-on-demand-profit-calculator.html">Print-on-Demand Profit Calculator</a> <span class="current-tag">You are here</span></h4>
+        <p>True POD margins per sale after base cost, shipping and fees — plus the sales your goal needs.</p>
+        <a href="print-on-demand-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ugc-rate-calculator.html">UGC Rate Calculator</a></h4>
+        <p>A defensible UGC quote from deliverables, usage rights, exclusivity and rush — as a range, not a guess.</p>
+        <a href="ugc-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="mileage-deduction-calculator.html">Mileage Deduction Calculator</a></h4>
+        <p>Your 2026 mileage deduction with the mid-year IRS rate change — and the tax saving behind it.</p>
+        <a href="mileage-deduction-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="debt-payoff-calculator.html">Debt Payoff Calculator</a></h4>
+        <p>Snowball vs avalanche on your real debts — months to debt-free, interest saved, payoff order.</p>
+        <a href="debt-payoff-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="emergency-fund-calculator.html">Emergency Fund Calculator</a></h4>
+        <p>Your emergency fund target from real essential expenses — and how many months of saving it takes.</p>
+        <a href="emergency-fund-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-project-quote-estimator.html">Freelance Project Quote Estimator</a></h4>
+        <p>A project quote that survives revisions: price, payment schedule, and your true effective rate.</p>
+        <a href="freelance-project-quote-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="course-pricing-calculator.html">Course Pricing Calculator</a></h4>
+        <p>The course price your revenue target demands, after platform fees and refunds — per platform.</p>
+        <a href="course-pricing-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="raise-calculator.html">Raise Calculator</a></h4>
+        <p>What your raise is really worth after tax — and whether it beats inflation.</p>
+        <a href="raise-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="invoice-generator.html">Invoice Generator</a></h4>
+        <p>A professional freelance invoice in minutes — live preview, late-fee math, print or save as PDF.</p>
+        <a href="invoice-generator.html">Open full tool →</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>Quick Earn Guide</h5>
+        <ul>
+          <li><a href="../../index.html#about">About</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+          <li><a href="index.html">Free Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Guides" data-es="Guías">Guides</h5>
+        <ul>
+          <li><a href="../../index.html#all-calculators">Money Calculators</a></li>
+          <li><a href="../guides/chatgpt.html">Make Money With ChatGPT</a></li>
+          <li><a href="../guides/freelancing.html">Freelancing Quick-Start</a></li>
+          <li><a href="../guides/faceless-blueprint.html">Faceless Social Media Blueprint</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../index.html#privacy">Privacy Policy</a></li>
+          <li><a href="../../index.html#terms">Terms of Use</a></li>
+          <li><a href="../../index.html#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>© 2026 Quick Earn Guide · Written by Sadiq Khan · Not financial advice — content is for educational purposes only. Do your own research. Earnings figures are estimates, not guarantees.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){ try{ if(v===null){ localStorage.removeItem(k); } else { localStorage.setItem(k,v); } }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  var TITLES={"en": "Print-on-Demand Profit Calculator | Quick Earn Guide", "es": "Print-on-Demand Profit Calculator | Quick Earn Guide"}, DESCS={"en": "Free print-on-demand profit calculator: tee, hoodie and mug margins after base cost, shipping and platform fees \u2014 plus sales needed for your goal.", "es": "Free print-on-demand profit calculator: tee, hoodie and mug margins after base cost, shipping and platform fees \u2014 plus sales needed for your goal."}, ES_DICT={};
+  var btn=document.getElementById('themeBtn');
+  function syncTheme(){ btn.textContent = root.classList.contains('dark') ? '\u2600\ufe0f Light' : '\uD83C\uDF19 Dark'; }
+  var savedTheme=read('qeg-theme');
+  if(savedTheme==='dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){ root.classList.add('dark'); }
+  syncTheme();
+  btn.addEventListener('click',function(){
+    var dark=root.classList.toggle('dark');
+    store('qeg-theme',dark?'dark':'light');
+    syncTheme();
+  });
+  var menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',function(){ nav.classList.toggle('open'); });
+  nav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ nav.classList.remove('open'); } });
+  function dictSwap(lang){
+    var scopes=document.querySelectorAll('.calc');
+    for(var s=0;s<scopes.length;s++){
+      var els=scopes[s].querySelectorAll('*');
+      for(var i=0;i<els.length;i++){
+        var e=els[i];
+        if(e.children.length || e.hasAttribute('data-en')) continue;
+        if(lang==='es'){
+          var tx=e.textContent.replace(/\s+/g,' ').trim();
+          if(ES_DICT[tx]){ if(!e.hasAttribute('data-orig')) e.setAttribute('data-orig',e.textContent); e.textContent=ES_DICT[tx]; }
+        }else{
+          var o=e.getAttribute('data-orig');
+          if(o!==null){ e.textContent=o; }
+        }
+      }
+    }
+  }
+  var langBtn=document.getElementById('langBtn');
+  function applyLang(lang){
+    root.lang=(lang==='es')?'es':'en';
+    var els=document.querySelectorAll('[data-en]');
+    for(var i=0;i<els.length;i++){
+      var v=els[i].getAttribute('data-'+root.lang);
+      if(v!==null) els[i].innerHTML=v;
+    }
+    dictSwap(root.lang);
+    document.title=TITLES[root.lang];
+    var md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content',DESCS[root.lang]);
+    langBtn.textContent=(root.lang==='es')?'EN':'ES';
+    langBtn.setAttribute('aria-label',(root.lang==='es')?'Switch to English':'Cambiar a espa\u00f1ol');
+    store('qeg-lang',root.lang);
+  }
+  langBtn.addEventListener('click',function(){ applyLang(root.lang==='es'?'en':'es'); });
+  var savedLang=read('qeg-lang');
+  if(savedLang==='es'){ applyLang('es'); }
+})();
+</script>
+<script>
+(function(){
+
+  var fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
+  var fmt0=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0,maximumFractionDigits:0});
+  function el(id){ return document.getElementById(id); }
+  function num(id){ return parseFloat(el(id).value); }
+  function set(id,text){ el(id).textContent=text; }
+  function dash(ids){ for(var i=0;i<ids.length;i++){ set(ids[i],'\u2014'); } }
+  function pair(rangeId,numId){
+    var r=el(rangeId), n=el(numId);
+    if(!r||!n) return;
+    r.addEventListener('input',function(){ n.value=r.value; });
+    n.addEventListener('input',function(){
+      var v=parseFloat(n.value);
+      if(!isNaN(v)){ r.value=Math.min(Math.max(v,parseFloat(r.min)),parseFloat(r.max)); }
+    });
+  }
+  function live(ids,errorId,compute){
+    var err=el(errorId);
+    function run(){ if(err) err.style.display = compute() ? 'none' : 'block'; }
+    for(var i=0;i<ids.length;i++){ var e=el(ids[i]); if(e) e.addEventListener('input',run); }
+    run();
+  }
+  function on(id,ev,fn){ var e=el(id); if(e) e.addEventListener(ev,fn); }
+
+/*PURE-START*/
+  function calcPod(i){
+    var revenue=i.price+i.shipCharged;
+    var fees=revenue*i.feePct/100+i.fixed;
+    var totalCost=i.baseCost+i.shipCost+fees;
+    var profit=revenue-totalCost;
+    var margin=revenue>0?profit/revenue*100:0;
+    var sales=profit>0?Math.ceil(i.goal/profit):null;
+    return {revenue:revenue, fees:fees, totalCost:totalCost, profit:profit, margin:margin, sales:sales};
+  }
+  /*PURE-END*/
+  var POD_DEFAULTS={tee:{base:11, ship:4.75, price:24.99}, hoodie:{base:21, ship:6, price:49.99}, mug:{base:6.50, ship:4.50, price:19.99}, custom:null};
+  on('pod-product','input',function(){
+    var d=POD_DEFAULTS[el('pod-product').value];
+    if(d){ el('pod-base').value=d.base; el('pod-shipcost').value=d.ship; el('pod-price').value=d.price; }
+    el('pod-price').dispatchEvent(new Event('input',{bubbles:true}));
+  });
+  live(['pod-product','pod-price','pod-base','pod-shipcost','pod-shipcharge','pod-fee','pod-fixed','pod-goal'],'pod-error',function(){
+    var price=num('pod-price'), base=num('pod-base'), shipcost=num('pod-shipcost'), shipcharge=num('pod-shipcharge'),
+        fee=num('pod-fee'), fixed=num('pod-fixed'), goal=num('pod-goal');
+    if([price,base,shipcost,shipcharge,fee,fixed,goal].some(isNaN)||price<0||base<0||shipcost<0||shipcharge<0||fee<0||fee>30||fixed<0||goal<0){ dash(['pod-out-profit','pod-out-margin','pod-out-rev','pod-out-fees','pod-out-cost','pod-out-sales']); return false; }
+    var r=calcPod({price:price, baseCost:base, shipCost:shipcost, shipCharged:shipcharge, feePct:fee, fixed:fixed, goal:goal});
+    set('pod-out-profit',fmt.format(r.profit));
+    set('pod-out-margin',r.margin.toFixed(1)+'%');
+    set('pod-out-rev',fmt.format(r.revenue));
+    set('pod-out-fees',fmt.format(r.fees));
+    set('pod-out-cost',fmt.format(r.totalCost));
+    set('pod-out-sales',r.sales===null?'Goal unreachable at a loss per sale':r.sales.toLocaleString('en-US')+' sales/month');
+    return true;
+  });
+})();
+</script>
+</body>
+</html>

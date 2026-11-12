@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9026411505774637" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Free Amazon seller profit calculator: referral fee by category, FBA or FBM costs, and your true per-unit profit, margin and breakeven units.">
+<title>Amazon Seller Profit Calculator | Quick Earn Guide</title>
+<link rel="canonical" href="https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/assets/tools/amazon-seller-profit-calculator.html">
+<link rel="icon" href="data:,">
+
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f7f8f7; --card:#ffffff; --text:#1a1d1a; --muted:#5a625c;
+  --line:#e3e7e3; --accent:#177245; --accent-dark:#0f5a35; --accent-soft:#eef6f1;
+  --warn-bg:#fdf6e3; --warn-line:#e5d48a; --warn-text:#5c4a08;
+  --max:880px;
+}
+html.dark{
+  --bg:#141714; --bg-soft:#1b1e1b; --card:#1b1e1b; --text:#e8eae8; --muted:#a7aea8;
+  --line:#2e332e; --accent:#4cc084; --accent-dark:#4cc084; --accent-soft:#1d2b22;
+  --warn-bg:#2b2716; --warn-line:#6b5d24; --warn-text:#e8d48a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-weight:700;font-size:19px;color:var(--text);letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14.5px}
+nav.main a{color:var(--muted);font-weight:500}
+nav.main a:hover{color:var(--accent);text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.theme-btn:hover{border-color:var(--accent)}
+
+/* Hero */
+.hero{padding:52px 0 8px}
+.hero h1{font-size:clamp(30px,5.5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px;font-weight:800}
+.hero p.lead{font-size:19px;color:var(--muted);margin:0 0 20px;max-width:640px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:7px;font-weight:600;font-size:15.5px}
+.btn:hover{background:var(--accent-dark);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+
+.notice{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:13px 16px;font-size:14.5px;margin:22px 0}
+.notice strong{font-weight:700}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 4px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--card)}
+.stat b{display:block;font-size:20px;letter-spacing:-.01em}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* Sections */
+section.block{padding:44px 0 6px;border-top:1px solid var(--line);margin-top:38px}
+section.block:first-of-type{border-top:none}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+h2{font-size:clamp(24px,4vw,31px);letter-spacing:-.015em;line-height:1.25;margin:0 0 12px}
+h3{font-size:19px;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+ol.steps,ul.plain{margin:6px 0 16px;padding-left:22px}
+ol.steps li,ul.plain li{margin-bottom:9px}
+.callout{background:var(--accent-soft);border-radius:8px;padding:15px 17px;margin:18px 0;font-size:15.5px}
+.callout p:last-child{margin-bottom:0}
+
+/* Tables */
+.table-scroll{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg-soft);font-weight:600;font-size:13.5px}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+
+/* Hustle list */
+.hustles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.hustle{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.hustle h4{margin:0 0 5px;font-size:16.5px}
+.hustle p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.hustle .meta{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--text)}
+.tag.earn{border-color:var(--accent);color:var(--accent)}
+
+/* Compare strip */
+.compare{border:1px solid var(--line);border-radius:8px;padding:18px;margin:20px 0;background:var(--bg-soft)}
+.compare h3{margin-top:0}
+
+/* Hero live preview */
+.preview{border:1px solid var(--accent);border-radius:8px;background:var(--accent-soft);padding:20px;margin:24px 0 6px}
+.preview h3{margin:0 0 14px;font-size:19px}
+.preview-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preview-field label{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;font-weight:600;margin-bottom:6px}
+.preview-field label b{color:var(--accent);white-space:nowrap}
+.preview input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;margin:0}
+.preview-out{font-size:18px;margin:16px 0 8px}
+.preview-out b{font-size:clamp(32px,6vw,42px);color:var(--accent);letter-spacing:-.02em;vertical-align:-6px;margin:0 2px}
+.preview-note{font-size:15px;margin:0}
+.preview .calc-disclaimer{margin-top:12px}
+
+/* Goal picker + tools directory */
+.goal-list{list-style:none;margin:14px 0 6px;padding:0}
+.goal-list li{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--line)}
+.goal-list li:first-child{border-top:1px solid var(--line)}
+.goal-list span{font-weight:600}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.tool-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--card)}
+.tool-card svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool-card h4{margin:8px 0 4px;font-size:16.5px}
+.tool-card p{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+.deeper{font-size:15.5px;margin:16px 0 0}
+
+/* Calculators */
+.calc{border:1px solid var(--line);border-radius:8px;padding:18px;margin:18px 0;background:var(--card)}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.calc-field input{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.calc-field input[type=range]{width:100%;margin:9px 0 0;padding:0;border:none;background:none;accent-color:var(--accent);cursor:pointer}
+.calc-error{display:none;color:#b3261e;font-size:14.5px;margin:12px 0 0}
+html.dark .calc-error{color:#f28b82}
+.calc-results{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.calc-results .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.calc-results .row:last-of-type{border-bottom:none}
+.calc-results .row span{color:var(--muted)}
+.calc-results .row b{white-space:nowrap}
+.calc-results .row.headline b{color:var(--accent);font-size:19px}
+.calc-disclaimer{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+/* Micro-action steps box */
+.next-steps{background:var(--accent-soft);border-radius:8px;padding:12px 16px;margin-top:16px}
+.next-steps h4{margin:0 0 4px;font-size:15.5px;color:var(--accent-dark)}
+.next-steps p{font-size:14.5px;margin:0 0 6px}
+.next-steps ol{margin:0;padding-left:20px;font-size:14.5px}
+.next-steps li{margin-bottom:3px}
+.next-steps li:last-child{margin-bottom:0}
+
+/* Legal */
+.legal h2{font-size:24px}
+.legal p,.legal li{font-size:15.5px}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 44px;background:var(--bg-soft)}
+footer.site .cols{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+footer.site h5{margin:0 0 10px;font-size:14px}
+footer.site ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+footer.site li{margin-bottom:7px}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--accent)}
+.foot-note{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  table{min-width:0;font-size:14.5px}
+  table,thead,tbody,tr{display:block;width:100%}
+  thead{display:none}
+  tr{border-bottom:1px solid var(--line);padding:8px 0}
+  tr:last-child{border-bottom:none}
+  td{display:block;border-bottom:none;padding:5px 14px}
+  td.num,th.num{text-align:left}
+  td:first-child{font-weight:600}
+  .stats{grid-template-columns:1fr}
+  .hustles{grid-template-columns:1fr}
+  .calc-fields{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .preview-fields{grid-template-columns:1fr}
+  nav.main{display:none}
+  nav.main.open{display:flex;width:100%;padding:6px 0 4px;flex-direction:column;gap:10px}
+  .header-in{flex-wrap:wrap}
+  .menu-btn{display:inline-block!important}
+  .hero{padding-top:36px}
+  body{font-size:16.5px}
+}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+
+/* Viral script — compact collapsible card */
+.script-card{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:22px 0 6px;overflow:hidden}
+.script-card summary{padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.script-card summary::-webkit-details-marker{display:none}
+.script-card summary:hover{background:var(--bg-soft)}
+.script-card summary h2{font-size:20px;margin:0}
+.script-card summary .chev{color:var(--accent);font-weight:700;flex:none}
+.script-card[open ] summary{border-bottom:1px solid var(--line)}
+.script-body{padding:14px 18px 16px;font-size:15px}
+.script-body h3{font-size:15.5px;margin:14px 0 4px}
+.script-body h3:first-child{margin-top:0}
+.script-body p{margin:0 0 8px}
+.script-body ul{margin:0 0 8px;padding-left:20px}
+.script-body li{margin-bottom:4px}
+
+/* Guide cards — compact Finovly-style cards; full text lives in the collapsible body */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+section.block.gcard{padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.guide-grid section.block.gcard{margin-top:0}
+.gcard.open{grid-column:1/-1}
+.gcard-head{padding:18px 20px 16px;cursor:pointer}
+.gcard-head:hover{background:var(--bg-soft)}
+.gcard-head .kicker{margin:0 0 5px}
+.gcard-head h2{font-size:21px;line-height:1.3;margin:0 0 8px}
+.gcard-excerpt{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-btn{background:none;border:none;padding:0;font:inherit;font-size:15.5px;font-weight:700;color:var(--accent);cursor:pointer}
+.read-btn:hover{text-decoration:underline}
+.gcard-body{border-top:1px solid var(--line);padding:18px 20px 14px}
+.gcard-body[hidden]{display:none}
+@media (max-width:700px){.guide-grid{grid-template-columns:1fr}}
+
+/* Expansion pack: language toggle, share, cases, checklist */
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap;font-weight:700}
+.lang-btn:hover{border-color:var(--accent)}
+.head-btns{display:flex;gap:8px;align-items:center}
+.es-only{display:none}
+html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:14.5px;margin:0 0 14px}
+.share-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.share-row .share-label{font-size:13.5px;font-weight:700;color:var(--muted)}
+.share-row a,.share-row button{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--text);background:none;cursor:pointer;font-family:inherit}
+.share-row a:hover,.share-row button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.calc-field select{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:130px;padding:10px 12px;font-size:15px;font-weight:600;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;cursor:pointer;font-family:inherit}
+.seg button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.big-warn{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:12px 15px;font-size:14.5px;margin-top:14px}
+.prompt{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14.5px;margin:0 0 10px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.case{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.case h4{margin:0 0 5px;font-size:16.5px}
+.case p{font-size:14.5px;margin:0 0 8px}
+.case .lesson{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.case .src{font-size:13.5px;margin:0}
+.check-list{list-style:none;margin:14px 0;padding:0}
+.check-list li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.check-list li:last-child{border-bottom:none}
+.check-list input{width:19px;height:19px;margin-top:3px;accent-color:var(--accent);flex:none;cursor:pointer}
+.email-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.email-row input{flex:1;min-width:220px;padding:11px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.email-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+#print-area{display:none}
+@media (max-width:640px){.case-grid{grid-template-columns:1fr}}
+@media print{
+  body *{visibility:hidden}
+  #print-area,#print-area *{visibility:visible}
+  #print-area{display:block!important;position:absolute;top:0;left:0;right:0;padding:10px;color:#000}
+}
+
+/* Tool pages */
+.crumbs{font-size:14px;color:var(--muted);padding:20px 0 0;margin:0}
+.crumbs a{color:var(--muted);font-weight:500}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .sep{margin:0 7px}
+.tool-hero{padding:22px 0 2px}
+.tool-hero h1{font-size:clamp(29px,5.2vw,42px);line-height:1.16;letter-spacing:-.02em;margin:0 0 12px;font-weight:800}
+.tool-hero p.lead{font-size:18.5px;color:var(--muted);margin:0;max-width:660px}
+.faq-item{border-top:1px solid var(--line);padding:15px 0 3px}
+.faq-item h3{margin:0 0 6px;font-size:17.5px}
+.faq-item p{margin:0 0 12px}
+.current-tag{font-size:12.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","datePublished":"2026-11-12","dateModified":"2026-11-12","mainEntity":[{"@type":"Question","name":"What is Amazon's referral fee in 2026?","acceptedAnswer":{"@type":"Answer","text":"15% of the total sale price in most categories, with a $0.30 per-unit minimum. Electronics and computers pay 8%, clothing is tiered (5% to $15, 10% to $20, 17% above), beauty and baby pay 8% to $10 then 15%, and Amazon device accessories pay 45%. Rates were frozen for 2025\u20132026."}},{"@type":"Question","name":"What does FBA cost per unit?","acceptedAnswer":{"@type":"Answer","text":"FBA fulfillment fees start at $2.43 per unit for the smallest size tier and rise with size and weight, plus a 3.5% fuel and logistics surcharge since April 2026. Your exact fee depends on your product's size tier \u2014 check it in Seller Central's revenue calculator and enter it here."}},{"@type":"Question","name":"Should I choose the Professional or Individual plan?","acceptedAnswer":{"@type":"Answer","text":"Professional costs $39.99 a month with no per-item fee; Individual costs $0.99 per item sold. At 40+ units a month, Professional is cheaper on plan cost alone \u2014 and it unlocks reports and promotions Individual sellers cannot use. This calculator shows the plan cost per unit at your volume."}},{"@type":"Question","name":"Why is my margin lower than this calculator shows?","acceptedAnswer":{"@type":"Answer","text":"Most often advertising. PPC spend, storage fees, and returns are real costs this page does not model. Add your average ad spend per unit to the fulfillment field for a closer number."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"../../index.html"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"index.html"},{"@type":"ListItem","position":3,"name":"Amazon Seller Profit Calculator"}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="header-in">
+    <a class="logo" href="../../index.html">Quick Earn <span>Guide</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html" data-en="Free Tools" data-es="Herramientas Gratis">Free Tools</a>
+      <a href="../../index.html#all-calculators" data-en="Calculators" data-es="Calculadoras">Calculators</a>
+      <a href="../guides/ai-hustles.html" data-en="AI Hustles" data-es="Negocios con IA">AI Hustles</a>
+      <a href="../../index.html#case-studies" data-en="Case Studies" data-es="Casos Reales">Case Studies</a>
+      <a href="../../index.html#about" data-en="About" data-es="Acerca de">About</a>
+    </nav>
+    <div class="head-btns">
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar a español">ES</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <p class="crumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="index.html">Free Tools</a><span class="sep">›</span><span>Amazon Seller Profit Calculator</span></p>
+
+  <div class="tool-hero">
+    <h1>Amazon Seller Profit Calculator</h1>
+    <p class="lead">Amazon's cut is a stack, not a single fee: a referral fee that changes by category, fulfillment costs that change by size, and a monthly plan on top. Enter your product's real numbers to see per-unit profit, margin, and how many units cover your fixed costs.</p>
+  </div>
+
+  <section class="block" style="border-top:none;margin-top:10px;padding-top:6px">
+<div class="calc">
+      <div class="calc-fields">
+        <div class="calc-field">
+          <label for="am-cat">🏷️ Category</label>
+          <select id="am-cat">
+            <option value="most">Most categories — 15%</option>
+            <option value="electronics">Consumer electronics / computers — 8%</option>
+            <option value="clothing">Clothing &amp; accessories — tiered 5/10/17%</option>
+            <option value="beauty">Beauty / baby — 8% to $10, 15% above</option>
+            <option value="grocery">Grocery &amp; gourmet — 8% to $15, 15% above</option>
+            <option value="furniture">Furniture — 15% to $200, 10% above</option>
+            <option value="media">Media (books/DVD/music) — 15% + $1.80 closing</option>
+            <option value="device">Amazon device accessories — 45%</option>
+            <option value="custom">Custom rate — enter below</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="am-pct">✂️ Referral fee (%) — editable / custom</label>
+          <input type="number" id="am-pct" min="0" max="60" step="any" inputmode="decimal" value="15">
+        </div>
+        <div class="calc-field">
+          <label for="am-price">💵 Selling price ($)</label>
+          <input type="number" id="am-price" min="0" step="any" inputmode="decimal" value="29.99">
+        </div>
+        <div class="calc-field">
+          <label for="am-ship">📦 Shipping charged to buyer ($)</label>
+          <input type="number" id="am-ship" min="0" step="any" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="am-plan">📋 Selling plan</label>
+          <select id="am-plan">
+            <option value="pro">Professional — $39.99/month</option>
+            <option value="ind">Individual — $0.99 per item</option>
+          </select>
+        </div>
+        <div class="calc-field">
+          <label for="am-units">📦 Units you expect to sell / month</label>
+          <input type="number" id="am-units" min="0" step="1" inputmode="numeric" value="100">
+        </div>
+        <div class="calc-field">
+          <label for="am-fba">🚚 Fulfillment cost per unit ($) — FBA or your shipping</label>
+          <input type="number" id="am-fba" min="0" step="any" inputmode="decimal" value="3.50">
+        </div>
+        <div class="calc-field">
+          <label for="am-cost">🛒 Product cost per unit ($)</label>
+          <input type="number" id="am-cost" min="0" step="any" inputmode="decimal" value="8">
+        </div>
+        <div class="calc-field">
+          <label for="am-inbound">🏭 Inbound shipping per unit ($)</label>
+          <input type="number" id="am-inbound" min="0" step="any" inputmode="decimal" value="0.50">
+        </div>
+        <div class="calc-field">
+          <label for="am-fixed">🧾 Other monthly fixed costs ($)</label>
+          <input type="number" id="am-fixed" min="0" step="any" inputmode="decimal" value="0">
+        </div>
+      </div>
+      <p class="calc-error" id="am-error">Please enter valid numbers: all amounts $0 or more, referral fee between 0% and 60%.</p>
+      <div class="calc-results" id="am-results" aria-live="polite">
+        <div class="row headline"><span>Net profit per unit</span><b id="am-out-profit">—</b></div>
+        <div class="row"><span>Margin</span><b id="am-out-margin">—</b></div>
+        <div class="row"><span>Referral fee</span><b id="am-out-ref">—</b></div>
+        <div class="row"><span>Closing / per-item fee</span><b id="am-out-close">—</b></div>
+        <div class="row"><span>Plan cost per unit</span><b id="am-out-plan">—</b></div>
+        <div class="row"><span>Total cost per unit</span><b id="am-out-total">—</b></div>
+        <div class="row"><span>Monthly profit at expected units</span><b id="am-out-month">—</b></div>
+        <div class="row"><span>Breakeven units / month</span><b id="am-out-be">—</b></div>
+      </div>
+      <p class="calc-disclaimer"><strong>Rates checked Nov 12, 2026</strong> against Amazon's Seller Central referral-fee schedule (frozen for 2025–2026; checked Sep 2026): most categories 15% with a $0.30 minimum; electronics/computers 8%; clothing tiered; media +$1.80 closing fee. FBA fees start at $2.43/unit and rise with size/weight, plus a 3.5% fuel &amp; logistics surcharge since Apr 2026 — enter your exact fee from Seller Central's revenue calculator. Storage, advertising, and returns are not included. Estimates only — educational, not financial advice.</p>
+      <div class="next-steps">
+        <h4>Your 3-step start →</h4>
+        <p>Margin under 25%?</p>
+        <ol>
+          <li>Check your category twice — clothing and beauty tiers change the fee a lot at low prices.</li>
+          <li>Get your exact FBA fee from Seller Central before you commit to a product.</li>
+          <li>Price for ads: most new listings need PPC spend on top of every fee shown here.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="kicker">About this tool</p>
+<h2>What this Amazon seller profit calculator does</h2>
+    <p>Amazon charges a referral fee on the total amount the buyer pays — price plus any shipping you charge — and the percentage depends on your category: 15% for most of the catalog, 8% for electronics and computers, tiered rates for clothing, beauty, and grocery, and 45% for Amazon device accessories. On top of that sit fulfillment (FBA fees by size and weight, plus a 3.5% surcharge since April 2026), your selling plan ($39.99 a month Professional, or $0.99 per item Individual), and your own product and inbound shipping costs. This calculator stacks all of it into one per-unit profit figure, a margin, and the breakeven units that cover your monthly fixed costs.</p>
+    <h3>A quick example</h3>
+    <p>Run the defaults: a $29.99 item in a 15% category, $3.50 fulfillment, $8 product cost, $0.50 inbound shipping, Professional plan at 100 units a month. The referral fee is $4.50, the plan costs $0.40 per unit, total cost per unit is $16.90, and profit is $13.09 — a 43.7% margin. Breakeven is just 4 units a month against the $39.99 plan. Drop the price to $14.99 and the same stack leaves $5.84 — the fixed costs do not shrink with the price.</p>
+    <h3>How to use it — 3 steps</h3>
+    <ol class="steps">
+      <li>Pick your category. Tiered categories (clothing, beauty, grocery, furniture) apply their published breakpoints automatically; pick Custom to enter any rate.</li>
+      <li>Enter your price, fulfillment cost per unit, product cost, and inbound shipping. For FBA, use the exact fee from Seller Central's revenue calculator for your size tier.</li>
+      <li>Set your plan and expected monthly units — the calculator spreads the $39.99 plan across them and shows breakeven against all fixed costs.</li>
+    </ol>
+    <h3>Who it is for</h3>
+    <p>New sellers validating a product before ordering inventory, existing sellers repricing, and anyone comparing FBA against shipping orders themselves (FBM).</p>
+    <h3>Honest limitations</h3>
+    <p>Storage fees, long-term storage surcharges, advertising (PPC), returns processing, and referral-fee promotions are not included — real margins are thinner than this page shows once ads start. Category assignment follows Amazon's browse node, which can change. Estimates only — not financial advice.</p>
+    <p class="deeper">Deeper: <a href="../guides/sellable-products.html">Best Products to Sell Online</a> · <a href="../guides/trending-products.html">Trending Products to Sell in 2026</a> · <a href="ebay-fee-calculator.html">eBay Fee Calculator</a></p>
+  </section>
+
+  <section class="block">
+    <p class="kicker">FAQ</p>
+    <h2>Amazon Seller Profit Calculator — common questions</h2>
+    <div class="faq-item">
+      <h3>What is Amazon's referral fee in 2026?</h3>
+      <p>15% of the total sale price in most categories, with a $0.30 per-unit minimum. Electronics and computers pay 8%, clothing is tiered (5% to $15, 10% to $20, 17% above), beauty and baby pay 8% to $10 then 15%, and Amazon device accessories pay 45%. Rates were frozen for 2025–2026.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What does FBA cost per unit?</h3>
+      <p>FBA fulfillment fees start at $2.43 per unit for the smallest size tier and rise with size and weight, plus a 3.5% fuel and logistics surcharge since April 2026. Your exact fee depends on your product's size tier — check it in Seller Central's revenue calculator and enter it here.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Should I choose the Professional or Individual plan?</h3>
+      <p>Professional costs $39.99 a month with no per-item fee; Individual costs $0.99 per item sold. At 40+ units a month, Professional is cheaper on plan cost alone — and it unlocks reports and promotions Individual sellers cannot use. This calculator shows the plan cost per unit at your volume.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why is my margin lower than this calculator shows?</h3>
+      <p>Most often advertising. PPC spend, storage fees, and returns are real costs this page does not model. Add your average ad spend per unit to the fulfillment field for a closer number.</p>
+    </div>
+  </section>
+
+  <section class="block" id="free-tools">
+    <p class="kicker">Free Tools</p>
+    <h2>All 34 free tools</h2>
+    <p>Every tool is free, works instantly, and needs no signup. Each one also lives on the <a href="../../index.html#all-calculators">homepage</a> if you prefer everything on one page.</p>
+    <div class="tools">
+      <div class="tool-card">
+        <h4><a href="investment-calculator.html">Investment Calculator</a></h4>
+        <p>See what a starting amount plus steady monthly contributions could grow into with compound returns — before you invest a single dollar.</p>
+        <a href="investment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-rate-calculator.html">Freelance Rate Calculator</a></h4>
+        <p>Work backwards from the salary you actually want to the hourly rate clients need to pay — taxes, expenses and time off included.</p>
+        <a href="freelance-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="savings-goal-calculator.html">Savings Goal Calculator</a></h4>
+        <p>Turn any goal — an emergency fund, a car, a deposit — into one monthly number you can actually plan around.</p>
+        <a href="savings-goal-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-income-calculator.html">Side Hustle Income Calculator</a></h4>
+        <p>What are a few hours of side work each week actually worth per month — and per year? Run your own numbers.</p>
+        <a href="side-hustle-income-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ai-tool-roi-calculator.html">AI Tool ROI Calculator</a></h4>
+        <p>Turn a $20 subscription into monthly income — or find out honestly whether it is just an expense.</p>
+        <a href="ai-tool-roi-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-time-calculator.html">Side Hustle Time Calculator</a></h4>
+        <p>Only have a few free hours a week around school or work? See what they are honestly worth.</p>
+        <a href="side-hustle-time-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="currency-converter.html">USD to PKR Converter</a></h4>
+        <p>What are your US dollars worth back home? Convert USD to PKR — or nine other currencies — in seconds.</p>
+        <a href="currency-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="faceless-channel-revenue-calculator.html">YouTube Revenue Calculator</a></h4>
+        <p>Views are not dollars. Estimate what a faceless channel's views might actually pay — with the honest warnings attached.</p>
+        <a href="faceless-channel-revenue-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tiktok-earnings-calculator.html">TikTok Earnings Calculator</a></h4>
+        <p>How much are your TikTok views really worth? Turn monthly views and an honest RPM into monthly, yearly and per-video Creator Rewards estimates.</p>
+        <a href="tiktok-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="etsy-profit-calculator.html">Etsy Profit Calculator</a></h4>
+        <p>What do you really keep after Etsy fees? Enter price, costs and shipping to see profit per sale, total fees and your true margin.</p>
+        <a href="etsy-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="delivery-driver-earnings-calculator.html">Delivery Driver Earnings Calculator</a></h4>
+        <p>$18 an hour — before gas. Enter your hours, average rate and weekly gas to see your real weekly and monthly net pay.</p>
+        <a href="delivery-driver-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ups-battery-backup-calculator.html">UPS Battery Backup Calculator</a></h4>
+        <p>How long will a 200Ah battery run 3 fans? Pick your battery, tick your appliances, and get an honest backup time in hours — plus what recharging costs.</p>
+        <a href="ups-battery-backup-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-finder-quiz.html">Side Hustle Finder Quiz</a></h4>
+        <p>Not sure where to start? Five quick questions match you with one best-fit side hustle for your time, budget and style — plus two runner-ups.</p>
+        <a href="side-hustle-finder-quiz.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tradesperson-rate-calculator.html">Tradesperson Rate Calculator</a></h4>
+        <p>Your true hourly rate as an electrician, plumber, or HVAC tech — with a price book and a below-floor warning.</p>
+        <a href="tradesperson-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-tax-calculator.html">Side Hustle Tax Calculator</a></h4>
+        <p>Estimate SE tax and quarterly payments on 1099 income with verified 2026 federal figures.</p>
+        <a href="side-hustle-tax-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="salary-hourly-converter.html">Salary to Hourly Converter</a></h4>
+        <p>Convert salary to hourly, daily, weekly, and monthly pay — with overtime at time-and-a-half.</p>
+        <a href="salary-hourly-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="survey-earnings-estimator.html">Survey Earnings Estimator</a></h4>
+        <p>What surveys really pay per hour after screen-outs, by platform.</p>
+        <a href="survey-earnings-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="w2-vs-1099-calculator.html">W-2 vs 1099 Calculator</a></h4>
+        <p>Compare a salary offer against contract work after SE tax — and find the breakeven 1099 rate.</p>
+        <a href="w2-vs-1099-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="fastest-first-payment-calculator.html">Fastest First Payment Calculator</a></h4>
+        <p>Which side hustle pays you first? Ranked by typical days to first payout.</p>
+        <a href="fastest-first-payment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="upwork-fee-calculator.html">Upwork Fee Calculator</a></h4>
+        <p>Your real Upwork take-home after the service fee, withdrawal costs and Connects — plus the direct-client comparison.</p>
+        <a href="upwork-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="paypal-fee-calculator.html">PayPal Fee Calculator</a></h4>
+        <p>What PayPal keeps on every payment type, and the gross-up price that nets you exactly what you quoted.</p>
+        <a href="paypal-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ebay-fee-calculator.html">eBay Fee Calculator</a></h4>
+        <p>Your true eBay profit per sale after the final value fee, per-order fee and promoted listing ads.</p>
+        <a href="ebay-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="amazon-seller-profit-calculator.html">Amazon Seller Profit Calculator</a> <span class="current-tag">You are here</span></h4>
+        <p>Per-unit Amazon profit after referral fees, FBA/FBM costs and your plan — plus breakeven units.</p>
+        <a href="amazon-seller-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="dropshipping-profit-calculator.html">Dropshipping Profit Calculator</a></h4>
+        <p>True dropshipping profit per order, breakeven ROAS, and the order volume your goal actually needs.</p>
+        <a href="dropshipping-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="affiliate-commission-calculator.html">Affiliate Commission Calculator</a></h4>
+        <p>Honest affiliate math: clicks × conversion × commission, with the clicks your goal really needs.</p>
+        <a href="affiliate-commission-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="print-on-demand-profit-calculator.html">Print-on-Demand Profit Calculator</a></h4>
+        <p>True POD margins per sale after base cost, shipping and fees — plus the sales your goal needs.</p>
+        <a href="print-on-demand-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ugc-rate-calculator.html">UGC Rate Calculator</a></h4>
+        <p>A defensible UGC quote from deliverables, usage rights, exclusivity and rush — as a range, not a guess.</p>
+        <a href="ugc-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="mileage-deduction-calculator.html">Mileage Deduction Calculator</a></h4>
+        <p>Your 2026 mileage deduction with the mid-year IRS rate change — and the tax saving behind it.</p>
+        <a href="mileage-deduction-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="debt-payoff-calculator.html">Debt Payoff Calculator</a></h4>
+        <p>Snowball vs avalanche on your real debts — months to debt-free, interest saved, payoff order.</p>
+        <a href="debt-payoff-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="emergency-fund-calculator.html">Emergency Fund Calculator</a></h4>
+        <p>Your emergency fund target from real essential expenses — and how many months of saving it takes.</p>
+        <a href="emergency-fund-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-project-quote-estimator.html">Freelance Project Quote Estimator</a></h4>
+        <p>A project quote that survives revisions: price, payment schedule, and your true effective rate.</p>
+        <a href="freelance-project-quote-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="course-pricing-calculator.html">Course Pricing Calculator</a></h4>
+        <p>The course price your revenue target demands, after platform fees and refunds — per platform.</p>
+        <a href="course-pricing-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="raise-calculator.html">Raise Calculator</a></h4>
+        <p>What your raise is really worth after tax — and whether it beats inflation.</p>
+        <a href="raise-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="invoice-generator.html">Invoice Generator</a></h4>
+        <p>A professional freelance invoice in minutes — live preview, late-fee math, print or save as PDF.</p>
+        <a href="invoice-generator.html">Open full tool →</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>Quick Earn Guide</h5>
+        <ul>
+          <li><a href="../../index.html#about">About</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+          <li><a href="index.html">Free Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Guides" data-es="Guías">Guides</h5>
+        <ul>
+          <li><a href="../../index.html#all-calculators">Money Calculators</a></li>
+          <li><a href="../guides/chatgpt.html">Make Money With ChatGPT</a></li>
+          <li><a href="../guides/freelancing.html">Freelancing Quick-Start</a></li>
+          <li><a href="../guides/faceless-blueprint.html">Faceless Social Media Blueprint</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../index.html#privacy">Privacy Policy</a></li>
+          <li><a href="../../index.html#terms">Terms of Use</a></li>
+          <li><a href="../../index.html#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>© 2026 Quick Earn Guide · Written by Sadiq Khan · Not financial advice — content is for educational purposes only. Do your own research. Earnings figures are estimates, not guarantees.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){ try{ if(v===null){ localStorage.removeItem(k); } else { localStorage.setItem(k,v); } }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  var TITLES={"en": "Amazon Seller Profit Calculator | Quick Earn Guide", "es": "Amazon Seller Profit Calculator | Quick Earn Guide"}, DESCS={"en": "Free Amazon seller profit calculator: referral fee by category, FBA or FBM costs, and your true per-unit profit, margin and breakeven units.", "es": "Free Amazon seller profit calculator: referral fee by category, FBA or FBM costs, and your true per-unit profit, margin and breakeven units."}, ES_DICT={};
+  var btn=document.getElementById('themeBtn');
+  function syncTheme(){ btn.textContent = root.classList.contains('dark') ? '\u2600\ufe0f Light' : '\uD83C\uDF19 Dark'; }
+  var savedTheme=read('qeg-theme');
+  if(savedTheme==='dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){ root.classList.add('dark'); }
+  syncTheme();
+  btn.addEventListener('click',function(){
+    var dark=root.classList.toggle('dark');
+    store('qeg-theme',dark?'dark':'light');
+    syncTheme();
+  });
+  var menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',function(){ nav.classList.toggle('open'); });
+  nav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ nav.classList.remove('open'); } });
+  function dictSwap(lang){
+    var scopes=document.querySelectorAll('.calc');
+    for(var s=0;s<scopes.length;s++){
+      var els=scopes[s].querySelectorAll('*');
+      for(var i=0;i<els.length;i++){
+        var e=els[i];
+        if(e.children.length || e.hasAttribute('data-en')) continue;
+        if(lang==='es'){
+          var tx=e.textContent.replace(/\s+/g,' ').trim();
+          if(ES_DICT[tx]){ if(!e.hasAttribute('data-orig')) e.setAttribute('data-orig',e.textContent); e.textContent=ES_DICT[tx]; }
+        }else{
+          var o=e.getAttribute('data-orig');
+          if(o!==null){ e.textContent=o; }
+        }
+      }
+    }
+  }
+  var langBtn=document.getElementById('langBtn');
+  function applyLang(lang){
+    root.lang=(lang==='es')?'es':'en';
+    var els=document.querySelectorAll('[data-en]');
+    for(var i=0;i<els.length;i++){
+      var v=els[i].getAttribute('data-'+root.lang);
+      if(v!==null) els[i].innerHTML=v;
+    }
+    dictSwap(root.lang);
+    document.title=TITLES[root.lang];
+    var md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content',DESCS[root.lang]);
+    langBtn.textContent=(root.lang==='es')?'EN':'ES';
+    langBtn.setAttribute('aria-label',(root.lang==='es')?'Switch to English':'Cambiar a espa\u00f1ol');
+    store('qeg-lang',root.lang);
+  }
+  langBtn.addEventListener('click',function(){ applyLang(root.lang==='es'?'en':'es'); });
+  var savedLang=read('qeg-lang');
+  if(savedLang==='es'){ applyLang('es'); }
+})();
+</script>
+<script>
+(function(){
+
+  var fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
+  var fmt0=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:0,maximumFractionDigits:0});
+  function el(id){ return document.getElementById(id); }
+  function num(id){ return parseFloat(el(id).value); }
+  function set(id,text){ el(id).textContent=text; }
+  function dash(ids){ for(var i=0;i<ids.length;i++){ set(ids[i],'\u2014'); } }
+  function pair(rangeId,numId){
+    var r=el(rangeId), n=el(numId);
+    if(!r||!n) return;
+    r.addEventListener('input',function(){ n.value=r.value; });
+    n.addEventListener('input',function(){
+      var v=parseFloat(n.value);
+      if(!isNaN(v)){ r.value=Math.min(Math.max(v,parseFloat(r.min)),parseFloat(r.max)); }
+    });
+  }
+  function live(ids,errorId,compute){
+    var err=el(errorId);
+    function run(){ if(err) err.style.display = compute() ? 'none' : 'block'; }
+    for(var i=0;i<ids.length;i++){ var e=el(ids[i]); if(e) e.addEventListener('input',run); }
+    run();
+  }
+  function on(id,ev,fn){ var e=el(id); if(e) e.addEventListener(ev,fn); }
+
+/*PURE-START*/
+  function referralFee(cat, pct, total){
+    if(cat==='custom') return Math.max(total*pct/100, 0.30);
+    if(cat==='electronics') return Math.max(total*0.08, 0.30);
+    if(cat==='device') return Math.max(total*0.45, 0.30);
+    if(cat==='media') return Math.max(total*0.15, 0);
+    if(cat==='clothing'){
+      if(total<=15) return Math.max(total*0.05, 0.30);
+      if(total<=20) return Math.max(total*0.10, 0.30);
+      return Math.max(total*0.17, 0.30);
+    }
+    if(cat==='beauty') return Math.max(total*(total<=10?0.08:0.15), 0.30);
+    if(cat==='grocery') return total*(total<=15?0.08:0.15);
+    if(cat==='furniture') return Math.max(Math.min(total,200)*0.15+Math.max(0,total-200)*0.10, 0.30);
+    return Math.max(total*0.15, 0.30);
+  }
+  function calcAmazon(i){
+    var total=i.price+i.shipCharged;
+    var ref=referralFee(i.cat, i.pct, total);
+    var closing=(i.cat==='media'?1.80:0)+(i.plan==='ind'?0.99:0);
+    var planPerUnit=i.plan==='pro'?(i.units>0?39.99/i.units:39.99):0;
+    var totalCost=ref+closing+planPerUnit+i.fbaFee+i.productCost+i.inbound;
+    var profit=total-totalCost;
+    var margin=total>0?profit/total*100:0;
+    var fixedTotal=(i.plan==='pro'?39.99:0)+i.fixed;
+    var monthProfit=profit*i.units-fixedTotal;
+    var breakeven=profit>0?Math.ceil(fixedTotal/profit):null;
+    return {ref:ref, closing:closing, planPerUnit:planPerUnit, totalCost:totalCost, profit:profit, margin:margin, monthProfit:monthProfit, breakeven:breakeven};
+  }
+  /*PURE-END*/
+  var AM_PCT={most:15, electronics:8, clothing:17, beauty:15, grocery:15, furniture:15, media:15, device:45, custom:15};
+  on('am-cat','input',function(){
+    el('am-pct').value=AM_PCT[el('am-cat').value];
+    el('am-price').dispatchEvent(new Event('input',{bubbles:true}));
+  });
+  live(['am-cat','am-pct','am-price','am-ship','am-plan','am-units','am-fba','am-cost','am-inbound','am-fixed'],'am-error',function(){
+    var pct=num('am-pct'), price=num('am-price'), ship=num('am-ship'), units=num('am-units'),
+        fba=num('am-fba'), cost=num('am-cost'), inbound=num('am-inbound'), fixed=num('am-fixed');
+    if([pct,price,ship,units,fba,cost,inbound,fixed].some(isNaN)||pct<0||pct>60||price<0||ship<0||units<0||fba<0||cost<0||inbound<0||fixed<0){ dash(['am-out-profit','am-out-margin','am-out-ref','am-out-close','am-out-plan','am-out-total','am-out-month','am-out-be']); return false; }
+    var r=calcAmazon({cat:el('am-cat').value, pct:pct, price:price, shipCharged:ship, plan:el('am-plan').value, units:units, fbaFee:fba, productCost:cost, inbound:inbound, fixed:fixed});
+    set('am-out-profit',fmt.format(r.profit));
+    set('am-out-margin',r.margin.toFixed(1)+'%');
+    set('am-out-ref',fmt.format(r.ref));
+    set('am-out-close',fmt.format(r.closing));
+    set('am-out-plan',fmt.format(r.planPerUnit));
+    set('am-out-total',fmt.format(r.totalCost));
+    set('am-out-month',fmt.format(r.monthProfit));
+    set('am-out-be',r.breakeven===null?'No breakeven — loss per unit':r.breakeven.toLocaleString('en-US')+' units');
+    return true;
+  });
+})();
+</script>
+</body>
+</html>
