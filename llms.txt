@@ -101,10 +101,17 @@ Status: private build — not publicly launched, so paths below are relative to 
 
 ## Free tools (separate pages under assets/tools/)
 
+- 401k Retirement Calculator: assets/tools/401k-retirement-calculator.html
 - Affiliate Commission Calculator: assets/tools/affiliate-commission-calculator.html
+- Age Calculator: assets/tools/age-calculator.html
 - AI Tool ROI Calculator: assets/tools/ai-tool-roi-calculator.html
+- Airbnb Earnings Calculator: assets/tools/airbnb-earnings-calculator.html
 - Amazon Seller Profit Calculator: assets/tools/amazon-seller-profit-calculator.html
+- BMI Calculator: assets/tools/bmi-calculator.html
+- Budget Calculator: assets/tools/budget-calculator.html
+- Compound Interest Calculator: assets/tools/compound-interest-calculator.html
 - Course Pricing Calculator: assets/tools/course-pricing-calculator.html
+- Credit Card Payoff Calculator: assets/tools/credit-card-payoff-calculator.html
 - Currency Converter: assets/tools/currency-converter.html
 - Debt Payoff Calculator: assets/tools/debt-payoff-calculator.html
 - Delivery Driver Earnings Calculator: assets/tools/delivery-driver-earnings-calculator.html
@@ -114,23 +121,40 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Etsy Profit Calculator: assets/tools/etsy-profit-calculator.html
 - Faceless Channel Revenue Calculator: assets/tools/faceless-channel-revenue-calculator.html
 - Fastest First Payment Calculator: assets/tools/fastest-first-payment-calculator.html
+- Fiverr Fee Calculator: assets/tools/fiverr-fee-calculator.html
 - Freelance Project Quote Estimator: assets/tools/freelance-project-quote-estimator.html
 - Freelance Rate Calculator: assets/tools/freelance-rate-calculator.html
 - Tools index: assets/tools/index.html
+- Home Affordability Calculator: assets/tools/home-affordability-calculator.html
+- Instagram Earnings Calculator: assets/tools/instagram-earnings-calculator.html
 - Investment Calculator: assets/tools/investment-calculator.html
 - Invoice Generator: assets/tools/invoice-generator.html
+- Loan Calculator: assets/tools/loan-calculator.html
 - Mileage Deduction Calculator: assets/tools/mileage-deduction-calculator.html
+- Mortgage Calculator: assets/tools/mortgage-calculator.html
+- Overtime Calculator: assets/tools/overtime-calculator.html
+- Password Generator: assets/tools/password-generator.html
+- Paycheck Calculator: assets/tools/paycheck-calculator.html
 - PayPal Fee Calculator: assets/tools/paypal-fee-calculator.html
+- Percentage Calculator: assets/tools/percentage-calculator.html
+- Poshmark Fee Calculator: assets/tools/poshmark-fee-calculator.html
 - Print-on-Demand Profit Calculator: assets/tools/print-on-demand-profit-calculator.html
+- Profit Margin Calculator: assets/tools/profit-margin-calculator.html
 - Raise Calculator: assets/tools/raise-calculator.html
+- Rent vs Buy Calculator: assets/tools/rent-vs-buy-calculator.html
 - Salary to Hourly Converter: assets/tools/salary-hourly-converter.html
+- Sales Tax Calculator: assets/tools/sales-tax-calculator.html
 - Savings Goal Calculator: assets/tools/savings-goal-calculator.html
+- Shopify Profit Calculator: assets/tools/shopify-profit-calculator.html
 - Side Hustle Finder Quiz: assets/tools/side-hustle-finder-quiz.html
 - Side Hustle Income Calculator: assets/tools/side-hustle-income-calculator.html
 - Side Hustle Tax Calculator: assets/tools/side-hustle-tax-calculator.html
 - Side Hustle Time Calculator: assets/tools/side-hustle-time-calculator.html
+- Stripe Fee Calculator: assets/tools/stripe-fee-calculator.html
+- Student Loan Payoff Calculator: assets/tools/student-loan-payoff-calculator.html
 - Survey Earnings Estimator: assets/tools/survey-earnings-estimator.html
 - TikTok Earnings Calculator: assets/tools/tiktok-earnings-calculator.html
+- Tip Calculator: assets/tools/tip-calculator.html
 - Tradesperson Rate Calculator: assets/tools/tradesperson-rate-calculator.html
 - UGC Rate Calculator: assets/tools/ugc-rate-calculator.html
 - UPS Battery Backup Calculator: assets/tools/ups-battery-backup-calculator.html

@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9026411505774637" crossorigin="anonymous"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Home affordability calculator: max home price from income, debts, down payment and rate using the 28/36 DTI rule. See which limit binds.">
+<title>Home Affordability Calculator: 28/36 DTI Rule</title>
+<link rel="canonical" href="https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/assets/tools/home-affordability-calculator.html">
+<link rel="icon" href="data:,">
+
+<style>
+:root{
+  --bg:#ffffff; --bg-soft:#f7f8f7; --card:#ffffff; --text:#1a1d1a; --muted:#5a625c;
+  --line:#e3e7e3; --accent:#177245; --accent-dark:#0f5a35; --accent-soft:#eef6f1;
+  --warn-bg:#fdf6e3; --warn-line:#e5d48a; --warn-text:#5c4a08;
+  --max:880px;
+}
+html.dark{
+  --bg:#141714; --bg-soft:#1b1e1b; --card:#1b1e1b; --text:#e8eae8; --muted:#a7aea8;
+  --line:#2e332e; --accent:#4cc084; --accent-dark:#4cc084; --accent-soft:#1d2b22;
+  --warn-bg:#2b2716; --warn-line:#6b5d24; --warn-text:#e8d48a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+
+/* Header */
+header.site{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.header-in{max-width:var(--max);margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.logo{font-weight:700;font-size:19px;color:var(--text);letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+nav.main{display:flex;flex-wrap:wrap;gap:4px 16px;font-size:14.5px}
+nav.main a{color:var(--muted);font-weight:500}
+nav.main a:hover{color:var(--accent);text-decoration:none}
+.theme-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap}
+.theme-btn:hover{border-color:var(--accent)}
+
+/* Hero */
+.hero{padding:52px 0 8px}
+.hero h1{font-size:clamp(30px,5.5vw,44px);line-height:1.15;letter-spacing:-.02em;margin:0 0 14px;font-weight:800}
+.hero p.lead{font-size:19px;color:var(--muted);margin:0 0 20px;max-width:640px}
+.hero .cta-row{display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 8px}
+.btn{display:inline-block;background:var(--accent);color:#fff;padding:11px 20px;border-radius:7px;font-weight:600;font-size:15.5px}
+.btn:hover{background:var(--accent-dark);text-decoration:none}
+.btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent)}
+.btn.ghost:hover{background:var(--accent-soft)}
+
+.notice{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:13px 16px;font-size:14.5px;margin:22px 0}
+.notice strong{font-weight:700}
+
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 4px}
+.stat{border:1px solid var(--line);border-radius:8px;padding:14px 16px;background:var(--card)}
+.stat b{display:block;font-size:20px;letter-spacing:-.01em}
+.stat span{font-size:13.5px;color:var(--muted)}
+
+/* Sections */
+section.block{padding:44px 0 6px;border-top:1px solid var(--line);margin-top:38px}
+section.block:first-of-type{border-top:none}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+h2{font-size:clamp(24px,4vw,31px);letter-spacing:-.015em;line-height:1.25;margin:0 0 12px}
+h3{font-size:19px;margin:26px 0 8px;letter-spacing:-.01em}
+p{margin:0 0 14px}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+ol.steps,ul.plain{margin:6px 0 16px;padding-left:22px}
+ol.steps li,ul.plain li{margin-bottom:9px}
+.callout{background:var(--accent-soft);border-radius:8px;padding:15px 17px;margin:18px 0;font-size:15.5px}
+.callout p:last-child{margin-bottom:0}
+
+/* Tables */
+.table-scroll{overflow-x:auto;margin:16px 0 20px;border:1px solid var(--line);border-radius:8px}
+table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+th,td{text-align:left;padding:11px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--bg-soft);font-weight:600;font-size:13.5px}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;white-space:nowrap}
+
+/* Hustle list */
+.hustles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.hustle{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.hustle h4{margin:0 0 5px;font-size:16.5px}
+.hustle p{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.hustle .meta{display:flex;gap:8px;flex-wrap:wrap}
+.tag{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:2px 10px;color:var(--text)}
+.tag.earn{border-color:var(--accent);color:var(--accent)}
+
+/* Compare strip */
+.compare{border:1px solid var(--line);border-radius:8px;padding:18px;margin:20px 0;background:var(--bg-soft)}
+.compare h3{margin-top:0}
+
+/* Hero live preview */
+.preview{border:1px solid var(--accent);border-radius:8px;background:var(--accent-soft);padding:20px;margin:24px 0 6px}
+.preview h3{margin:0 0 14px;font-size:19px}
+.preview-fields{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.preview-field label{display:flex;justify-content:space-between;gap:10px;font-size:14.5px;font-weight:600;margin-bottom:6px}
+.preview-field label b{color:var(--accent);white-space:nowrap}
+.preview input[type=range]{width:100%;accent-color:var(--accent);cursor:pointer;margin:0}
+.preview-out{font-size:18px;margin:16px 0 8px}
+.preview-out b{font-size:clamp(32px,6vw,42px);color:var(--accent);letter-spacing:-.02em;vertical-align:-6px;margin:0 2px}
+.preview-note{font-size:15px;margin:0}
+.preview .calc-disclaimer{margin-top:12px}
+
+/* Goal picker + tools directory */
+.goal-list{list-style:none;margin:14px 0 6px;padding:0}
+.goal-list li{display:flex;justify-content:space-between;align-items:baseline;gap:8px 16px;flex-wrap:wrap;padding:11px 0;border-bottom:1px solid var(--line)}
+.goal-list li:first-child{border-top:1px solid var(--line)}
+.goal-list span{font-weight:600}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.tool-card{border:1px solid var(--line);border-radius:8px;padding:16px;background:var(--card)}
+.tool-card svg{width:26px;height:26px;stroke:var(--accent);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tool-card h4{margin:8px 0 4px;font-size:16.5px}
+.tool-card p{font-size:14.5px;color:var(--muted);margin:0 0 10px}
+.deeper{font-size:15.5px;margin:16px 0 0}
+
+/* Calculators */
+.calc{border:1px solid var(--line);border-radius:8px;padding:18px;margin:18px 0;background:var(--card)}
+.calc-fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc-field label{display:block;font-size:14px;font-weight:600;margin-bottom:5px}
+.calc-field input{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.calc-field input[type=range]{width:100%;margin:9px 0 0;padding:0;border:none;background:none;accent-color:var(--accent);cursor:pointer}
+.calc-error{display:none;color:#b3261e;font-size:14.5px;margin:12px 0 0}
+html.dark .calc-error{color:#f28b82}
+.calc-results{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}
+.calc-results .row{display:flex;justify-content:space-between;gap:14px;padding:7px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.calc-results .row:last-of-type{border-bottom:none}
+.calc-results .row span{color:var(--muted)}
+.calc-results .row b{white-space:nowrap}
+.calc-results .row.headline b{color:var(--accent);font-size:19px}
+.calc-disclaimer{font-size:13.5px;color:var(--muted);margin:14px 0 0}
+
+/* Micro-action steps box */
+.next-steps{background:var(--accent-soft);border-radius:8px;padding:12px 16px;margin-top:16px}
+.next-steps h4{margin:0 0 4px;font-size:15.5px;color:var(--accent-dark)}
+.next-steps p{font-size:14.5px;margin:0 0 6px}
+.next-steps ol{margin:0;padding-left:20px;font-size:14.5px}
+.next-steps li{margin-bottom:3px}
+.next-steps li:last-child{margin-bottom:0}
+
+/* Legal */
+.legal h2{font-size:24px}
+.legal p,.legal li{font-size:15.5px}
+
+/* Footer */
+footer.site{border-top:1px solid var(--line);margin-top:56px;padding:30px 0 44px;background:var(--bg-soft)}
+footer.site .cols{display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between}
+footer.site h5{margin:0 0 10px;font-size:14px}
+footer.site ul{list-style:none;margin:0;padding:0;font-size:14.5px}
+footer.site li{margin-bottom:7px}
+footer.site a{color:var(--muted)}
+footer.site a:hover{color:var(--accent)}
+.foot-note{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}
+
+@media (max-width:640px){
+  .table-scroll{overflow-x:visible}
+  table{min-width:0;font-size:14.5px}
+  table,thead,tbody,tr{display:block;width:100%}
+  thead{display:none}
+  tr{border-bottom:1px solid var(--line);padding:8px 0}
+  tr:last-child{border-bottom:none}
+  td{display:block;border-bottom:none;padding:5px 14px}
+  td.num,th.num{text-align:left}
+  td:first-child{font-weight:600}
+  .stats{grid-template-columns:1fr}
+  .hustles{grid-template-columns:1fr}
+  .calc-fields{grid-template-columns:1fr}
+  .tools{grid-template-columns:1fr}
+  .preview-fields{grid-template-columns:1fr}
+  nav.main{display:none}
+  nav.main.open{display:flex;width:100%;padding:6px 0 4px;flex-direction:column;gap:10px}
+  .header-in{flex-wrap:wrap}
+  .menu-btn{display:inline-block!important}
+  .hero{padding-top:36px}
+  body{font-size:16.5px}
+}
+.menu-btn{display:none;background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+
+/* Viral script — compact collapsible card */
+.script-card{border:1px solid var(--line);border-radius:10px;background:var(--card);margin:22px 0 6px;overflow:hidden}
+.script-card summary{padding:16px 18px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.script-card summary::-webkit-details-marker{display:none}
+.script-card summary:hover{background:var(--bg-soft)}
+.script-card summary h2{font-size:20px;margin:0}
+.script-card summary .chev{color:var(--accent);font-weight:700;flex:none}
+.script-card[open ] summary{border-bottom:1px solid var(--line)}
+.script-body{padding:14px 18px 16px;font-size:15px}
+.script-body h3{font-size:15.5px;margin:14px 0 4px}
+.script-body h3:first-child{margin-top:0}
+.script-body p{margin:0 0 8px}
+.script-body ul{margin:0 0 8px;padding-left:20px}
+.script-body li{margin-bottom:4px}
+
+/* Guide cards — compact Finovly-style cards; full text lives in the collapsible body */
+.guide-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:38px}
+section.block.gcard{padding:0;border:1px solid var(--line);border-radius:10px;background:var(--card);overflow:hidden}
+.guide-grid section.block.gcard{margin-top:0}
+.gcard.open{grid-column:1/-1}
+.gcard-head{padding:18px 20px 16px;cursor:pointer}
+.gcard-head:hover{background:var(--bg-soft)}
+.gcard-head .kicker{margin:0 0 5px}
+.gcard-head h2{font-size:21px;line-height:1.3;margin:0 0 8px}
+.gcard-excerpt{color:var(--muted);font-size:15px;line-height:1.55;margin:0 0 12px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.read-btn{background:none;border:none;padding:0;font:inherit;font-size:15.5px;font-weight:700;color:var(--accent);cursor:pointer}
+.read-btn:hover{text-decoration:underline}
+.gcard-body{border-top:1px solid var(--line);padding:18px 20px 14px}
+.gcard-body[hidden]{display:none}
+@media (max-width:700px){.guide-grid{grid-template-columns:1fr}}
+
+/* Expansion pack: language toggle, share, cases, checklist */
+.lang-btn{background:none;border:1px solid var(--line);color:var(--text);border-radius:6px;padding:6px 11px;font-size:13.5px;cursor:pointer;white-space:nowrap;font-weight:700}
+.lang-btn:hover{border-color:var(--accent)}
+.head-btns{display:flex;gap:8px;align-items:center}
+.es-only{display:none}
+html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radius:8px;padding:10px 14px;font-size:14.5px;margin:0 0 14px}
+.share-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;margin:0 0 14px}
+.share-row .share-label{font-size:13.5px;font-weight:700;color:var(--muted)}
+.share-row a,.share-row button{font-size:13px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:3px 11px;color:var(--text);background:none;cursor:pointer;font-family:inherit}
+.share-row a:hover,.share-row button:hover{border-color:var(--accent);color:var(--accent);text-decoration:none}
+.calc-field select{width:100%;padding:10px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.calc-field select:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+.seg{display:flex;gap:8px;flex-wrap:wrap}
+.seg button{flex:1;min-width:130px;padding:10px 12px;font-size:15px;font-weight:600;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;cursor:pointer;font-family:inherit}
+.seg button.active{background:var(--accent);border-color:var(--accent);color:#fff}
+.big-warn{border:1px solid var(--warn-line);background:var(--warn-bg);color:var(--warn-text);border-radius:8px;padding:12px 15px;font-size:14.5px;margin-top:14px}
+.prompt{background:var(--bg-soft);border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-size:14.5px;margin:0 0 10px}
+.case-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}
+.case{border:1px solid var(--line);border-radius:8px;padding:15px 16px;background:var(--card)}
+.case h4{margin:0 0 5px;font-size:16.5px}
+.case p{font-size:14.5px;margin:0 0 8px}
+.case .lesson{font-size:14.5px;color:var(--muted);margin:0 0 8px}
+.case .src{font-size:13.5px;margin:0}
+.check-list{list-style:none;margin:14px 0;padding:0}
+.check-list li{display:flex;gap:10px;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--line);font-size:15.5px}
+.check-list li:last-child{border-bottom:none}
+.check-list input{width:19px;height:19px;margin-top:3px;accent-color:var(--accent);flex:none;cursor:pointer}
+.email-row{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0 6px}
+.email-row input{flex:1;min-width:220px;padding:11px 12px;font-size:16px;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:6px;font-family:inherit}
+.email-row input:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:var(--accent)}
+#print-area{display:none}
+@media (max-width:640px){.case-grid{grid-template-columns:1fr}}
+@media print{
+  body *{visibility:hidden}
+  #print-area,#print-area *{visibility:visible}
+  #print-area{display:block!important;position:absolute;top:0;left:0;right:0;padding:10px;color:#000}
+}
+
+/* Tool pages */
+.crumbs{font-size:14px;color:var(--muted);padding:20px 0 0;margin:0}
+.crumbs a{color:var(--muted);font-weight:500}
+.crumbs a:hover{color:var(--accent)}
+.crumbs .sep{margin:0 7px}
+.tool-hero{padding:22px 0 2px}
+.tool-hero h1{font-size:clamp(29px,5.2vw,42px);line-height:1.16;letter-spacing:-.02em;margin:0 0 12px;font-weight:800}
+.tool-hero p.lead{font-size:18.5px;color:var(--muted);margin:0;max-width:660px}
+.faq-item{border-top:1px solid var(--line);padding:15px 0 3px}
+.faq-item h3{margin:0 0 6px;font-size:17.5px}
+.faq-item p{margin:0 0 12px}
+.current-tag{font-size:12.5px;font-weight:700;color:var(--accent);border:1px solid var(--accent);border-radius:20px;padding:1px 9px;margin-left:8px;vertical-align:2px}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","datePublished":"2026-11-12","dateModified":"2026-11-12","mainEntity":[{"@type":"Question","name":"How does the home affordability calculator work?","acceptedAnswer":{"@type":"Answer","text":"It converts annual income to gross monthly income, applies the front-end limit (28% by default) and the back-end limit (36% minus other debts) to get two housing budgets, and takes the lower one. It then solves the mortgage formula in reverse: the loan that fits the budget after property tax, insurance and HOA are counted, plus the down payment, is the maximum price."}},{"@type":"Question","name":"What is the 28/36 rule?","acceptedAnswer":{"@type":"Answer","text":"A lending guideline: monthly housing costs should not exceed 28% of gross monthly income (the front-end ratio), and total monthly debt payments including housing should not exceed 36% (the back-end ratio). Both are measured against gross income, before tax. It is a rule of thumb used by many lenders, not a law, and programs differ."}},{"@type":"Question","name":"Why does the back-end limit sometimes bind instead?","acceptedAnswer":{"@type":"Answer","text":"Because other debts eat the same 36% budget. With no other debts, the front-end rule usually binds. Add a car payment, student loans and card minimums, and the back-end budget \u2014 36% of income minus those debts \u2014 can fall below the front-end budget. The calculator names the binding limit so you know which lever to pull."}},{"@type":"Question","name":"Is the maximum price what I should spend?","acceptedAnswer":{"@type":"Answer","text":"No \u2014 it is a ceiling, not a target. The rule uses gross income and ignores groceries, utilities, transport, childcare, savings and everything else life costs. Many buyers are comfortable well below the maximum. Treat the figure as the top of the range and shop with room to breathe underneath it."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"../../index.html"},{"@type":"ListItem","position":2,"name":"Free Tools","item":"index.html"},{"@type":"ListItem","position":3,"name":"Home Affordability Calculator"}]}</script>
+</head>
+<body>
+<header class="site">
+  <div class="header-in">
+    <a class="logo" href="../../index.html">Quick Earn <span>Guide</span></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu">Menu</button>
+    <nav class="main" id="mainNav">
+      <a href="index.html" data-en="Free Tools" data-es="Herramientas Gratis">Free Tools</a>
+      <a href="../../index.html#all-calculators" data-en="Calculators" data-es="Calculadoras">Calculators</a>
+      <a href="../guides/ai-hustles.html" data-en="AI Hustles" data-es="Negocios con IA">AI Hustles</a>
+      <a href="../../index.html#case-studies" data-en="Case Studies" data-es="Casos Reales">Case Studies</a>
+      <a href="../../index.html#about" data-en="About" data-es="Acerca de">About</a>
+    </nav>
+    <div class="head-btns">
+      <button class="lang-btn" id="langBtn" aria-label="Cambiar a español">ES</button>
+      <button class="theme-btn" id="themeBtn" aria-label="Toggle dark mode">🌙 Dark</button>
+    </div>
+  </div>
+</header>
+<main class="wrap" id="top">
+  <p class="crumbs"><a href="../../index.html">Home</a><span class="sep">›</span><a href="index.html">Free Tools</a><span class="sep">›</span><span>Home Affordability Calculator</span></p>
+
+  <div class="tool-hero">
+    <h1>Home Affordability Calculator</h1>
+    <p class="lead">This home affordability calculator works out the maximum home price your income supports under the 28/36 DTI rule — housing costs at or under 28% of gross income, total debts at or under 36% — and shows which of the two limits binds for you.</p>
+  </div>
+
+  <section class="block" style="border-top:none;margin-top:10px;padding-top:6px">
+<div class="calc">
+      <div class="calc-fields">
+        <div class="calc-field">
+          <label for="ha-income">💵 Annual gross income ($, before tax)</label>
+          <input type="number" id="ha-income" min="0" step="any" inputmode="decimal" value="90000">
+        </div>
+        <div class="calc-field">
+          <label for="ha-debts">💳 Other monthly debt payments ($)</label>
+          <input type="number" id="ha-debts" min="0" step="any" inputmode="decimal" value="500">
+        </div>
+        <div class="calc-field">
+          <label for="ha-down">💰 Down payment ($)</label>
+          <input type="number" id="ha-down" min="0" step="any" inputmode="decimal" value="40000">
+        </div>
+        <div class="calc-field">
+          <label for="ha-rate">📈 Interest rate (% per year)</label>
+          <input type="number" id="ha-rate" min="0" max="20" step="any" inputmode="decimal" value="6.5">
+        </div>
+        <div class="calc-field">
+          <label for="ha-term">📅 Loan term (years)</label>
+          <input type="number" id="ha-term" min="1" max="40" step="1" inputmode="numeric" value="30">
+        </div>
+        <div class="calc-field">
+          <label for="ha-tax">🏛️ Property tax (% of price per year)</label>
+          <input type="number" id="ha-tax" min="0" max="5" step="any" inputmode="decimal" value="1.2">
+        </div>
+        <div class="calc-field">
+          <label for="ha-ins">🛡️ Homeowners insurance ($ per year)</label>
+          <input type="number" id="ha-ins" min="0" step="any" inputmode="decimal" value="1800">
+        </div>
+        <div class="calc-field">
+          <label for="ha-hoa">🏘️ HOA dues ($ per month)</label>
+          <input type="number" id="ha-hoa" min="0" step="any" inputmode="decimal" value="0">
+        </div>
+        <div class="calc-field">
+          <label for="ha-front">🚦 Front-end limit, housing (% of gross)</label>
+          <input type="number" id="ha-front" min="1" max="60" step="any" inputmode="decimal" value="28">
+        </div>
+        <div class="calc-field">
+          <label for="ha-back">🚦 Back-end limit, all debts (% of gross)</label>
+          <input type="number" id="ha-back" min="1" max="60" step="any" inputmode="decimal" value="36">
+        </div>
+      </div>
+      <p class="calc-error" id="ha-error">Please enter valid numbers: income above $0, no negative amounts, rate 0–20%, term 1–40 years, tax 0–5%, limits 1–60%.</p>
+      <div class="calc-results" id="ha-results" aria-live="polite">
+        <div class="row"><span>Max housing payment, front-end rule</span><b id="ha-out-front">—</b></div>
+        <div class="row"><span>Max housing payment, back-end rule</span><b id="ha-out-back">—</b></div>
+        <div class="row"><span>Max monthly housing payment allowed</span><b id="ha-out-housing">—</b></div>
+        <div class="row"><span>Binding limit</span><b id="ha-out-binding">—</b></div>
+        <div class="row headline"><span>Maximum home price</span><b id="ha-out-price">—</b></div>
+        <div class="row"><span>Maximum loan amount</span><b id="ha-out-loan">—</b></div>
+        <div class="row"><span>Principal and interest at max price</span><b id="ha-out-pi">—</b></div>
+        <div class="row"><span>Property tax at max price (monthly)</span><b id="ha-out-taxmo">—</b></div>
+        <div class="row"><span>Insurance (monthly)</span><b id="ha-out-insmo">—</b></div>
+      </div>
+      <p class="calc-disclaimer"><strong>Estimates only — planning estimates, not financial advice.</strong> The 28/36 rule is a lending guideline, not a promise: lenders vary, and many approve higher debt-to-income ratios with compensating factors such as strong credit or large reserves. PMI, closing costs, credit score and employment history are not modeled. A pre-approval from a lender is the only figure that counts as an offer.</p>
+      <div class="next-steps">
+        <h4>Your 3-step start →</h4>
+        <p>Know your ceiling?</p>
+        <ol>
+          <li>Shop below the maximum — the rule is a ceiling, not a target, and life costs more than debt payments.</li>
+          <li>If the back-end limit binds, paying down a car loan or card can raise the ceiling more than a raise does.</li>
+          <li>Get pre-approved before house hunting so the ceiling is a lender's number, not a calculator's.</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <p class="kicker">About this tool</p>
+    <h2>What this home affordability calculator does</h2>
+    <p>Lenders judge affordability with two ratios, and the stricter one wins. The front-end ratio caps housing costs — principal, interest, tax, insurance and HOA — at 28% of gross monthly income. The back-end ratio caps all monthly debts including housing at 36%. This home affordability calculator applies both, takes the lower housing budget, and solves backwards through the mortgage formula to the maximum home price, counting property tax on the price itself rather than pretending tax is fixed.</p>
+    <h3>A quick example</h3>
+    <p>With the defaults — $90,000 of income, $500 of other monthly debts, $40,000 down, 6.5% over 30 years — the front-end rule allows $2,100 a month for housing and the back-end rule allows $2,200, so the front-end rule binds. The maximum home price is about $300,905, with a loan of about $260,905. Raise other debts to $1,500 and the back-end rule binds instead at $1,200 a month, cutting the maximum price to about $177,965. Debts move the ceiling fast.</p>
+    <h3>How to use it — 3 steps</h3>
+    <ol class="steps">
+      <li>Enter gross annual income before tax, other monthly debt payments, and your down payment.</li>
+      <li>Add the rate, term, property tax rate, insurance and HOA dues for the area you are shopping in.</li>
+      <li>Read the maximum price and which limit binds — then change debts or down payment to see what raises the ceiling.</li>
+    </ol>
+    <h3>Who it is for</h3>
+    <p>Buyers setting a realistic price range before falling for a listing, and anyone deciding whether paying down debt or saving a bigger down payment helps affordability more. It is a planning ceiling, not a pre-approval.</p>
+    <h3>Honest limitations</h3>
+    <p>The 28/36 rule is a guideline: FHA, VA, USDA and conventional programs each have their own DTI standards, and automated underwriting can approve up to 50% back-end DTI with compensating factors. Credit score, down payment source, reserves and employment history all matter to a lender and none are modeled here. Property tax is estimated as a flat percentage of price. Estimates only — not financial advice.</p>
+    <p class="deeper">Deeper: <a href="mortgage-calculator.html">Mortgage Calculator</a> · <a href="rent-vs-buy-calculator.html">Rent vs Buy Calculator</a> · <a href="budget-calculator.html">Budget Calculator</a></p>
+  </section>
+
+  <section class="block">
+    <p class="kicker">FAQ</p>
+    <h2>Home Affordability Calculator — common questions</h2>
+    <div class="faq-item">
+      <h3>How does the home affordability calculator work?</h3>
+      <p>It converts annual income to gross monthly income, applies the front-end limit (28% by default) and the back-end limit (36% minus other debts) to get two housing budgets, and takes the lower one. It then solves the mortgage formula in reverse: the loan that fits the budget after property tax, insurance and HOA are counted, plus the down payment, is the maximum price.</p>
+    </div>
+    <div class="faq-item">
+      <h3>What is the 28/36 rule?</h3>
+      <p>A lending guideline: monthly housing costs should not exceed 28% of gross monthly income (the front-end ratio), and total monthly debt payments including housing should not exceed 36% (the back-end ratio). Both are measured against gross income, before tax. It is a rule of thumb used by many lenders, not a law, and programs differ.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Why does the back-end limit sometimes bind instead?</h3>
+      <p>Because other debts eat the same 36% budget. With no other debts, the front-end rule usually binds. Add a car payment, student loans and card minimums, and the back-end budget — 36% of income minus those debts — can fall below the front-end budget. The calculator names the binding limit so you know which lever to pull.</p>
+    </div>
+    <div class="faq-item">
+      <h3>Is the maximum price what I should spend?</h3>
+      <p>No — it is a ceiling, not a target. The rule uses gross income and ignores groceries, utilities, transport, childcare, savings and everything else life costs. Many buyers are comfortable well below the maximum. Treat the figure as the top of the range and shop with room to breathe underneath it.</p>
+    </div>
+  </section>
+
+<section class="block" id="free-tools">
+    <p class="kicker">Free Tools</p>
+    <h2>All 58 free tools</h2>
+    <p>Every tool is free, works instantly, and needs no signup. Each one also lives on the <a href="../../index.html#all-calculators">homepage</a> if you prefer everything on one page.</p>
+    <div class="tools">
+      <div class="tool-card">
+        <h4><a href="investment-calculator.html">Investment Calculator</a></h4>
+        <p>See what a starting amount plus steady monthly contributions could grow into with compound returns — before you invest a single dollar.</p>
+        <a href="investment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-rate-calculator.html">Freelance Rate Calculator</a></h4>
+        <p>Work backwards from the salary you actually want to the hourly rate clients need to pay — taxes, expenses and time off included.</p>
+        <a href="freelance-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="savings-goal-calculator.html">Savings Goal Calculator</a></h4>
+        <p>Turn any goal — an emergency fund, a car, a deposit — into one monthly number you can actually plan around.</p>
+        <a href="savings-goal-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-income-calculator.html">Side Hustle Income Calculator</a></h4>
+        <p>What are a few hours of side work each week actually worth per month — and per year? Run your own numbers.</p>
+        <a href="side-hustle-income-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ai-tool-roi-calculator.html">AI Tool ROI Calculator</a></h4>
+        <p>Turn a $20 subscription into monthly income — or find out honestly whether it is just an expense.</p>
+        <a href="ai-tool-roi-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-time-calculator.html">Side Hustle Time Calculator</a></h4>
+        <p>Only have a few free hours a week around school or work? See what they are honestly worth.</p>
+        <a href="side-hustle-time-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="currency-converter.html">USD to PKR Converter</a></h4>
+        <p>What are your US dollars worth back home? Convert USD to PKR — or nine other currencies — in seconds.</p>
+        <a href="currency-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="faceless-channel-revenue-calculator.html">YouTube Revenue Calculator</a></h4>
+        <p>Views are not dollars. Estimate what a faceless channel's views might actually pay — with the honest warnings attached.</p>
+        <a href="faceless-channel-revenue-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tiktok-earnings-calculator.html">TikTok Earnings Calculator</a></h4>
+        <p>How much are your TikTok views really worth? Turn monthly views and an honest RPM into monthly, yearly and per-video Creator Rewards estimates.</p>
+        <a href="tiktok-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="etsy-profit-calculator.html">Etsy Profit Calculator</a></h4>
+        <p>What do you really keep after Etsy fees? Enter price, costs and shipping to see profit per sale, total fees and your true margin.</p>
+        <a href="etsy-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="delivery-driver-earnings-calculator.html">Delivery Driver Earnings Calculator</a></h4>
+        <p>$18 an hour — before gas. Enter your hours, average rate and weekly gas to see your real weekly and monthly net pay.</p>
+        <a href="delivery-driver-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ups-battery-backup-calculator.html">UPS Battery Backup Calculator</a></h4>
+        <p>How long will a 200Ah battery run 3 fans? Pick your battery, tick your appliances, and get an honest backup time in hours — plus what recharging costs.</p>
+        <a href="ups-battery-backup-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-finder-quiz.html">Side Hustle Finder Quiz</a></h4>
+        <p>Not sure where to start? Five quick questions match you with one best-fit side hustle for your time, budget and style — plus two runner-ups.</p>
+        <a href="side-hustle-finder-quiz.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tradesperson-rate-calculator.html">Tradesperson Rate Calculator</a></h4>
+        <p>Your true hourly rate as an electrician, plumber, or HVAC tech — with a price book and a below-floor warning.</p>
+        <a href="tradesperson-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="side-hustle-tax-calculator.html">Side Hustle Tax Calculator</a></h4>
+        <p>Estimate SE tax and quarterly payments on 1099 income with verified 2026 federal figures.</p>
+        <a href="side-hustle-tax-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="salary-hourly-converter.html">Salary to Hourly Converter</a></h4>
+        <p>Convert salary to hourly, daily, weekly, and monthly pay — with overtime at time-and-a-half.</p>
+        <a href="salary-hourly-converter.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="survey-earnings-estimator.html">Survey Earnings Estimator</a></h4>
+        <p>What surveys really pay per hour after screen-outs, by platform.</p>
+        <a href="survey-earnings-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="w2-vs-1099-calculator.html">W-2 vs 1099 Calculator</a></h4>
+        <p>Compare a salary offer against contract work after SE tax — and find the breakeven 1099 rate.</p>
+        <a href="w2-vs-1099-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="fastest-first-payment-calculator.html">Fastest First Payment Calculator</a></h4>
+        <p>Which side hustle pays you first? Ranked by typical days to first payout.</p>
+        <a href="fastest-first-payment-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="upwork-fee-calculator.html">Upwork Fee Calculator</a></h4>
+        <p>Your real Upwork take-home after the service fee, withdrawal costs and Connects — plus the direct-client comparison.</p>
+        <a href="upwork-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="paypal-fee-calculator.html">PayPal Fee Calculator</a></h4>
+        <p>What PayPal keeps on every payment type, and the gross-up price that nets you exactly what you quoted.</p>
+        <a href="paypal-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ebay-fee-calculator.html">eBay Fee Calculator</a></h4>
+        <p>Your true eBay profit per sale after the final value fee, per-order fee and promoted listing ads.</p>
+        <a href="ebay-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="amazon-seller-profit-calculator.html">Amazon Seller Profit Calculator</a></h4>
+        <p>Per-unit Amazon profit after referral fees, FBA/FBM costs and your plan — plus breakeven units.</p>
+        <a href="amazon-seller-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="dropshipping-profit-calculator.html">Dropshipping Profit Calculator</a></h4>
+        <p>True dropshipping profit per order, breakeven ROAS, and the order volume your goal actually needs.</p>
+        <a href="dropshipping-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="affiliate-commission-calculator.html">Affiliate Commission Calculator</a></h4>
+        <p>Honest affiliate math: clicks × conversion × commission, with the clicks your goal really needs.</p>
+        <a href="affiliate-commission-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="print-on-demand-profit-calculator.html">Print-on-Demand Profit Calculator</a></h4>
+        <p>True POD margins per sale after base cost, shipping and fees — plus the sales your goal needs.</p>
+        <a href="print-on-demand-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="ugc-rate-calculator.html">UGC Rate Calculator</a></h4>
+        <p>A defensible UGC quote from deliverables, usage rights, exclusivity and rush — as a range, not a guess.</p>
+        <a href="ugc-rate-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="mileage-deduction-calculator.html">Mileage Deduction Calculator</a></h4>
+        <p>Your 2026 mileage deduction with the mid-year IRS rate change — and the tax saving behind it.</p>
+        <a href="mileage-deduction-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="debt-payoff-calculator.html">Debt Payoff Calculator</a></h4>
+        <p>Snowball vs avalanche on your real debts — months to debt-free, interest saved, payoff order.</p>
+        <a href="debt-payoff-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="emergency-fund-calculator.html">Emergency Fund Calculator</a></h4>
+        <p>Your emergency fund target from real essential expenses — and how many months of saving it takes.</p>
+        <a href="emergency-fund-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="freelance-project-quote-estimator.html">Freelance Project Quote Estimator</a></h4>
+        <p>A project quote that survives revisions: price, payment schedule, and your true effective rate.</p>
+        <a href="freelance-project-quote-estimator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="course-pricing-calculator.html">Course Pricing Calculator</a></h4>
+        <p>The course price your revenue target demands, after platform fees and refunds — per platform.</p>
+        <a href="course-pricing-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="raise-calculator.html">Raise Calculator</a></h4>
+        <p>What your raise is really worth after tax — and whether it beats inflation.</p>
+        <a href="raise-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="invoice-generator.html">Invoice Generator</a></h4>
+        <p>A professional freelance invoice in minutes — live preview, late-fee math, print or save as PDF.</p>
+        <a href="invoice-generator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="mortgage-calculator.html">Mortgage Calculator</a></h4>
+        <p>Monthly P&amp;I and full PITI with tax, insurance, PMI and HOA, plus lifetime interest.</p>
+        <a href="mortgage-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="paycheck-calculator.html">Paycheck Calculator</a></h4>
+        <p>Take-home pay per paycheck after 2026 federal withholding, Social Security and Medicare.</p>
+        <a href="paycheck-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="loan-calculator.html">Loan Calculator</a></h4>
+        <p>Monthly payment, total interest and a year-by-year schedule, with extra-payment savings.</p>
+        <a href="loan-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="sales-tax-calculator.html">Sales Tax Calculator</a></h4>
+        <p>Add tax to a price or reverse it from a total, with 2026 state base rates for 50 states plus DC.</p>
+        <a href="sales-tax-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="budget-calculator.html">Budget Calculator</a></h4>
+        <p>A 50/30/20 budget from take-home pay, or your own split, monthly and annual.</p>
+        <a href="budget-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="overtime-calculator.html">Overtime Calculator</a></h4>
+        <p>Regular plus time-and-a-half pay for hours over 40, with editable threshold and multiplier.</p>
+        <a href="overtime-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="401k-retirement-calculator.html">401k Retirement Calculator</a></h4>
+        <p>Retirement projection with contributions, employer match and the verified 2026 IRS limit.</p>
+        <a href="401k-retirement-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="rent-vs-buy-calculator.html">Rent vs Buy Calculator</a></h4>
+        <p>Year-by-year renting vs buying costs with equity, and the break-even year.</p>
+        <a href="rent-vs-buy-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="home-affordability-calculator.html">Home Affordability Calculator</a> <span class="current-tag">You are here</span></h4>
+        <p>Max home price under the 28/36 DTI rule, showing which limit binds.</p>
+        <a href="home-affordability-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="student-loan-payoff-calculator.html">Student Loan Payoff Calculator</a></h4>
+        <p>Payoff date and interest on the standard plan versus extra payments, one loan at a time.</p>
+        <a href="student-loan-payoff-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="compound-interest-calculator.html">Compound Interest Calculator</a></h4>
+        <p>Future value with contributions, compounding frequency and a year-by-year table.</p>
+        <a href="compound-interest-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="credit-card-payoff-calculator.html">Credit Card Payoff Calculator</a></h4>
+        <p>Minimum-only trap versus a fixed payment for one card, with payoff time and interest.</p>
+        <a href="credit-card-payoff-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="tip-calculator.html">Tip Calculator</a></h4>
+        <p>Split the bill fairly: tip percent, total, and what each person pays.</p>
+        <a href="tip-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="percentage-calculator.html">Percentage Calculator</a></h4>
+        <p>Three percent modes: percent of a number, one number as a percent of another, and percent change.</p>
+        <a href="percentage-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="age-calculator.html">Age Calculator</a></h4>
+        <p>Your exact age in years, months, and days, total days lived, and next birthday countdown.</p>
+        <a href="age-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="bmi-calculator.html">BMI Calculator</a></h4>
+        <p>Your BMI and WHO category in imperial or metric, with the healthy weight range for your height.</p>
+        <a href="bmi-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="fiverr-fee-calculator.html">Fiverr Fee Calculator</a></h4>
+        <p>What Fiverr keeps at 20% on orders and tips, what you keep, and the reverse price for your target.</p>
+        <a href="fiverr-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="stripe-fee-calculator.html">Stripe Fee Calculator</a></h4>
+        <p>Stripe's 2.9% + 30 cent US card fee, surcharges, net earnings, and reverse invoice amounts.</p>
+        <a href="stripe-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="shopify-profit-calculator.html">Shopify Profit Calculator</a></h4>
+        <p>Per-order Shopify profit after card fees, costs, and plan fees, on every plan.</p>
+        <a href="shopify-profit-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="poshmark-fee-calculator.html">Poshmark Fee Calculator</a></h4>
+        <p>Poshmark's $2.95 / 20% seller fee, your net earnings, and profit after item cost.</p>
+        <a href="poshmark-fee-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="profit-margin-calculator.html">Profit Margin Calculator</a></h4>
+        <p>Margin vs markup from cost and price, plus the reverse price for the margin you want.</p>
+        <a href="profit-margin-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="password-generator.html">Password Generator</a></h4>
+        <p>Strong random passwords generated in your browser, with length and character options.</p>
+        <a href="password-generator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="instagram-earnings-calculator.html">Instagram Earnings Calculator</a></h4>
+        <p>Estimated sponsored-post rates from followers and engagement, with every rate editable.</p>
+        <a href="instagram-earnings-calculator.html">Open full tool →</a>
+      </div>
+      <div class="tool-card">
+        <h4><a href="airbnb-earnings-calculator.html">Airbnb Earnings Calculator</a></h4>
+        <p>Monthly Airbnb host earnings after the service fee, under the 15.5% single fee or 3% split fee.</p>
+        <a href="airbnb-earnings-calculator.html">Open full tool →</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer class="site">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <h5>Quick Earn Guide</h5>
+        <ul>
+          <li><a href="../../index.html#about">About</a></li>
+          <li><a href="../../index.html#contact">Contact</a></li>
+          <li><a href="index.html">Free Tools</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5 data-en="Guides" data-es="Guías">Guides</h5>
+        <ul>
+          <li><a href="../../index.html#all-calculators">Money Calculators</a></li>
+          <li><a href="../guides/chatgpt.html">Make Money With ChatGPT</a></li>
+          <li><a href="../guides/freelancing.html">Freelancing Quick-Start</a></li>
+          <li><a href="../guides/faceless-blueprint.html">Faceless Social Media Blueprint</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Legal</h5>
+        <ul>
+          <li><a href="../../index.html#privacy">Privacy Policy</a></li>
+          <li><a href="../../index.html#terms">Terms of Use</a></li>
+          <li><a href="../../index.html#disclaimer">Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-note">
+      <p>© 2026 Quick Earn Guide · Written by Sadiq Khan · Not financial advice — content is for educational purposes only. Do your own research. Earnings figures are estimates, not guarantees.</p>
+    </div>
+  </div>
+</footer>
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){ try{ if(v===null){ localStorage.removeItem(k); } else { localStorage.setItem(k,v); } }catch(e){} }
+  function read(k){ try{ return localStorage.getItem(k); }catch(e){ return null; } }
+  var TITLES={"en": "Home Affordability Calculator: 28/36 DTI Rule", "es": "Home Affordability Calculator: 28/36 DTI Rule"}, DESCS={"en": "Home affordability calculator: max home price from income, debts, down payment and rate using the 28/36 DTI rule. See which limit binds.", "es": "Home affordability calculator: max home price from income, debts, down payment and rate using the 28/36 DTI rule. See which limit binds."}, ES_DICT={};
+  var btn=document.getElementById('themeBtn');
+  function syncTheme(){ btn.textContent = root.classList.contains('dark') ? '\u2600\ufe0f Light' : '\uD83C\uDF19 Dark'; }
+  var savedTheme=read('qeg-theme');
+  if(savedTheme==='dark' || (!savedTheme && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)){ root.classList.add('dark'); }
+  syncTheme();
+  btn.addEventListener('click',function(){
+    var dark=root.classList.toggle('dark');
+    store('qeg-theme',dark?'dark':'light');
+    syncTheme();
+  });
+  var menuBtn=document.getElementById('menuBtn'), nav=document.getElementById('mainNav');
+  menuBtn.addEventListener('click',function(){ nav.classList.toggle('open'); });
+  nav.addEventListener('click',function(e){ if(e.target.tagName==='A'){ nav.classList.remove('open'); } });
+  function dictSwap(lang){
+    var scopes=document.querySelectorAll('.calc');
+    for(var s=0;s<scopes.length;s++){
+      var els=scopes[s].querySelectorAll('*');
+      for(var i=0;i<els.length;i++){
+        var e=els[i];
+        if(e.children.length || e.hasAttribute('data-en')) continue;
+        if(lang==='es'){
+          var tx=e.textContent.replace(/\s+/g,' ').trim();
+          if(ES_DICT[tx]){ if(!e.hasAttribute('data-orig')) e.setAttribute('data-orig',e.textContent); e.textContent=ES_DICT[tx]; }
+        }else{
+          var o=e.getAttribute('data-orig');
+          if(o!==null){ e.textContent=o; }
+        }
+      }
+    }
+  }
+  var langBtn=document.getElementById('langBtn');
+  function applyLang(lang){
+    root.lang=(lang==='es')?'es':'en';
+    var els=document.querySelectorAll('[data-en]');
+    for(var i=0;i<els.length;i++){
+      var v=els[i].getAttribute('data-'+root.lang);
+      if(v!==null) els[i].innerHTML=v;
+    }
+    dictSwap(root.lang);
+    document.title=TITLES[root.lang];
+    var md=document.querySelector('meta[name="description"]');
+    if(md) md.setAttribute('content',DESCS[root.lang]);
+    langBtn.textContent=(root.lang==='es')?'EN':'ES';
+    langBtn.setAttribute('aria-label',(root.lang==='es')?'Switch to English':'Cambiar a espa\u00f1ol');
+    store('qeg-lang',root.lang);
+  }
+  langBtn.addEventListener('click',function(){ applyLang(root.lang==='es'?'en':'es'); });
+  var savedLang=read('qeg-lang');
+  if(savedLang==='es'){ applyLang('es'); }
+})();
+
+</script>
+<script>
+(function(){
+
+  var fmt=new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',minimumFractionDigits:2,maximumFractionDigits:2});
+  function el(id){ return document.getElementById(id); }
+  function num(id){ return parseFloat(el(id).value); }
+  function set(id,text){ el(id).textContent=text; }
+  function dash(ids){ for(var i=0;i<ids.length;i++){ set(ids[i],'\u2014'); } }
+  function live(ids,errorId,compute){
+    var err=el(errorId);
+    function run(){ if(err) err.style.display = compute() ? 'none' : 'block'; }
+    for(var i=0;i<ids.length;i++){ var e=el(ids[i]); if(e){ e.addEventListener('input',run); e.addEventListener('change',run); } }
+    run();
+  }
+  var OUT=['ha-out-front','ha-out-back','ha-out-housing','ha-out-binding','ha-out-price','ha-out-loan','ha-out-pi','ha-out-taxmo','ha-out-insmo'];
+  live(['ha-income','ha-debts','ha-down','ha-rate','ha-term','ha-tax','ha-ins','ha-hoa','ha-front','ha-back'],'ha-error',function(){
+    var income=num('ha-income'), debts=num('ha-debts'), down=num('ha-down'), rate=num('ha-rate'),
+        term=num('ha-term'), tax=num('ha-tax'), ins=num('ha-ins'), hoa=num('ha-hoa'),
+        frontPct=num('ha-front'), backPct=num('ha-back');
+    if([income,debts,down,rate,term,tax,ins,hoa,frontPct,backPct].some(isNaN)||income<=0||debts<0||down<0||rate<0||rate>20||term<1||term>40||tax<0||tax>5||ins<0||hoa<0||frontPct<1||frontPct>60||backPct<1||backPct>60){
+      dash(OUT); return false;
+    }
+    var grossMo=income/12;
+    var front= grossMo*frontPct/100;
+    var back=grossMo*backPct/100-debts;
+    var allowed=Math.min(front,back);
+    var binding=(front<=back)?'Front-end ('+frontPct+'% housing)':'Back-end ('+backPct+'% total debts)';
+    var n=Math.round(term*12), r=rate/100/12;
+    var f=(r===0)?(1/n):(r/(1-Math.pow(1+r,-n)));
+    var tmo=tax/100/12;
+    var loan=(allowed-down*tmo-ins/12-hoa)/(f+tmo);
+    if(loan<0){ loan=0; }
+    var price=down+loan;
+    set('ha-out-front',fmt.format(front));
+    set('ha-out-back',fmt.format(back));
+    set('ha-out-housing',fmt.format(allowed));
+    set('ha-out-binding',binding);
+    set('ha-out-price',fmt.format(price));
+    set('ha-out-loan',fmt.format(loan));
+    set('ha-out-pi',fmt.format(loan*f));
+    set('ha-out-taxmo',fmt.format(price*tmo));
+    set('ha-out-insmo',fmt.format(ins/12));
+    return true;
+  });
+
+})();
+</script>
+</body>
+</html>
