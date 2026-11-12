@@ -102,13 +102,18 @@ Status: private build — not publicly launched, so paths below are relative to 
 ## Free tools (separate pages under assets/tools/)
 
 - 401k Retirement Calculator: assets/tools/401k-retirement-calculator.html
+- 52-Week Savings Challenge Calculator: assets/tools/new-year-savings-challenge-calculator.html
 - Affiliate Commission Calculator: assets/tools/affiliate-commission-calculator.html
 - Age Calculator: assets/tools/age-calculator.html
 - AI Tool ROI Calculator: assets/tools/ai-tool-roi-calculator.html
 - Airbnb Earnings Calculator: assets/tools/airbnb-earnings-calculator.html
 - Amazon Seller Profit Calculator: assets/tools/amazon-seller-profit-calculator.html
+- Black Friday Deal Calculator: assets/tools/black-friday-deal-calculator.html
+- Black Friday Resale Profit Calculator: assets/tools/black-friday-resale-profit-calculator.html
 - BMI Calculator: assets/tools/bmi-calculator.html
 - Budget Calculator: assets/tools/budget-calculator.html
+- Christmas Countdown: assets/tools/christmas-countdown.html
+- Christmas Shopping Budget Calculator: assets/tools/christmas-shopping-budget-calculator.html
 - Compound Interest Calculator: assets/tools/compound-interest-calculator.html
 - Course Pricing Calculator: assets/tools/course-pricing-calculator.html
 - Credit Card Payoff Calculator: assets/tools/credit-card-payoff-calculator.html
@@ -125,6 +130,7 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Freelance Project Quote Estimator: assets/tools/freelance-project-quote-estimator.html
 - Freelance Rate Calculator: assets/tools/freelance-rate-calculator.html
 - Tools index: assets/tools/index.html
+- Holiday Delivery Date Calculator: assets/tools/holiday-delivery-date-calculator.html
 - Home Affordability Calculator: assets/tools/home-affordability-calculator.html
 - Instagram Earnings Calculator: assets/tools/instagram-earnings-calculator.html
 - Investment Calculator: assets/tools/investment-calculator.html
@@ -132,6 +138,7 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Loan Calculator: assets/tools/loan-calculator.html
 - Mileage Deduction Calculator: assets/tools/mileage-deduction-calculator.html
 - Mortgage Calculator: assets/tools/mortgage-calculator.html
+- New Year Countdown: assets/tools/new-year-countdown.html
 - Overtime Calculator: assets/tools/overtime-calculator.html
 - Password Generator: assets/tools/password-generator.html
 - Paycheck Calculator: assets/tools/paycheck-calculator.html
@@ -160,3 +167,4 @@ Status: private build — not publicly launched, so paths below are relative to 
 - UPS Battery Backup Calculator: assets/tools/ups-battery-backup-calculator.html
 - Upwork Fee Calculator: assets/tools/upwork-fee-calculator.html
 - W-2 vs 1099 Calculator: assets/tools/w2-vs-1099-calculator.html
+- Year-End Bonus Calculator: assets/tools/year-end-bonus-calculator.html
