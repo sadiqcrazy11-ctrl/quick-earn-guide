@@ -4,7 +4,7 @@
 
 Run by: Sadiq Khan.
 
-Status: private build — not publicly launched, so paths below are relative to the site root.
+Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 
 ## Home (guide listing, calculators, and site sections)
 
