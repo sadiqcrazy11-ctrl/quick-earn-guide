@@ -98,6 +98,12 @@ Status: private build — not publicly launched, so paths below are relative to 
 - Side Hustles With the Fastest First Payment in 2026: Same-Day Cash to First Paycheck: assets/guides/side-hustles-fastest-first-payment-2026.html
 - Black Friday Reselling in 2026: How to Flip Deals for Profit (Honest Guide): assets/guides/black-friday-reselling-flip-deals-profit-2026.html
 - Christmas Seasonal Jobs 2026: Who Is Hiring, Real Pay Rates, and How to Apply: assets/guides/christmas-seasonal-jobs-hiring-2026.html
+- 3 Side Hustles That Pay You to Do Nothing (2026): The Honest Numbers: assets/guides/side-hustles-that-pay-you-to-do-nothing-2026.html
+- Make Money With ChatGPT Work Agent Mode: 7 Side Hustles That Still Work in 2026: assets/guides/make-money-with-chatgpt-work-agent-mode-2026.html
+- Get Paid to Post AI Videos in 2026: The Real Pay Table: assets/guides/get-paid-to-post-ai-videos-2026.html
+- Walmart Early Black Friday Wave 1 Ends Tomorrow (Nov 15): Last-Chance Deals Worth Buying: assets/guides/walmart-early-black-friday-wave-1-ends-november-15-2026.html
+- Side Hustles That Pay Before Thanksgiving 2026: The Payout-Timing Guide: assets/guides/side-hustles-pay-before-thanksgiving-2026.html
+- 7 AI Side Hustles That Pay in 2026: Start With $0, First $100 in 30 Days: assets/guides/ai-side-hustles-that-pay-2026-first-100.html
 
 ## Free tools (separate pages under assets/tools/)
 
