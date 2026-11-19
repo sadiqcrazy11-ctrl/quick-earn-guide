@@ -104,6 +104,26 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Walmart Early Black Friday Wave 1 Ends Tomorrow (Nov 15): Last-Chance Deals Worth Buying: assets/guides/walmart-early-black-friday-wave-1-ends-november-15-2026.html
 - Side Hustles That Pay Before Thanksgiving 2026: The Payout-Timing Guide: assets/guides/side-hustles-pay-before-thanksgiving-2026.html
 - 7 AI Side Hustles That Pay in 2026: Start With $0, First $100 in 30 Days: assets/guides/ai-side-hustles-that-pay-2026-first-100.html
+- Q4 Side Hustles November 2026: Santa, Line Standing, and Loan Signing Agent Pay: assets/guides/q4-side-hustles-santa-line-standing-loan-signing-agent-2026.html
+- 30 Side Hustles Most People Never Heard Of (2026): Real Pay + the Rules: assets/guides/side-hustles-most-people-never-heard-of-2026.html
+- 35 Side Hustles That Pick Up in November 2026: Real Pay + the Catch: assets/guides/side-hustles-that-pick-up-in-november-2026.html
+- 8 Hobbies That Make Money in 2026 (and the Tax Mistakes to Avoid): assets/guides/hobbies-that-make-money-2026.html
+- Make Money Clipping Videos in 2026: The #1 Phone-Only Side Hustle (Honest Numbers): assets/guides/make-money-clipping-videos-2026.html
+- Amazon Black Friday Week Starts Tomorrow, November 19: Deals Live, Real Prices, and What to Skip: assets/guides/amazon-black-friday-week-starts-tomorrow-november-19-2026.html
+- TikTok Shop Black Friday Double Commission: How the 2x Affiliate Days Work (Nov 27 and Nov 30): assets/guides/tiktok-shop-black-friday-double-commission-november-2026.html
+- Amazon Black Friday Week Starts Today, November 19: Deals Live, Real Prices, and What to Buy First: assets/guides/amazon-black-friday-week-starts-today-november-19-2026.html
+- How to Make Money Online: 22 Real Ways That Actually Pay in 2026: assets/guides/how-to-make-money-online.html
+- Make Money From Your Phone: 12 Ways That Work in 2026: assets/guides/make-money-from-your-phone.html
+- Games That Pay Real Money: The Honest 2026 Guide: assets/guides/games-that-pay-real-money.html
+- Rent Out Your Stuff: Earn From What You Already Own in 2026: assets/guides/rent-out-your-stuff.html
+- Passive Income Investing: The Honest 2026 Beginner's Guide: assets/guides/passive-income-investing.html
+- Rideshare and Delivery Driving in 2026: The Honest Money Guide: assets/guides/rideshare-delivery-guide.html
+- Reselling and Flipping: How to Turn Thrift Finds Into Profit in 2026: assets/guides/reselling-flipping-guide.html
+- Local Service Hustles: Earn Cash in Your Own Neighborhood: assets/guides/local-service-hustles.html
+- How Much Do Side Hustles Pay? Honest 2026 Ranges for 15 Hustles: assets/guides/how-much-do-side-hustles-pay.html
+- AI Training and Data Annotation Jobs: The Honest 2026 Guide: assets/guides/ai-training-data-annotation-jobs.html
+- Etsy SEO and Keyword Research: Get Found and Get Sales in 2026: assets/guides/etsy-seo-keyword-research.html
+- Cashback and Unclaimed Money: Free Money You Are Probably Owed: assets/guides/cashback-unclaimed-money.html
 
 ## Free tools (separate pages under assets/tools/)
 
@@ -174,3 +194,19 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Upwork Fee Calculator: assets/tools/upwork-fee-calculator.html
 - W-2 vs 1099 Calculator: assets/tools/w2-vs-1099-calculator.html
 - Year-End Bonus Calculator: assets/tools/year-end-bonus-calculator.html
+- Fee Comparison Calculator: assets/tools/fee-comparison-calculator.html
+- Gumroad Fee Calculator: assets/tools/gumroad-fee-calculator.html
+- TikTok Shop Fee Calculator: assets/tools/tiktok-shop-fee-calculator.html
+- Depop Fee Calculator: assets/tools/depop-fee-calculator.html
+- Mercari Fee Calculator: assets/tools/mercari-fee-calculator.html
+- Square Fee Calculator: assets/tools/square-fee-calculator.html
+- Venmo & Cash App Fee Calculator: assets/tools/venmo-cash-app-fee-calculator.html
+- Fiverr vs Upwork Fee Calculator: assets/tools/fiverr-vs-upwork-fee-calculator.html
+- Patreon vs Substack Fee Calculator: assets/tools/patreon-substack-fee-calculator.html
+- Twitch Earnings Calculator: assets/tools/twitch-earnings-calculator.html
+- Turo & Neighbor Rental Earnings Calculator: assets/tools/turo-neighbor-rental-earnings-calculator.html
+- Rideshare & Delivery Earnings Calculator: assets/tools/rideshare-delivery-earnings-calculator.html
+- 50-State Paycheck Calculator: assets/tools/paycheck-calculator-50-state.html
+- Passive Income Calculator: assets/tools/passive-income-calculator.html
+- KDP Royalty Calculator: assets/tools/kdp-royalty-calculator.html
+- Creator Platform Comparison Calculator: assets/tools/creator-platform-comparison-calculator.html
