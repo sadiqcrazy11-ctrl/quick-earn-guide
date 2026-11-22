@@ -58,6 +58,7 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Side Hustles With the Fastest First Payment in 2026: Same-Day Cash to First Paycheck: assets/guides/side-hustles-fastest-first-payment-2026.html
 - 30 Side Hustles Most People Never Heard Of (2026): Real Pay + the Rules: assets/guides/side-hustles-most-people-never-heard-of-2026.html
 - 7 Side Hustles That Pay Within a Week in 2026 (Ranked by Friction, Not Hype): assets/guides/side-hustles-that-pay-within-a-week-2026.html
+- AI Side Hustles 2026: Why AI Video Services Pay Beginners the Most: assets/guides/ai-side-hustles-2026-ai-video-services-beginners.html
 
 ## Free tools (separate pages under assets/tools/)
 
