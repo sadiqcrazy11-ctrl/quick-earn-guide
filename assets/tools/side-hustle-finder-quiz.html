@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7E73X6E2CR"></script>
+<!-- Google Analytics 4 loads only after the visitor accepts cookies in the consent banner at the end of this page. Declining keeps GA4 off. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7E73X6E2CR');
-  gtag('config', 'G-H7T7NGYLLY');
+  window.__qegLoadGA = function(){
+    if(window.__qegGALoaded){ return; }
+    window.__qegGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7E73X6E2CR';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-7E73X6E2CR');
+    gtag('config', 'G-H7T7NGYLLY');
+  };
+  try{ if(localStorage.getItem('qeg-consent') === 'accepted'){ window.__qegLoadGA(); } }catch(e){}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9026411505774637" crossorigin="anonymous"></script>
 <meta charset="utf-8">
@@ -517,7 +525,7 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
       desc:{en:'Make short videos with AI tools — no camera, no showing your face. Slow first month, then views can compound while you sleep.', es:'Crea videos cortos con herramientas de IA — sin cámara y sin mostrar tu cara. Primer mes lento, luego las vistas pueden crecer mientras duermes.'},
       links:[
         {href:'faceless-channel-revenue-calculator.html', label:{en:'YouTube Revenue Calculator', es:'Calculadora de Ingresos de YouTube'}},
-        {href:'../../index.html#ai-monetization', label:{en:'Guide 21 — AI Video Monetization', es:'Guía 21 — Monetización de Videos con IA'}}
+        {href:'../../index.html#ai-monetization', label:{en:'AI Video Monetization', es:'Monetización de Videos con IA'}}
       ]
     },
     freelance:{
@@ -533,8 +541,8 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
       desc:{en:'Digital products, printables or trending finds — build once, sell again and again. Marketing is the real work.', es:'Productos digitales, imprimibles o productos en tendencia — crea una vez y vende una y otra vez. El marketing es el trabajo real.'},
       links:[
         {href:'etsy-profit-calculator.html', label:{en:'Etsy Profit Calculator', es:'Calculadora de Ganancias de Etsy'}},
-        {href:'../../index.html#sellable-products', label:{en:'Guide 19 — Sellable Products', es:'Guía 19 — Productos Vendibles'}},
-        {href:'../../index.html#trending-products', label:{en:'Guide 20 — Trending Products 2026', es:'Guía 20 — Productos en Tendencia 2026'}}
+        {href:'../../index.html#sellable-products', label:{en:'Sellable Products', es:'Productos Vendibles'}},
+        {href:'../../index.html#trending-products', label:{en:'Trending Products 2026', es:'Productos en Tendencia 2026'}}
       ]
     },
     delivery:{
@@ -556,7 +564,7 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
       name:{en:'Online Tutoring & Teaching', es:'Tutorías y Clases en Línea'},
       desc:{en:'Teach what you already know — school subjects, English, test prep. Steady hourly pay, no stock, no audience needed.', es:'Enseña lo que ya sabes — materias escolares, inglés, preparación de exámenes. Pago por hora estable, sin inventario y sin necesitar audiencia.'},
       links:[
-        {href:'../../index.html#hustles', label:{en:'Guide 5 — Side Hustles Worth Your Time', es:'Guía 5 — Ingresos Extra que Valen tu Tiempo'}},
+        {href:'../../index.html#hustles', label:{en:'Side Hustles Worth Your Time', es:'Ingresos Extra que Valen tu Tiempo'}},
         {href:'side-hustle-time-calculator.html', label:{en:'Side Hustle Time Calculator', es:'Calculadora de Tiempo para Ingresos Extra'}}
       ]
     }
@@ -666,6 +674,45 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
   });
   resetScores();
   showQuestion(0);
+})();
+</script>
+
+<style>
+.qeg-consent{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg,#ffffff);color:var(--text,#1a1d1a);border-top:1px solid var(--line,#e3e7e3);box-shadow:0 -4px 18px rgba(0,0,0,.08);padding:14px 20px}
+.qeg-consent[hidden]{display:none}
+.qeg-consent-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.qeg-consent p{margin:0;font-size:14.5px;line-height:1.5;flex:1 1 320px}
+.qeg-consent-btns{display:flex;gap:8px;flex:none}
+.qeg-consent button{font:inherit;font-size:14.5px;font-weight:600;border-radius:7px;padding:9px 18px;cursor:pointer}
+.qeg-consent .qeg-accept{background:var(--accent,#177245);border:1px solid var(--accent,#177245);color:#fff}
+.qeg-consent .qeg-decline{background:transparent;border:1px solid var(--line,#e3e7e3);color:var(--text,#1a1d1a)}
+</style>
+<div class="qeg-consent" id="qegConsent" hidden role="region" aria-label="Cookie consent">
+  <div class="qeg-consent-in">
+    <p>We use Google Analytics cookies to see which guides and tools readers use most. Analytics stays off unless you accept. <a href="../../privacy-policy.html">Privacy Policy</a></p>
+    <div class="qeg-consent-btns">
+      <button type="button" class="qeg-accept" id="qegAccept">Accept</button>
+      <button type="button" class="qeg-decline" id="qegDecline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var b = document.getElementById('qegConsent');
+  if(!b){ return; }
+  var choice = null;
+  try{ choice = localStorage.getItem('qeg-consent'); }catch(e){}
+  if(choice === 'accepted' || choice === 'declined'){ return; }
+  b.hidden = false;
+  document.getElementById('qegAccept').addEventListener('click', function(){
+    try{ localStorage.setItem('qeg-consent', 'accepted'); }catch(e){}
+    b.hidden = true;
+    if(window.__qegLoadGA){ window.__qegLoadGA(); }
+  });
+  document.getElementById('qegDecline').addEventListener('click', function(){
+    try{ localStorage.setItem('qeg-consent', 'declined'); }catch(e){}
+    b.hidden = true;
+  });
 })();
 </script>
 </body>

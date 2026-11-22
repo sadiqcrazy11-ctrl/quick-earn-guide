@@ -1,14 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-7E73X6E2CR"></script>
+<!-- Google Analytics 4 loads only after the visitor accepts cookies in the consent banner at the end of this page. Declining keeps GA4 off. -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-7E73X6E2CR');
-  gtag('config', 'G-H7T7NGYLLY');
+  window.__qegLoadGA = function(){
+    if(window.__qegGALoaded){ return; }
+    window.__qegGALoaded = true;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-7E73X6E2CR';
+    document.head.appendChild(s);
+    gtag('js', new Date());
+    gtag('config', 'G-7E73X6E2CR');
+    gtag('config', 'G-H7T7NGYLLY');
+  };
+  try{ if(localStorage.getItem('qeg-consent') === 'accepted'){ window.__qegLoadGA(); } }catch(e){}
 </script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9026411505774637" crossorigin="anonymous"></script>
 <meta charset="utf-8">
@@ -359,7 +367,7 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
     <p>This Etsy profit calculator shows what one sale actually leaves in your pocket after Etsy takes its cut — all of its cuts, stacked together. Most new sellers do the head-math of 'price minus materials' and call the rest profit. Etsy disagrees: there is a 6.5% transaction fee on the item price plus shipping, a $0.20 listing fee, and payment processing of about 3% + $0.25 on every order. Together, on a typical small order, they quietly eat around a tenth of everything the buyer paid.</p>
     <h3>A quick example</h3>
     <p>Run the defaults: a $20 item with $5 shipping charged is a $25 sale total. The transaction fee is $1.63, the listing fee $0.20, and processing $1.00 — total Etsy fees of $2.83. Subtract your $8 of materials and $4 of real shipping cost and your profit is $10.18 per sale, a 40.7% margin. Now drag the price down to $12 and watch the margin fall apart — the fixed fees ($0.20 + $0.25) punish cheap items hardest, which is why so many 'bargain' Etsy listings lose money politely.</p>
-    <p>Go deeper: <a href="../guides/sellable-products.html">see the full Etsy fee table in Guide 19 →</a> — it sits next to real product ideas, prices and startup costs if you are still choosing what to sell.</p>
+    <p>Go deeper: <a href="../guides/sellable-products.html">see the full Etsy fee table in the Best Products to Sell Online guide →</a> — it sits next to real product ideas, prices and startup costs if you are still choosing what to sell.</p>
     <h3>How to use it — 3 steps</h3>
     <ol class="steps">
       <li>Enter your item price and what one item costs you to make or buy — materials, packaging, the lot.</li>
@@ -520,6 +528,45 @@ html[lang="es"] .es-only{display:block;background:var(--accent-soft);border-radi
     set('et-out-margin',(profit/saleTotal*100).toFixed(1)+'%');
     set('et-out-keep',((saleTotal-fees)/saleTotal*100).toFixed(1)+'%');
     return true;
+  });
+})();
+</script>
+
+<style>
+.qeg-consent{position:fixed;left:0;right:0;bottom:0;z-index:60;background:var(--bg,#ffffff);color:var(--text,#1a1d1a);border-top:1px solid var(--line,#e3e7e3);box-shadow:0 -4px 18px rgba(0,0,0,.08);padding:14px 20px}
+.qeg-consent[hidden]{display:none}
+.qeg-consent-in{max-width:880px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;justify-content:space-between}
+.qeg-consent p{margin:0;font-size:14.5px;line-height:1.5;flex:1 1 320px}
+.qeg-consent-btns{display:flex;gap:8px;flex:none}
+.qeg-consent button{font:inherit;font-size:14.5px;font-weight:600;border-radius:7px;padding:9px 18px;cursor:pointer}
+.qeg-consent .qeg-accept{background:var(--accent,#177245);border:1px solid var(--accent,#177245);color:#fff}
+.qeg-consent .qeg-decline{background:transparent;border:1px solid var(--line,#e3e7e3);color:var(--text,#1a1d1a)}
+</style>
+<div class="qeg-consent" id="qegConsent" hidden role="region" aria-label="Cookie consent">
+  <div class="qeg-consent-in">
+    <p>We use Google Analytics cookies to see which guides and tools readers use most. Analytics stays off unless you accept. <a href="../../privacy-policy.html">Privacy Policy</a></p>
+    <div class="qeg-consent-btns">
+      <button type="button" class="qeg-accept" id="qegAccept">Accept</button>
+      <button type="button" class="qeg-decline" id="qegDecline">Decline</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var b = document.getElementById('qegConsent');
+  if(!b){ return; }
+  var choice = null;
+  try{ choice = localStorage.getItem('qeg-consent'); }catch(e){}
+  if(choice === 'accepted' || choice === 'declined'){ return; }
+  b.hidden = false;
+  document.getElementById('qegAccept').addEventListener('click', function(){
+    try{ localStorage.setItem('qeg-consent', 'accepted'); }catch(e){}
+    b.hidden = true;
+    if(window.__qegLoadGA){ window.__qegLoadGA(); }
+  });
+  document.getElementById('qegDecline').addEventListener('click', function(){
+    try{ localStorage.setItem('qeg-consent', 'declined'); }catch(e){}
+    b.hidden = true;
   });
 })();
 </script>
