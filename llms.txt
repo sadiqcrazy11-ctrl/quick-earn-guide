@@ -40,8 +40,6 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - AI Side Hustles You Can Start This Week (2026): assets/guides/ai-side-hustles-this-week.html
 - Make Money With AI Tools on Your Phone (No Coding): The Honest Version: assets/guides/ai-tools-phone.html
 - Build a Micro-SaaS in a Weekend With No Coding: The Honest 2026 Guide: assets/guides/build-micro-saas-weekend-no-coding.html
-- Black Friday 2026 Seller Prep: Early Access, Real Dates, and Deals That Still Make Money: assets/guides/black-friday-2026-seller-prep.html
-- Black Friday 2026 Sale Dates Calendar: When Walmart, Target, and Best Buy Deals Actually Drop: assets/guides/black-friday-2026-sale-dates-calendar.html
 - Become a UGC Creator: A Side Hustle With No Followers Needed (2026): assets/guides/ugc-creator-side-hustle.html
 - Make Money With AI: Your First $100 in 30 Days (Honest Beginner Plan): assets/guides/make-money-with-ai-first-100-30-days-2026.html
 - Faceless Shorts Side Hustle: The Real Cost and the Real Pay in 2026: assets/guides/faceless-shorts-side-hustle-reality-2026.html
@@ -54,7 +52,6 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Best Side Hustles November 2026: Real Income Ranges and Honest Timelines: assets/guides/best-side-hustles-november-2026.html
 - AI Automation Agency Income: How Much Can You Really Make in 2026?: assets/guides/ai-automation-agency-income-2026.html
 - Side Hustle Average Income: $810 a Month in 2026 (Real Data): assets/guides/side-hustle-average-income-810-month-2026.html
-- Amazon Black Friday Week 2026: November 19-30 Dates, Double Drops and What to Buy: assets/guides/amazon-black-friday-week-2026-dates-deals-november-19-30.html
 - Side Hustles With the Fastest First Payment in 2026: Same-Day Cash to First Paycheck: assets/guides/side-hustles-fastest-first-payment-2026.html
 - 30 Side Hustles Most People Never Heard Of (2026): Real Pay + the Rules: assets/guides/side-hustles-most-people-never-heard-of-2026.html
 - 7 Side Hustles That Pay Within a Week in 2026 (Ranked by Friction, Not Hype): assets/guides/side-hustles-that-pay-within-a-week-2026.html
@@ -114,12 +111,9 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Profit Margin Calculator: assets/tools/profit-margin-calculator.html
 - Instagram Earnings Calculator: assets/tools/instagram-earnings-calculator.html
 - Airbnb Earnings Calculator: assets/tools/airbnb-earnings-calculator.html
-- Black Friday Deal Calculator: assets/tools/black-friday-deal-calculator.html
 - Christmas Shopping Budget Calculator: assets/tools/christmas-shopping-budget-calculator.html
-- Black Friday Resale Profit Calculator: assets/tools/black-friday-resale-profit-calculator.html
 - 52-Week Savings Challenge Calculator: assets/tools/new-year-savings-challenge-calculator.html
 - Year-End Bonus Calculator: assets/tools/year-end-bonus-calculator.html
-- Holiday Delivery Date Calculator: assets/tools/holiday-delivery-date-calculator.html
 - Fee Comparison Calculator: assets/tools/fee-comparison-calculator.html
 - Gumroad Fee Calculator: assets/tools/gumroad-fee-calculator.html
 - TikTok Shop Fee Calculator: assets/tools/tiktok-shop-fee-calculator.html
