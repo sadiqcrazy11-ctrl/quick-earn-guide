@@ -56,6 +56,10 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - 30 Side Hustles Most People Never Heard Of (2026): Real Pay + the Rules: assets/guides/side-hustles-most-people-never-heard-of-2026.html
 - 7 Side Hustles That Pay Within a Week in 2026 (Ranked by Friction, Not Hype): assets/guides/side-hustles-that-pay-within-a-week-2026.html
 - AI Side Hustles 2026: Why AI Video Services Pay Beginners the Most: assets/guides/ai-side-hustles-2026-ai-video-services-beginners.html
+- When Does GTA 6 Release? Launch Date, Platforms, PC, and How to Earn From It: assets/guides/when-does-gta-6-release-2026.html
+- Will GTA 6 Have Online? GTA 6 Online, Crossplay and Cross-Platform, Answered Honestly: assets/guides/will-gta-6-have-online.html
+- Fastest Car in GTA 5: Top Speeds, Prices, and How to Earn In-Game Money in GTA Online: assets/guides/fastest-car-in-gta-5.html
+- GTA 6 Cover Girl: Who Lucia Is, the Mystery Woman, and the Strip Club Question: assets/guides/gta-6-cover-girl.html
 
 ## Free tools (separate pages under assets/tools/)
 
