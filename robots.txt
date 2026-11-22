@@ -39,3 +39,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/sitemap.xml
