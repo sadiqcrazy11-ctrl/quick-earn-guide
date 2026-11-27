@@ -60,10 +60,6 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Will GTA 6 Have Online? GTA 6 Online, Crossplay and Cross-Platform, Answered Honestly: assets/guides/will-gta-6-have-online.html
 - Fastest Car in GTA 5: Top Speeds, Prices, and How to Earn In-Game Money in GTA Online: assets/guides/fastest-car-in-gta-5.html
 - GTA 6 Cover Girl: Who Lucia Is, the Mystery Woman, and the Strip Club Question: assets/guides/gta-6-cover-girl.html
-- Walmart Black Friday Deals Start Today, November 23, 2026: Online Times, Walmart+ Early Access, and Confirmed Prices: assets/guides/walmart-black-friday-deals-start-november-23-2026.html
-- Target Black Friday Sale Is Live, November 22–29, 2026: Best Buy Doorbusters — Sony XM5 $169, TCL TV $229.99: assets/guides/target-black-friday-sale-live-best-buy-doorbusters-november-2026.html
-- Amazon Black Friday Week Day 6, November 24, 2026: AirPods Pro 3 Hit a New Low of $149: assets/guides/amazon-black-friday-week-day-6-november-24-2026-airpods-pro-3-149.html
-- Amazon Black Friday Week Day 7, November 25, 2026: AirTag 2 Hits a New Low of $18: assets/guides/amazon-black-friday-week-day-7-november-25-2026-airtag-2-18.html
 - GTA 6 Clipping Side Hustle: What It Actually Pays in November 2026: assets/guides/gta-6-clipping-side-hustle-november-2026.html
 - How Much Does GTA 6 Cost? Price, Editions, and What's Worth It: assets/guides/gta-6-price-editions-2026.html
 - GTA 6 Map Size: How Big Is Leonida and Every Confirmed Location: assets/guides/gta-6-map-size-leonida.html
@@ -71,7 +67,15 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - How to Make Money Fast in GTA 6: Best Methods by Chapter: assets/guides/gta-6-make-money-fast.html
 - GTA 6 Characters: Jason, Lucia, and Everyone in Leonida: assets/guides/gta-6-characters-jason-lucia.html
 - GTA 6 File Size and Performance: 60 FPS, PS5 Pro, and Download Size: assets/guides/gta-6-file-size-performance.html
+- Amazon Black Friday Week Day 7, November 25, 2026: AirTag 2 Hits a New Low of $18: assets/guides/amazon-black-friday-week-day-7-november-25-2026-airtag-2-18.html
 - Black Friday Is Friday, November 27, 2026: Store Hours, 6 a.m. Openings and the $100 Gift Card for $60: assets/guides/black-friday-november-27-2026-store-hours-walmart-target-best-buy-gift-cards.html
+- Walmart Black Friday Deals Start Nov 23, 2026 — Online Times & Confirmed Prices: assets/guides/walmart-black-friday-deals-start-november-23-2026.html
+- Target Black Friday Sale Live Nov 22–29, 2026 + Best Buy Doorbusters: assets/guides/target-black-friday-sale-live-best-buy-doorbusters-november-2026.html
+- Gemini Tasks Is Free — Sell It as a $99/Month Life-Admin Service: assets/guides/gemini-tasks-free-november-2026-life-admin-service-99.html
+- I Tested 25 Viral AI Side Hustles — Only 3 Actually Pay (Nov 2026): assets/guides/25-ai-side-hustles-tested-only-3-pay-november-2026.html
+- Amazon Black Friday Week Day 9, November 27, 2026: Main Event Live — AirPods Pro 3 $149, AirTag 2 $18, Watch Ultra 4 $649: assets/guides/amazon-black-friday-week-day-9-november-27-2026-main-event-live.html
+- Buy Now or Wait for Black Friday 2026? The Verdict on Every Big Deal: assets/guides/buy-now-or-wait-black-friday-2026-verdict.html
+- Cyber Monday 2026, November 30: What to Expect — Amazon Double Drop, Walmart Online-Only Sale: assets/guides/cyber-monday-2026-november-30-preview.html
 
 ## Free tools (separate pages under assets/tools/)
 
