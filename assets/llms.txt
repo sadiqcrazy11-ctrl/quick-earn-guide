@@ -80,6 +80,17 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Buy Now or Wait for Black Friday 2026? The Verdict on Every Big Deal: assets/guides/buy-now-or-wait-black-friday-2026-verdict.html
 - Cyber Monday 2026, November 30: What to Expect — Amazon Double Drop, Walmart Online-Only Sale: assets/guides/cyber-monday-2026-november-30-preview.html
 - Cyber Monday, November 30, 2026: Buy Now or Wait for Monday?: assets/guides/cyber-monday-november-30-2026-buy-now-or-wait.html
+- Side Hustles That Actually Work in 2026: assets/guides/side-hustles-that-actually-work-2026.html
+
+- Etsy vs eBay Fees 2026: Which Platform Takes Less?: assets/guides/etsy-vs-ebay-fees-2026-which-takes-less.html
+
+- Etsy Refunds and Cancellations: Do You Get Your Fees Back?: assets/guides/etsy-refunds-cancellations-fees-back.html
+
+- Etsy Regulatory Operating Fee: Which Countries Pay It?: assets/guides/etsy-regulatory-operating-fee-countries.html
+
+- Airbnb Host Fee Explained: What Hosts Pay in 2026: assets/guides/airbnb-host-fee-explained.html
+
+- Vinted Fees for Sellers: What It Really Costs to Sell: assets/guides/vinted-fees-for-sellers.html
 
 ## Free tools (separate pages under assets/tools/)
 
@@ -154,3 +165,28 @@ Status: public. Live at https://sadiqcrazy11-ctrl.github.io/quick-earn-guide/.
 - Passive Income Calculator: assets/tools/passive-income-calculator.html
 - KDP Royalty Calculator: assets/tools/kdp-royalty-calculator.html
 - Creator Platform Comparison Calculator: assets/tools/creator-platform-comparison-calculator.html
+- Booking.com Fee Calculator: assets/tools/booking-com-fee-calculator.html
+- Vrbo Fee Calculator: assets/tools/vrbo-fee-calculator.html
+- Vinted Fee Calculator: assets/tools/vinted-fee-calculator.html
+- Break-Even Calculator: assets/tools/break-even-calculator.html
+- Etsy Listing Fee Calculator: assets/tools/etsy-listing-fee-calculator.html
+- Etsy Offsite Ads Fee Calculator: assets/tools/etsy-offsite-ads-fee-calculator.html
+- Etsy Fees by Country Calculator: assets/tools/etsy-fees-by-country-calculator.html
+- Payhip Fee Calculator: assets/tools/payhip-fee-calculator.html
+- Whatnot Fee Calculator: assets/tools/whatnot-fee-calculator.html
+- Facebook Ads Calculator: assets/tools/facebook-ads-calculator.html
+- Pinterest Ads Calculator: assets/tools/pinterest-ads-calculator.html
+- Credit Card Processing Fee Calculator: assets/tools/credit-card-processing-fee-calculator.html
+- CAC & LTV Calculator: assets/tools/cac-ltv-calculator.html
+- Conversion Rate Calculator: assets/tools/conversion-rate-calculator.html
+- Break-Even ROAS Calculator: assets/tools/break-even-roas-calculator.html
+- YouTube RPM Calculator: assets/tools/youtube-rpm-calculator.html
+- Engagement Rate Calculator: assets/tools/engagement-rate-calculator.html
+- Facebook Marketplace Fee Calculator: assets/tools/facebook-marketplace-fee-calculator.html
+- Amazon FBA Fee Calculator: assets/tools/amazon-fba-fee-calculator.html
+- FBA vs FBM Calculator: assets/tools/fba-vs-fbm-calculator.html
+- Retainer Fee Calculator: assets/tools/retainer-fee-calculator.html
+- Late Payment Fee Calculator: assets/tools/late-payment-fee-calculator.html
+- Foreign Transaction Fee Calculator: assets/tools/foreign-transaction-fee-calculator.html
+- Wholesale & Consignment Price Calculator: assets/tools/wholesale-consignment-calculator.html
+- Handmade Pricing Calculator: assets/tools/handmade-pricing-calculator.html
